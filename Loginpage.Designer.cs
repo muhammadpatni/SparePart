@@ -33,7 +33,7 @@
             // 
             // button1
             // 
-            button1.BackColor = Color.Black;
+            button1.BackColor = Color.Gray;
             button1.Location = new Point(220, 154);
             button1.Name = "button1";
             button1.Size = new Size(75, 23);
