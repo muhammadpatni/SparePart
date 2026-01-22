@@ -46,6 +46,7 @@
             LoginBtn.TabIndex = 1;
             LoginBtn.Text = "Login";
             LoginBtn.UseVisualStyleBackColor = false;
+            LoginBtn.Click += LoginBtn_Click;
             // 
             // LoginPnl
             // 
@@ -71,7 +72,6 @@
             EmployeeRadioBtn.TabStop = true;
             EmployeeRadioBtn.Text = "Employee";
             EmployeeRadioBtn.UseVisualStyleBackColor = true;
-            EmployeeRadioBtn.CheckedChanged += radioButton1_CheckedChanged;
             // 
             // AdminRadioBtn
             // 
@@ -83,7 +83,6 @@
             AdminRadioBtn.TabStop = true;
             AdminRadioBtn.Text = "Admin";
             AdminRadioBtn.UseVisualStyleBackColor = true;
-            AdminRadioBtn.CheckedChanged += radioButton1_CheckedChanged;
             // 
             // PasswordTxtBox
             // 
@@ -111,11 +110,13 @@
             ClientSize = new Size(759, 508);
             Controls.Add(LoginPnl);
             FormBorderStyle = FormBorderStyle.None;
+            KeyPreview = true;
             Name = "LoginPage";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "LoginPage";
             WindowState = FormWindowState.Maximized;
             Load += Loginpage_Load;
+            KeyDown += LoginPage_KeyDown;
             LoginPnl.ResumeLayout(false);
             LoginPnl.PerformLayout();
             ResumeLayout(false);
