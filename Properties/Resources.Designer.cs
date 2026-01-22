@@ -59,5 +59,15 @@ namespace SparePart.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Black_and_White_Bold_Automotive_Logo_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("Black_and_White_Bold_Automotive_Logo-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
