@@ -28,105 +28,105 @@
         /// </summary>
         private void InitializeComponent()
         {
-            LoginButton = new Button();
-            panel1 = new Panel();
-            EmployeeRadioButton = new RadioButton();
-            AdminRadioButton = new RadioButton();
-            PasswordTextBox = new TextBox();
-            UserNameTextBox = new TextBox();
-            panel1.SuspendLayout();
+            LoginBtn = new Button();
+            LoginPnl = new Panel();
+            EmployeeRadioBtn = new RadioButton();
+            AdminRadioBtn = new RadioButton();
+            PasswordTxtBox = new TextBox();
+            UserNameTxtBox = new TextBox();
+            LoginPnl.SuspendLayout();
             SuspendLayout();
             // 
-            // LoginButton
+            // LoginBtn
             // 
-            LoginButton.BackColor = Color.DodgerBlue;
-            LoginButton.Location = new Point(58, 198);
-            LoginButton.Name = "LoginButton";
-            LoginButton.Size = new Size(153, 45);
-            LoginButton.TabIndex = 1;
-            LoginButton.Text = "Login";
-            LoginButton.UseVisualStyleBackColor = false;
+            LoginBtn.BackColor = Color.DodgerBlue;
+            LoginBtn.Location = new Point(93, 211);
+            LoginBtn.Name = "LoginBtn";
+            LoginBtn.Size = new Size(211, 40);
+            LoginBtn.TabIndex = 1;
+            LoginBtn.Text = "Login";
+            LoginBtn.UseVisualStyleBackColor = false;
             // 
-            // panel1
+            // LoginPnl
             // 
-            panel1.BackColor = SystemColors.ActiveCaption;
-            panel1.Controls.Add(EmployeeRadioButton);
-            panel1.Controls.Add(AdminRadioButton);
-            panel1.Controls.Add(PasswordTextBox);
-            panel1.Controls.Add(LoginButton);
-            panel1.Controls.Add(UserNameTextBox);
-            panel1.Dock = DockStyle.Fill;
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(648, 481);
-            panel1.TabIndex = 2;
-            panel1.Paint += panel1_Paint;
+            LoginPnl.BackColor = SystemColors.ActiveCaption;
+            LoginPnl.BorderStyle = BorderStyle.FixedSingle;
+            LoginPnl.Controls.Add(EmployeeRadioBtn);
+            LoginPnl.Controls.Add(AdminRadioBtn);
+            LoginPnl.Controls.Add(PasswordTxtBox);
+            LoginPnl.Controls.Add(LoginBtn);
+            LoginPnl.Controls.Add(UserNameTxtBox);
+            LoginPnl.Location = new Point(181, 99);
+            LoginPnl.Name = "LoginPnl";
+            LoginPnl.Size = new Size(397, 310);
+            LoginPnl.TabIndex = 2;
             // 
-            // EmployeeRadioButton
+            // EmployeeRadioBtn
             // 
-            EmployeeRadioButton.AutoSize = true;
-            EmployeeRadioButton.Location = new Point(150, 147);
-            EmployeeRadioButton.Name = "EmployeeRadioButton";
-            EmployeeRadioButton.Size = new Size(77, 19);
-            EmployeeRadioButton.TabIndex = 3;
-            EmployeeRadioButton.TabStop = true;
-            EmployeeRadioButton.Text = "Employee";
-            EmployeeRadioButton.UseVisualStyleBackColor = true;
-            EmployeeRadioButton.CheckedChanged += radioButton1_CheckedChanged;
+            EmployeeRadioBtn.AutoSize = true;
+            EmployeeRadioBtn.Location = new Point(210, 171);
+            EmployeeRadioBtn.Name = "EmployeeRadioBtn";
+            EmployeeRadioBtn.Size = new Size(77, 19);
+            EmployeeRadioBtn.TabIndex = 3;
+            EmployeeRadioBtn.TabStop = true;
+            EmployeeRadioBtn.Text = "Employee";
+            EmployeeRadioBtn.UseVisualStyleBackColor = true;
+            EmployeeRadioBtn.CheckedChanged += radioButton1_CheckedChanged;
             // 
-            // AdminRadioButton
+            // AdminRadioBtn
             // 
-            AdminRadioButton.AutoSize = true;
-            AdminRadioButton.Location = new Point(47, 147);
-            AdminRadioButton.Name = "AdminRadioButton";
-            AdminRadioButton.Size = new Size(61, 19);
-            AdminRadioButton.TabIndex = 3;
-            AdminRadioButton.TabStop = true;
-            AdminRadioButton.Text = "Admin";
-            AdminRadioButton.UseVisualStyleBackColor = true;
-            AdminRadioButton.CheckedChanged += radioButton1_CheckedChanged;
+            AdminRadioBtn.AutoSize = true;
+            AdminRadioBtn.Location = new Point(104, 171);
+            AdminRadioBtn.Name = "AdminRadioBtn";
+            AdminRadioBtn.Size = new Size(61, 19);
+            AdminRadioBtn.TabIndex = 3;
+            AdminRadioBtn.TabStop = true;
+            AdminRadioBtn.Text = "Admin";
+            AdminRadioBtn.UseVisualStyleBackColor = true;
+            AdminRadioBtn.CheckedChanged += radioButton1_CheckedChanged;
             // 
-            // PasswordTextBox
+            // PasswordTxtBox
             // 
-            PasswordTextBox.Location = new Point(35, 94);
-            PasswordTextBox.Multiline = true;
-            PasswordTextBox.Name = "PasswordTextBox";
-            PasswordTextBox.PlaceholderText = "Password";
-            PasswordTextBox.Size = new Size(211, 34);
-            PasswordTextBox.TabIndex = 3;
+            PasswordTxtBox.Location = new Point(93, 107);
+            PasswordTxtBox.Multiline = true;
+            PasswordTxtBox.Name = "PasswordTxtBox";
+            PasswordTxtBox.PlaceholderText = "Password";
+            PasswordTxtBox.Size = new Size(211, 34);
+            PasswordTxtBox.TabIndex = 3;
             // 
-            // UserNameTextBox
+            // UserNameTxtBox
             // 
-            UserNameTextBox.Location = new Point(35, 35);
-            UserNameTextBox.Multiline = true;
-            UserNameTextBox.Name = "UserNameTextBox";
-            UserNameTextBox.PlaceholderText = "User Name";
-            UserNameTextBox.Size = new Size(211, 34);
-            UserNameTextBox.TabIndex = 3;
+            UserNameTxtBox.Location = new Point(93, 48);
+            UserNameTxtBox.Multiline = true;
+            UserNameTxtBox.Name = "UserNameTxtBox";
+            UserNameTxtBox.PlaceholderText = "User Name";
+            UserNameTxtBox.Size = new Size(211, 34);
+            UserNameTxtBox.TabIndex = 3;
             // 
             // LoginPage
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ButtonFace;
-            ClientSize = new Size(648, 481);
-            Controls.Add(panel1);
+            BackColor = Color.White;
+            ClientSize = new Size(759, 508);
+            Controls.Add(LoginPnl);
             FormBorderStyle = FormBorderStyle.None;
             Name = "LoginPage";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "LoginPage";
+            WindowState = FormWindowState.Maximized;
             Load += Loginpage_Load;
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
+            LoginPnl.ResumeLayout(false);
+            LoginPnl.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
-        private Button LoginButton;
-        private Panel panel1;
-        private TextBox PasswordTextBox;
-        private TextBox UserNameTextBox;
-        private RadioButton AdminRadioButton;
-        private RadioButton EmployeeRadioButton;
+        private Button LoginBtn;
+        private Panel LoginPnl;
+        private TextBox PasswordTxtBox;
+        private TextBox UserNameTxtBox;
+        private RadioButton AdminRadioBtn;
+        private RadioButton EmployeeRadioBtn;
     }
 }
