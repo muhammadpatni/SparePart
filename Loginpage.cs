@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SparePart
 {
-    public partial class Loginpage : Form
+    public partial class LoginPage : Form
     {
-        public Loginpage()
+        public LoginPage()
         {
             InitializeComponent();
         }
@@ -22,6 +22,9 @@ namespace SparePart
 
         }
 
-      
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
