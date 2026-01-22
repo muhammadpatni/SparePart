@@ -30,6 +30,8 @@
         {
             LoginBtn = new Button();
             LoginPnl = new Panel();
+            panel2 = new Panel();
+            panel1 = new Panel();
             EmployeeRadioBtn = new RadioButton();
             AdminRadioBtn = new RadioButton();
             PasswordTxtBox = new TextBox();
@@ -40,6 +42,7 @@
             // LoginBtn
             // 
             LoginBtn.BackColor = Color.DodgerBlue;
+            LoginBtn.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             LoginBtn.Location = new Point(93, 211);
             LoginBtn.Name = "LoginBtn";
             LoginBtn.Size = new Size(211, 40);
@@ -52,6 +55,8 @@
             // 
             LoginPnl.BackColor = SystemColors.ActiveCaption;
             LoginPnl.BorderStyle = BorderStyle.FixedSingle;
+            LoginPnl.Controls.Add(panel2);
+            LoginPnl.Controls.Add(panel1);
             LoginPnl.Controls.Add(EmployeeRadioBtn);
             LoginPnl.Controls.Add(AdminRadioBtn);
             LoginPnl.Controls.Add(PasswordTxtBox);
@@ -62,9 +67,26 @@
             LoginPnl.Size = new Size(397, 310);
             LoginPnl.TabIndex = 2;
             // 
+            // panel2
+            // 
+            panel2.BackColor = Color.White;
+            panel2.Location = new Point(93, 131);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(211, 3);
+            panel2.TabIndex = 5;
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.White;
+            panel1.Location = new Point(93, 72);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(211, 3);
+            panel1.TabIndex = 4;
+            // 
             // EmployeeRadioBtn
             // 
             EmployeeRadioBtn.AutoSize = true;
+            EmployeeRadioBtn.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             EmployeeRadioBtn.Location = new Point(210, 171);
             EmployeeRadioBtn.Name = "EmployeeRadioBtn";
             EmployeeRadioBtn.Size = new Size(77, 19);
@@ -72,10 +94,12 @@
             EmployeeRadioBtn.TabStop = true;
             EmployeeRadioBtn.Text = "Employee";
             EmployeeRadioBtn.UseVisualStyleBackColor = true;
+            
             // 
             // AdminRadioBtn
             // 
             AdminRadioBtn.AutoSize = true;
+            AdminRadioBtn.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             AdminRadioBtn.Location = new Point(104, 171);
             AdminRadioBtn.Name = "AdminRadioBtn";
             AdminRadioBtn.Size = new Size(61, 19);
@@ -86,6 +110,9 @@
             // 
             // PasswordTxtBox
             // 
+            PasswordTxtBox.BackColor = SystemColors.ActiveCaption;
+            PasswordTxtBox.BorderStyle = BorderStyle.None;
+            PasswordTxtBox.ForeColor = Color.Black;
             PasswordTxtBox.Location = new Point(93, 107);
             PasswordTxtBox.Multiline = true;
             PasswordTxtBox.Name = "PasswordTxtBox";
@@ -95,10 +122,13 @@
             // 
             // UserNameTxtBox
             // 
+            UserNameTxtBox.BackColor = SystemColors.ActiveCaption;
+            UserNameTxtBox.BorderStyle = BorderStyle.None;
+            UserNameTxtBox.ForeColor = Color.Black;
             UserNameTxtBox.Location = new Point(93, 48);
             UserNameTxtBox.Multiline = true;
             UserNameTxtBox.Name = "UserNameTxtBox";
-            UserNameTxtBox.PlaceholderText = "User Name";
+            UserNameTxtBox.PlaceholderText = "Username";
             UserNameTxtBox.Size = new Size(211, 34);
             UserNameTxtBox.TabIndex = 3;
             // 
@@ -129,5 +159,7 @@
         private TextBox UserNameTxtBox;
         private RadioButton AdminRadioBtn;
         private RadioButton EmployeeRadioBtn;
+        private Panel panel1;
+        private Panel panel2;
     }
 }

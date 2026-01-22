@@ -27,11 +27,11 @@ namespace SparePart
 
         private void Performlogin()
         {
-           if(isValid())
-            { 
+            if (isValid())
+            {
                 string userType = AdminRadioBtn.Checked ? "admin" : "employee";
                 string query = $"SELECT * FROM Users WHERE UserName = '{UserNameTxtBox.Text.Trim()}' AND Password = '{PasswordTxtBox.Text.Trim()}' AND Designation = '{userType}'";
-               
+
                 DataTable dt = DatabaseManagement.retrieve(query);
                 if (dt != null && dt.Rows.Count > 0)
                 {
@@ -61,17 +61,26 @@ namespace SparePart
             {
                 MessageBox.Show("Please enter username", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 UserNameTxtBox.Focus();
+                PasswordTxtBox.Text = PasswordTxtBox.Text.Trim();
+                UserNameTxtBox.Clear();
                 return false;
             }
-             if (PasswordTxtBox.Text.Trim() == "")
+            if (PasswordTxtBox.Text.Trim() == "")
             {
                 MessageBox.Show("Please enter password", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 PasswordTxtBox.Focus();
+                UserNameTxtBox.Text = UserNameTxtBox.Text.Trim();
+                PasswordTxtBox.Clear();
                 return false;
             }
             if (!AdminRadioBtn.Checked && !EmployeeRadioBtn.Checked)
             {
                 MessageBox.Show("Please select user type", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                UserNameTxtBox.Text = UserNameTxtBox.Text.Trim();
+                PasswordTxtBox.Text = PasswordTxtBox.Text.Trim();
+                UserNameTxtBox.Text=UserNameTxtBox.Text.Trim();
+                PasswordTxtBox.Text = PasswordTxtBox.Text.Trim();
+
                 return false;
             }
             return true;
@@ -115,5 +124,6 @@ namespace SparePart
         {
             Performlogin();
         }
+
     }
 }
