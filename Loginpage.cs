@@ -13,11 +13,20 @@ namespace SparePart
 {
     public partial class LoginPage : Form
     {
+       /// <summary>
+       /// Initializes a new instance of the LoginPage class.
+       /// </summary>
         public LoginPage()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Handles the Load event of the login page form by centering the login panel and setting focus to the username
+        /// text box.
+        /// </summary>
+        /// <param name="sender">The source of the event, typically the login page form.</param>
+        /// <param name="e">An EventArgs object that contains the event data.</param>
         private void Loginpage_Load(object sender, EventArgs e)
         {
             LoginPnl.Location = new Point((this.Size.Width - LoginPnl.Width) / 2, (this.Size.Height - LoginPnl.Height) / 2);
@@ -25,6 +34,13 @@ namespace SparePart
         }
 
 
+        /// <summary>
+        /// Attempts to authenticate the user based on the entered credentials and navigates to the appropriate page
+        /// upon successful login.
+        /// </summary>
+        /// <remarks>Displays an error message if the username, password, or user type is invalid.
+        /// Navigates to the admin or employee page depending on the selected user type. This method is typically called
+        /// in response to a login action, such as clicking a login button.</remarks>
         private void Performlogin()
         {
             if (isValid())
@@ -55,6 +71,13 @@ namespace SparePart
             }
         }
 
+        /// <summary>
+        /// Validates the user input fields for username, password, and user type selection in the login form.
+        /// </summary>
+        /// <remarks>If validation fails, an error message is displayed to the user and the relevant input
+        /// field is focused for correction. This method is intended for use within the login form to ensure that all
+        /// necessary information is provided before proceeding.</remarks>
+        /// <returns>true if all required fields are filled and a user type is selected; otherwise, false.</returns>
         private bool isValid()
         {
             if (UserNameTxtBox.Text.Trim() == "")
@@ -85,7 +108,16 @@ namespace SparePart
             }
             return true;
         }
-
+        
+        /// <summary>
+        /// Handles key press events on the login page to provide keyboard shortcuts for common actions such as
+        /// submitting the form, exiting the application, switching user roles, and navigating between input fields.
+        /// </summary>
+        /// <remarks>This handler enables keyboard navigation and shortcuts for the login page. Pressing
+        /// Enter attempts to log in, Escape exits the application, F1 and F2 toggle between user roles, and the Up and
+        /// Down arrow keys move focus between the username and password fields.</remarks>
+        /// <param name="sender">The source of the event, typically the login page or one of its controls.</param>
+        /// <param name="e">A KeyEventArgs that contains the event data, including information about the key pressed.</param>
         private void LoginPage_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -119,7 +151,7 @@ namespace SparePart
 
 
         }
-
+        
         private void LoginBtn_Click(object sender, EventArgs e)
         {
             Performlogin();
