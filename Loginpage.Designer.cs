@@ -94,7 +94,6 @@
             EmployeeRadioBtn.TabStop = true;
             EmployeeRadioBtn.Text = "Employee";
             EmployeeRadioBtn.UseVisualStyleBackColor = true;
-            
             // 
             // AdminRadioBtn
             // 

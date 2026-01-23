@@ -32,7 +32,7 @@ namespace SparePart
                 string userType = AdminRadioBtn.Checked ? "admin" : "employee";
                 string query = $"SELECT * FROM Users WHERE UserName = '{UserNameTxtBox.Text.Trim()}' AND Password = '{PasswordTxtBox.Text.Trim()}' AND Designation = '{userType}'";
 
-                DataTable dt = DatabaseManagement.retrieve(query);
+                DataTable? dt = DatabaseManagement.retrieve(query);
                 if (dt != null && dt.Rows.Count > 0)
                 {
 
@@ -78,9 +78,6 @@ namespace SparePart
                 MessageBox.Show("Please select user type", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 UserNameTxtBox.Text = UserNameTxtBox.Text.Trim();
                 PasswordTxtBox.Text = PasswordTxtBox.Text.Trim();
-                UserNameTxtBox.Text=UserNameTxtBox.Text.Trim();
-                PasswordTxtBox.Text = PasswordTxtBox.Text.Trim();
-
                 return false;
             }
             return true;
@@ -123,6 +120,9 @@ namespace SparePart
         private void LoginBtn_Click(object sender, EventArgs e)
         {
             Performlogin();
+            UserNameTxtBox.Text = UserNameTxtBox.Text.Trim();
+            PasswordTxtBox.Text = PasswordTxtBox.Text.Trim();
+
         }
 
     }

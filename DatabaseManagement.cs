@@ -14,7 +14,7 @@ namespace SparePart
         private static string ConnectionString = "Data Source=DESKTOP-GJBQRB1\\SQLEXPRESS;Initial Catalog=SpareParts;Integrated Security=True;Trust Server Certificate=True";
          static  SqlConnection con = new SqlConnection(ConnectionString);
 
-        public  static DataTable retrieve(string query) {
+        public  static DataTable? retrieve(string query) {
 
             try {                 
                 SqlCommand cmd = new SqlCommand(query, con);
