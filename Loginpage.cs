@@ -13,9 +13,9 @@ namespace SparePart
 {
     public partial class LoginPage : Form
     {
-       /// <summary>
-       /// Initializes a new instance of the LoginPage class.
-       /// </summary>
+        /// <summary>
+        /// Initializes a new instance of the LoginPage class.
+        /// </summary>
         public LoginPage()
         {
             InitializeComponent();
@@ -84,28 +84,24 @@ namespace SparePart
             {
                 MessageBox.Show("Please enter username", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 UserNameTxtBox.Focus();
-                PasswordTxtBox.Text = PasswordTxtBox.Text.Trim();
-                UserNameTxtBox.Clear();
                 return false;
             }
             if (PasswordTxtBox.Text.Trim() == "")
             {
                 MessageBox.Show("Please enter password", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 PasswordTxtBox.Focus();
-                UserNameTxtBox.Text = UserNameTxtBox.Text.Trim();
-                PasswordTxtBox.Clear();
                 return false;
             }
             if (!AdminRadioBtn.Checked && !EmployeeRadioBtn.Checked)
             {
                 MessageBox.Show("Please select user type", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                UserNameTxtBox.Text = UserNameTxtBox.Text.Trim();
+                PasswordTxtBox.Focus();
                 PasswordTxtBox.Text = PasswordTxtBox.Text.Trim();
                 return false;
             }
             return true;
         }
-        
+
         /// <summary>
         /// Handles key press events on the login page to provide keyboard shortcuts for common actions such as
         /// submitting the form, exiting the application, switching user roles, and navigating between input fields.
@@ -117,19 +113,9 @@ namespace SparePart
         /// <param name="e">A KeyEventArgs that contains the event data, including information about the key pressed.</param>
         private void LoginPage_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
-            {
-                Performlogin();
-            }
-            else if (e.KeyCode == Keys.Escape)
+            if (e.KeyCode == Keys.Escape)
             {
                 Application.Exit();
-            }
-            else if (e.KeyCode == Keys.Down && !PasswordTxtBox.Focused)
-            {
-                PasswordTxtBox.Focus();
-                e.Handled = true;
-                e.SuppressKeyPress = true;
             }
             else if (e.KeyCode == Keys.F1 && !AdminRadioBtn.Checked)
             {
@@ -139,22 +125,22 @@ namespace SparePart
             {
                 EmployeeRadioBtn.Checked = true;
             }
-            else if (e.KeyCode == Keys.Up && !UserNameTxtBox.Focused)
-            {
-                UserNameTxtBox.Focus();
-                e.Handled = true;
-                e.SuppressKeyPress = true;
-            }
+
 
 
         }
-        
+
         private void LoginBtn_Click(object sender, EventArgs e)
         {
             Performlogin();
-            UserNameTxtBox.Text = UserNameTxtBox.Text.Trim();
-            PasswordTxtBox.Text = PasswordTxtBox.Text.Trim();
+        }
 
+        private void UserNameTxtBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                PasswordTxtBox.Focus();
+            }
         }
 
     }

@@ -28,28 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            LoginBtn = new Button();
+            pictureBox1 = new PictureBox();
             LoginPnl = new Panel();
             panel2 = new Panel();
             panel1 = new Panel();
             EmployeeRadioBtn = new RadioButton();
             AdminRadioBtn = new RadioButton();
             PasswordTxtBox = new TextBox();
+            LoginBtn = new Button();
             UserNameTxtBox = new TextBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             LoginPnl.SuspendLayout();
             SuspendLayout();
             // 
-            // LoginBtn
+            // pictureBox1
             // 
-            LoginBtn.BackColor = Color.DodgerBlue;
-            LoginBtn.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            LoginBtn.Location = new Point(93, 211);
-            LoginBtn.Name = "LoginBtn";
-            LoginBtn.Size = new Size(211, 40);
-            LoginBtn.TabIndex = 1;
-            LoginBtn.Text = "Login";
-            LoginBtn.UseVisualStyleBackColor = false;
-            LoginBtn.Click += LoginBtn_Click;
+            pictureBox1.Dock = DockStyle.Fill;
+            pictureBox1.Image = Properties.Resources.WhatsApp_Image_2026_01_23_at_12_16_00_PM;
+            pictureBox1.Location = new Point(0, 0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(759, 508);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
             // 
             // LoginPnl
             // 
@@ -65,7 +66,7 @@
             LoginPnl.Location = new Point(181, 99);
             LoginPnl.Name = "LoginPnl";
             LoginPnl.Size = new Size(397, 310);
-            LoginPnl.TabIndex = 2;
+            LoginPnl.TabIndex = 3;
             // 
             // panel2
             // 
@@ -119,6 +120,17 @@
             PasswordTxtBox.Size = new Size(211, 34);
             PasswordTxtBox.TabIndex = 3;
             // 
+            // LoginBtn
+            // 
+            LoginBtn.BackColor = Color.DodgerBlue;
+            LoginBtn.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            LoginBtn.Location = new Point(93, 211);
+            LoginBtn.Name = "LoginBtn";
+            LoginBtn.Size = new Size(211, 40);
+            LoginBtn.TabIndex = 1;
+            LoginBtn.Text = "Login";
+            LoginBtn.UseVisualStyleBackColor = false;
+            // 
             // UserNameTxtBox
             // 
             UserNameTxtBox.BackColor = SystemColors.ActiveCaption;
@@ -138,6 +150,7 @@
             BackColor = Color.White;
             ClientSize = new Size(759, 508);
             Controls.Add(LoginPnl);
+            Controls.Add(pictureBox1);
             FormBorderStyle = FormBorderStyle.None;
             KeyPreview = true;
             Name = "LoginPage";
@@ -146,19 +159,22 @@
             WindowState = FormWindowState.Maximized;
             Load += Loginpage_Load;
             KeyDown += LoginPage_KeyDown;
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             LoginPnl.ResumeLayout(false);
             LoginPnl.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
-        private Button LoginBtn;
+
+        private PictureBox pictureBox1;
         private Panel LoginPnl;
-        private TextBox PasswordTxtBox;
-        private TextBox UserNameTxtBox;
-        private RadioButton AdminRadioBtn;
-        private RadioButton EmployeeRadioBtn;
-        private Panel panel1;
         private Panel panel2;
+        private Panel panel1;
+        private RadioButton EmployeeRadioBtn;
+        private RadioButton AdminRadioBtn;
+        private TextBox PasswordTxtBox;
+        private Button LoginBtn;
+        private TextBox UserNameTxtBox;
     }
 }
