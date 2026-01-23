@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            pictureBox1 = new PictureBox();
             panel2 = new Panel();
+            textBox1 = new TextBox();
             panel1 = new Panel();
             EmployeeRadioBtn = new RadioButton();
             AdminRadioBtn = new RadioButton();
@@ -37,32 +37,38 @@
             LoginBtn = new Button();
             UserNameTxtBox = new TextBox();
             LoginPnl = new Panel();
+            pictureBox1 = new PictureBox();
+            panel2.SuspendLayout();
+            LoginPnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Dock = DockStyle.Fill;
-            pictureBox1.Image = Properties.Resources.WhatsApp_Image_2026_01_23_at_12_16_00_PM;
-            pictureBox1.Location = new Point(0, 0);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(1000, 508);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
             // 
             // panel2
             // 
             panel2.BackColor = Color.White;
-            panel2.Location = new Point(716, 182);
+            panel2.Controls.Add(textBox1);
+            panel2.Location = new Point(94, 124);
             panel2.Name = "panel2";
             panel2.Size = new Size(211, 3);
             panel2.TabIndex = 5;
             // 
+            // textBox1
+            // 
+            textBox1.BackColor = SystemColors.ActiveCaptionText;
+            textBox1.BorderStyle = BorderStyle.None;
+            textBox1.ForeColor = Color.Black;
+            textBox1.Location = new Point(0, -90);
+            textBox1.Multiline = true;
+            textBox1.Name = "textBox1";
+            textBox1.PlaceholderText = "Username";
+            textBox1.Size = new Size(211, 34);
+            textBox1.TabIndex = 3;
+            textBox1.TextChanged += textBox1_TextChanged;
+            // 
             // panel1
             // 
             panel1.BackColor = Color.White;
-            panel1.Location = new Point(716, 123);
+            panel1.Location = new Point(94, 65);
             panel1.Name = "panel1";
             panel1.Size = new Size(211, 3);
             panel1.TabIndex = 4;
@@ -71,7 +77,7 @@
             // 
             EmployeeRadioBtn.AutoSize = true;
             EmployeeRadioBtn.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
-            EmployeeRadioBtn.Location = new Point(833, 222);
+            EmployeeRadioBtn.Location = new Point(211, 164);
             EmployeeRadioBtn.Name = "EmployeeRadioBtn";
             EmployeeRadioBtn.Size = new Size(77, 19);
             EmployeeRadioBtn.TabIndex = 3;
@@ -83,7 +89,7 @@
             // 
             AdminRadioBtn.AutoSize = true;
             AdminRadioBtn.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
-            AdminRadioBtn.Location = new Point(727, 222);
+            AdminRadioBtn.Location = new Point(105, 164);
             AdminRadioBtn.Name = "AdminRadioBtn";
             AdminRadioBtn.Size = new Size(61, 19);
             AdminRadioBtn.TabIndex = 3;
@@ -93,21 +99,22 @@
             // 
             // PasswordTxtBox
             // 
-            PasswordTxtBox.BackColor = SystemColors.ActiveCaptionText;
+            PasswordTxtBox.BackColor = Color.FromArgb(239, 242, 247);
             PasswordTxtBox.BorderStyle = BorderStyle.None;
             PasswordTxtBox.ForeColor = Color.Black;
-            PasswordTxtBox.Location = new Point(716, 158);
+            PasswordTxtBox.Location = new Point(94, 100);
             PasswordTxtBox.Multiline = true;
             PasswordTxtBox.Name = "PasswordTxtBox";
             PasswordTxtBox.PlaceholderText = "Password";
             PasswordTxtBox.Size = new Size(211, 34);
             PasswordTxtBox.TabIndex = 3;
+            PasswordTxtBox.TextChanged += PasswordTxtBox_TextChanged;
             // 
             // LoginBtn
             // 
             LoginBtn.BackColor = Color.DodgerBlue;
             LoginBtn.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            LoginBtn.Location = new Point(716, 262);
+            LoginBtn.Location = new Point(94, 204);
             LoginBtn.Name = "LoginBtn";
             LoginBtn.Size = new Size(211, 40);
             LoginBtn.TabIndex = 1;
@@ -116,24 +123,45 @@
             // 
             // UserNameTxtBox
             // 
-            UserNameTxtBox.BackColor = SystemColors.ActiveCaptionText;
+            UserNameTxtBox.BackColor = Color.FromArgb(239, 242, 247);
             UserNameTxtBox.BorderStyle = BorderStyle.None;
             UserNameTxtBox.ForeColor = Color.Black;
-            UserNameTxtBox.Location = new Point(716, 99);
+            UserNameTxtBox.Location = new Point(94, 41);
             UserNameTxtBox.Multiline = true;
             UserNameTxtBox.Name = "UserNameTxtBox";
             UserNameTxtBox.PlaceholderText = "Username";
             UserNameTxtBox.Size = new Size(211, 34);
             UserNameTxtBox.TabIndex = 3;
+            UserNameTxtBox.KeyDown += UserNameTxtBox_KeyDown;
             // 
             // LoginPnl
             // 
-            LoginPnl.BackColor = SystemColors.ActiveCaption;
+            LoginPnl.BackColor = Color.FromArgb(239, 242, 247);
             LoginPnl.BorderStyle = BorderStyle.FixedSingle;
+            LoginPnl.Controls.Add(panel2);
+            LoginPnl.Controls.Add(PasswordTxtBox);
+            LoginPnl.Controls.Add(panel1);
+            LoginPnl.Controls.Add(LoginBtn);
+            LoginPnl.Controls.Add(EmployeeRadioBtn);
+            LoginPnl.Controls.Add(AdminRadioBtn);
+            LoginPnl.Controls.Add(UserNameTxtBox);
             LoginPnl.Location = new Point(181, 99);
             LoginPnl.Name = "LoginPnl";
             LoginPnl.Size = new Size(397, 310);
             LoginPnl.TabIndex = 3;
+            LoginPnl.Paint += LoginPnl_Paint;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Dock = DockStyle.Fill;
+            pictureBox1.Image = Properties.Resources.WhatsApp_Image_2026_01_23_at_12_16_00_PM;
+            pictureBox1.Location = new Point(0, 0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(1000, 508);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // LoginPage
             // 
@@ -141,15 +169,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1000, 508);
-            Controls.Add(panel2);
             Controls.Add(LoginPnl);
-            Controls.Add(panel1);
             Controls.Add(pictureBox1);
-            Controls.Add(EmployeeRadioBtn);
-            Controls.Add(UserNameTxtBox);
-            Controls.Add(AdminRadioBtn);
-            Controls.Add(LoginBtn);
-            Controls.Add(PasswordTxtBox);
             FormBorderStyle = FormBorderStyle.None;
             KeyPreview = true;
             Name = "LoginPage";
@@ -158,14 +179,15 @@
             WindowState = FormWindowState.Maximized;
             Load += Loginpage_Load;
             KeyDown += LoginPage_KeyDown;
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
+            LoginPnl.ResumeLayout(false);
+            LoginPnl.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
-
-        private PictureBox pictureBox1;
         private Panel panel2;
         private Panel panel1;
         private RadioButton EmployeeRadioBtn;
@@ -174,5 +196,7 @@
         private Button LoginBtn;
         private TextBox UserNameTxtBox;
         private Panel LoginPnl;
+        private PictureBox pictureBox1;
+        private TextBox textBox1;
     }
 }

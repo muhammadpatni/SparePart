@@ -79,5 +79,35 @@ namespace SparePart.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WhatsApp_Image_2026_01_23_at_12_161 {
+            get {
+                object obj = ResourceManager.GetObject("WhatsApp Image 2026-01-23 at 12.161", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WhatsApp_Image_2026_01_23_at_12_29_37_PM {
+            get {
+                object obj = ResourceManager.GetObject("WhatsApp Image 2026-01-23 at 12.29.37 PM", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WhatsApp_Image_2026_01_23_at_12_29_37_PM_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("WhatsApp_Image_2026-01-23_at_12.29.37_PM-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

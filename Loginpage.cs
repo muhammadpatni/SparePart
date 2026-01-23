@@ -135,6 +135,33 @@ namespace SparePart
             Performlogin();
         }
 
+
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LoginPnl_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PasswordTxtBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void UserNameTxtBox_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -142,6 +169,5 @@ namespace SparePart
                 PasswordTxtBox.Focus();
             }
         }
-
     }
 }
