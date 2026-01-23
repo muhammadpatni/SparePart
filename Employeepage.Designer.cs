@@ -28,14 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             label1 = new Label();
             panel1 = new Panel();
-            panel2 = new Panel();
-            panel3 = new Panel();
             button1 = new Button();
             pictureBox1 = new PictureBox();
-            panel2.SuspendLayout();
+            Employeedrawerpnl = new FlowLayoutPanel();
+            panel2 = new Panel();
+            MenuButton = new PictureBox();
+            Slidebartimer = new System.Windows.Forms.Timer(components);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            Employeedrawerpnl.SuspendLayout();
+            panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)MenuButton).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -51,29 +56,10 @@
             // 
             panel1.BackColor = Color.FromArgb(128, 128, 125);
             panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(200, 0);
+            panel1.Location = new Point(220, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1034, 55);
+            panel1.Size = new Size(1014, 55);
             panel1.TabIndex = 2;
-            // 
-            // panel2
-            // 
-            panel2.BackColor = Color.DimGray;
-            panel2.Controls.Add(panel3);
-            panel2.Dock = DockStyle.Left;
-            panel2.Location = new Point(0, 0);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(200, 450);
-            panel2.TabIndex = 3;
-            // 
-            // panel3
-            // 
-            panel3.BackColor = Color.White;
-            panel3.Dock = DockStyle.Top;
-            panel3.Location = new Point(0, 0);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(200, 217);
-            panel3.TabIndex = 0;
             // 
             // button1
             // 
@@ -98,24 +84,60 @@
             pictureBox1.TabIndex = 5;
             pictureBox1.TabStop = false;
             // 
+            // Employeedrawerpnl
+            // 
+            Employeedrawerpnl.BackColor = Color.Black;
+            Employeedrawerpnl.Controls.Add(panel2);
+            Employeedrawerpnl.Dock = DockStyle.Left;
+            Employeedrawerpnl.Location = new Point(0, 0);
+            Employeedrawerpnl.Name = "Employeedrawerpnl";
+            Employeedrawerpnl.Size = new Size(220, 587);
+            Employeedrawerpnl.TabIndex = 6;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.BlanchedAlmond;
+            panel2.Controls.Add(MenuButton);
+            panel2.Location = new Point(3, 3);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(218, 100);
+            panel2.TabIndex = 0;
+            // 
+            // MenuButton
+            // 
+            MenuButton.BackColor = Color.SandyBrown;
+            MenuButton.Location = new Point(9, 10);
+            MenuButton.Name = "MenuButton";
+            MenuButton.Size = new Size(58, 42);
+            MenuButton.TabIndex = 0;
+            MenuButton.TabStop = false;
+            MenuButton.Click += MenuButton_Click;
+            // 
+            // Slidebartimer
+            // 
+            Slidebartimer.Interval = 10;
+            Slidebartimer.Tick += Slidebartimer_Tick;
+            // 
             // Employeepage
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1234, 450);
+            ClientSize = new Size(1234, 587);
             Controls.Add(pictureBox1);
             Controls.Add(button1);
-            Controls.Add(panel1);
             Controls.Add(label1);
-            Controls.Add(panel2);
+            Controls.Add(panel1);
+            Controls.Add(Employeedrawerpnl);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Employeepage";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Employeepage";
             WindowState = FormWindowState.Maximized;
-            panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            Employeedrawerpnl.ResumeLayout(false);
+            panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)MenuButton).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -124,9 +146,11 @@
 
         private Label label1;
         private Panel panel1;
-        private Panel panel2;
-        private Panel panel3;
         private Button button1;
         private PictureBox pictureBox1;
+        private FlowLayoutPanel Employeedrawerpnl;
+        private Panel panel2;
+        private PictureBox MenuButton;
+        private System.Windows.Forms.Timer Slidebartimer;
     }
 }
