@@ -63,7 +63,6 @@
             textBox1.PlaceholderText = "Username";
             textBox1.Size = new Size(211, 34);
             textBox1.TabIndex = 3;
-            textBox1.TextChanged += textBox1_TextChanged;
             // 
             // panel1
             // 
@@ -108,7 +107,7 @@
             PasswordTxtBox.PlaceholderText = "Password";
             PasswordTxtBox.Size = new Size(211, 34);
             PasswordTxtBox.TabIndex = 3;
-            PasswordTxtBox.TextChanged += PasswordTxtBox_TextChanged;
+            PasswordTxtBox.KeyDown += PasswordTxtBox_KeyDown;
             // 
             // LoginBtn
             // 
@@ -120,6 +119,7 @@
             LoginBtn.TabIndex = 1;
             LoginBtn.Text = "Login";
             LoginBtn.UseVisualStyleBackColor = false;
+            LoginBtn.Click += LoginBtn_Click;
             // 
             // UserNameTxtBox
             // 
@@ -149,7 +149,6 @@
             LoginPnl.Name = "LoginPnl";
             LoginPnl.Size = new Size(397, 310);
             LoginPnl.TabIndex = 3;
-            LoginPnl.Paint += LoginPnl_Paint;
             // 
             // pictureBox1
             // 
@@ -157,18 +156,17 @@
             pictureBox1.Image = Properties.Resources.WhatsApp_Image_2026_01_23_at_12_16_00_PM;
             pictureBox1.Location = new Point(0, 0);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(1000, 508);
+            pictureBox1.Size = new Size(759, 508);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
-            pictureBox1.Click += pictureBox1_Click;
             // 
             // LoginPage
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1000, 508);
+            ClientSize = new Size(759, 508);
             Controls.Add(LoginPnl);
             Controls.Add(pictureBox1);
             FormBorderStyle = FormBorderStyle.None;

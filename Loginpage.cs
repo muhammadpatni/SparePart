@@ -125,41 +125,6 @@ namespace SparePart
             {
                 EmployeeRadioBtn.Checked = true;
             }
-
-
-
-        }
-
-        private void LoginBtn_Click(object sender, EventArgs e)
-        {
-            Performlogin();
-        }
-
-
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void LoginPnl_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void PasswordTxtBox_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void UserNameTxtBox_KeyDown(object sender, KeyEventArgs e)
@@ -168,6 +133,21 @@ namespace SparePart
             {
                 PasswordTxtBox.Focus();
             }
+        }
+
+        private void LoginBtn_Click(object sender, EventArgs e)
+        {
+            Performlogin();
+        }
+
+        private void PasswordTxtBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode== Keys.Enter)
+            {
+                Performlogin();
+                PasswordTxtBox.Text = PasswordTxtBox.Text.Trim();
+            }
+          
         }
     }
 }
