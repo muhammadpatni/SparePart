@@ -45,11 +45,11 @@
             // 
             // panel2
             // 
-            panel2.BackColor = Color.White;
+            panel2.BackColor = Color.Black;
             panel2.Controls.Add(textBox1);
             panel2.Location = new Point(94, 124);
             panel2.Name = "panel2";
-            panel2.Size = new Size(211, 3);
+            panel2.Size = new Size(211, 2);
             panel2.TabIndex = 5;
             // 
             // textBox1
@@ -66,10 +66,10 @@
             // 
             // panel1
             // 
-            panel1.BackColor = Color.White;
+            panel1.BackColor = Color.Black;
             panel1.Location = new Point(94, 65);
             panel1.Name = "panel1";
-            panel1.Size = new Size(211, 3);
+            panel1.Size = new Size(211, 2);
             panel1.TabIndex = 4;
             // 
             // EmployeeRadioBtn
@@ -100,6 +100,7 @@
             // 
             PasswordTxtBox.BackColor = Color.FromArgb(239, 242, 247);
             PasswordTxtBox.BorderStyle = BorderStyle.None;
+            PasswordTxtBox.Font = new Font("Segoe UI", 9F);
             PasswordTxtBox.ForeColor = Color.Black;
             PasswordTxtBox.Location = new Point(94, 100);
             PasswordTxtBox.Multiline = true;
@@ -125,6 +126,7 @@
             // 
             UserNameTxtBox.BackColor = Color.FromArgb(239, 242, 247);
             UserNameTxtBox.BorderStyle = BorderStyle.None;
+            UserNameTxtBox.Font = new Font("Segoe UI", 9F);
             UserNameTxtBox.ForeColor = Color.Black;
             UserNameTxtBox.Location = new Point(94, 41);
             UserNameTxtBox.Multiline = true;

@@ -25,7 +25,7 @@ namespace SparePart
             if (sliderbarExpand)
             {
                 Admindrawerpnl.Width -= 10;
-                if (Admindrawerpnl.Width <= 80)
+                if (Admindrawerpnl.Width <= 55)
                 {
                     sliderbarExpand = false;
                     Slidebartimer.Stop();
@@ -45,6 +45,16 @@ namespace SparePart
         private void MenuButton_Click(object sender, EventArgs e)
         {
             Slidebartimer.Start();
+        }
+
+        private void Admindrawerpnl_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
