@@ -30,17 +30,17 @@
         {
             components = new System.ComponentModel.Container();
             label1 = new Label();
-            panel1 = new Panel();
             button1 = new Button();
             pictureBox1 = new PictureBox();
-            Employeedrawerpnl = new FlowLayoutPanel();
-            panel2 = new Panel();
             Slidebartimer = new System.Windows.Forms.Timer(components);
+            panel1 = new Panel();
+            panel2 = new Panel();
             MenuButton = new PictureBox();
+            Employeedrawerpnl = new FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            Employeedrawerpnl.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)MenuButton).BeginInit();
+            Employeedrawerpnl.SuspendLayout();
             SuspendLayout();
             // 
             // label1
@@ -51,15 +51,6 @@
             label1.Size = new Size(65, 15);
             label1.TabIndex = 1;
             label1.Text = "EMPLOYEE";
-            // 
-            // panel1
-            // 
-            panel1.BackColor = Color.FromArgb(128, 128, 125);
-            panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(220, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(1014, 55);
-            panel1.TabIndex = 2;
             // 
             // button1
             // 
@@ -84,15 +75,19 @@
             pictureBox1.TabIndex = 5;
             pictureBox1.TabStop = false;
             // 
-            // Employeedrawerpnl
+            // Slidebartimer
             // 
-            Employeedrawerpnl.BackColor = Color.Black;
-            Employeedrawerpnl.Controls.Add(panel2);
-            Employeedrawerpnl.Dock = DockStyle.Left;
-            Employeedrawerpnl.Location = new Point(0, 0);
-            Employeedrawerpnl.Name = "Employeedrawerpnl";
-            Employeedrawerpnl.Size = new Size(220, 587);
-            Employeedrawerpnl.TabIndex = 6;
+            Slidebartimer.Interval = 10;
+            Slidebartimer.Tick += Slidebartimer_Tick;
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.FromArgb(128, 128, 125);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(220, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1014, 55);
+            panel1.TabIndex = 2;
             // 
             // panel2
             // 
@@ -120,6 +115,16 @@
             MenuButton.TabStop = false;
             MenuButton.Click += MenuButton_Click;
             // 
+            // Employeedrawerpnl
+            // 
+            Employeedrawerpnl.BackColor = Color.Black;
+            Employeedrawerpnl.Controls.Add(panel2);
+            Employeedrawerpnl.Dock = DockStyle.Left;
+            Employeedrawerpnl.Location = new Point(0, 0);
+            Employeedrawerpnl.Name = "Employeedrawerpnl";
+            Employeedrawerpnl.Size = new Size(220, 587);
+            Employeedrawerpnl.TabIndex = 6;
+            // 
             // Employeepage
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -137,9 +142,9 @@
             Text = "Employeepage";
             WindowState = FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            Employeedrawerpnl.ResumeLayout(false);
             panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)MenuButton).EndInit();
+            Employeedrawerpnl.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -147,12 +152,13 @@
         #endregion
 
         private Label label1;
-        private Panel panel1;
         private Button button1;
         private PictureBox pictureBox1;
-        private FlowLayoutPanel Employeedrawerpnl;
+        private System.Windows.Forms.Timer Slidebartimer;
+        private Panel panel1;
         private Panel panel2;
         private System.Windows.Forms.Timer Slidebartimer;
         private PictureBox MenuButton;
+        private FlowLayoutPanel Employeedrawerpnl;
     }
 }

@@ -142,12 +142,27 @@ namespace SparePart
 
         private void PasswordTxtBox_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode== Keys.Enter)
+            if (e.KeyCode == Keys.Enter)
             {
                 Performlogin();
                 PasswordTxtBox.Text = PasswordTxtBox.Text.Trim();
             }
-          
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LoginPnl_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void PasswordTxtBox_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
