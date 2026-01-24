@@ -8,7 +8,7 @@ namespace SparePart
 {
     internal class Pagecalling
     {
-        public void loadform(object Form, Panel panelmain)
+        public static void loadform(object Form, Panel panelmain)
         {
 
 

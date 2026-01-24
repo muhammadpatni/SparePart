@@ -67,6 +67,7 @@ namespace SparePart
 
         private void Adminpage_Load(object sender, EventArgs e)
         {
+            Pagecalling.loadform(new Dashboard(), Mainpanel);
 
         }
 
