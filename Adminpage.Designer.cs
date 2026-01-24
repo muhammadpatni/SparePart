@@ -31,6 +31,9 @@
             components = new System.ComponentModel.Container();
             label1 = new Label();
             drawerinnerpanel = new Panel();
+            pictureBox1 = new PictureBox();
+            label3 = new Label();
+            label2 = new Label();
             MenuButton = new PictureBox();
             panel2 = new Panel();
             Logoutbutton = new Button();
@@ -49,6 +52,7 @@
             Dashboardbtn = new Button();
             panel3 = new Panel();
             drawerinnerpanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)MenuButton).BeginInit();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
@@ -72,15 +76,51 @@
             // 
             // drawerinnerpanel
             // 
-            drawerinnerpanel.BackColor = Color.FromArgb(30, 41, 59);
+            drawerinnerpanel.BackColor = Color.FromArgb(22, 31, 50);
+            drawerinnerpanel.Controls.Add(pictureBox1);
+            drawerinnerpanel.Controls.Add(label3);
+            drawerinnerpanel.Controls.Add(label2);
             drawerinnerpanel.Controls.Add(MenuButton);
             drawerinnerpanel.Dock = DockStyle.Top;
             drawerinnerpanel.Location = new Point(0, 0);
             drawerinnerpanel.Margin = new Padding(0);
             drawerinnerpanel.Name = "drawerinnerpanel";
-            drawerinnerpanel.Size = new Size(220, 202);
+            drawerinnerpanel.Size = new Size(220, 249);
             drawerinnerpanel.TabIndex = 0;
             drawerinnerpanel.Paint += panel2_Paint;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.logo2;
+            pictureBox1.Location = new Point(49, 53);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(122, 110);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 17;
+            pictureBox1.TabStop = false;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.FromArgb(161, 165, 172);
+            label3.Location = new Point(28, 203);
+            label3.Name = "label3";
+            label3.Size = new Size(168, 15);
+            label3.TabIndex = 16;
+            label3.Text = "SPARE PARTS MANAGEMENT";
+            label3.Click += label3_Click;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI Black", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(21, 165);
+            label2.Name = "label2";
+            label2.Size = new Size(180, 30);
+            label2.TabIndex = 15;
+            label2.Text = "PARTEX ADMIN";
             // 
             // MenuButton
             // 
@@ -130,7 +170,7 @@
             // 
             // panel1
             // 
-            panel1.BackColor = Color.FromArgb(30, 41, 59);
+            panel1.BackColor = Color.FromArgb(22, 31, 50);
             panel1.Controls.Add(panel7);
             panel1.Controls.Add(partextitlelb);
             panel1.Dock = DockStyle.Top;
@@ -178,7 +218,7 @@
             partextitlelb.AutoSize = true;
             partextitlelb.Font = new Font("Segoe UI Black", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
             partextitlelb.ForeColor = Color.White;
-            partextitlelb.Location = new Point(19, 16);
+            partextitlelb.Location = new Point(432, 16);
             partextitlelb.Name = "partextitlelb";
             partextitlelb.Size = new Size(86, 25);
             partextitlelb.TabIndex = 11;
@@ -205,7 +245,7 @@
             // 
             panel5.Controls.Add(Minquantitybtn);
             panel5.Dock = DockStyle.Top;
-            panel5.Location = new Point(0, 358);
+            panel5.Location = new Point(0, 405);
             panel5.Name = "panel5";
             panel5.Size = new Size(220, 58);
             panel5.TabIndex = 14;
@@ -233,7 +273,7 @@
             // 
             panel6.Controls.Add(Outofstockbtn);
             panel6.Dock = DockStyle.Top;
-            panel6.Location = new Point(0, 300);
+            panel6.Location = new Point(0, 347);
             panel6.Name = "panel6";
             panel6.Size = new Size(220, 58);
             panel6.TabIndex = 15;
@@ -261,7 +301,7 @@
             // 
             panel4.Controls.Add(Dashboardbtn);
             panel4.Dock = DockStyle.Top;
-            panel4.Location = new Point(0, 242);
+            panel4.Location = new Point(0, 289);
             panel4.Name = "panel4";
             panel4.Size = new Size(220, 58);
             panel4.TabIndex = 13;
@@ -289,7 +329,7 @@
             // panel3
             // 
             panel3.Dock = DockStyle.Top;
-            panel3.Location = new Point(0, 202);
+            panel3.Location = new Point(0, 249);
             panel3.Name = "panel3";
             panel3.Size = new Size(220, 40);
             panel3.TabIndex = 13;
@@ -304,11 +344,15 @@
             Controls.Add(label1);
             Controls.Add(Admindrawerpnl);
             FormBorderStyle = FormBorderStyle.None;
+            KeyPreview = true;
             Name = "Adminpage";
             Text = "Admin";
             WindowState = FormWindowState.Maximized;
             Load += Adminpage_Load;
+            KeyDown += Adminpage_KeyDown;
             drawerinnerpanel.ResumeLayout(false);
+            drawerinnerpanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)MenuButton).EndInit();
             panel2.ResumeLayout(false);
             panel1.ResumeLayout(false);
@@ -345,5 +389,8 @@
         private PictureBox addnewproductbutton;
         private PictureBox Productsbtn;
         private Panel panel7;
+        private Label label3;
+        private Label label2;
+        private PictureBox pictureBox1;
     }
 }
