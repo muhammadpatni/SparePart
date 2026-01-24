@@ -10,12 +10,11 @@ using System.Windows.Forms;
 
 namespace SparePart
 {
-    public partial class Adminpage : Form
+    public partial class Adminoutofstoke : Form
     {
+        private bool sliderbarExpand = false;
 
-        bool sliderbarExpand = true;
-
-        public Adminpage()
+        public Adminoutofstoke()
         {
             InitializeComponent();
         }
@@ -25,13 +24,13 @@ namespace SparePart
             if (sliderbarExpand)
             {
                 Admindrawerpnl.Width -= 10;
-                if (Admindrawerpnl.Width <= 61)
+                if (Admindrawerpnl.Width <= 0)
                 {
+                    MenuButton.Visible = true;
+                    outofstocklb.Visible = true;
                     sliderbarExpand = false;
                     Slidebartimer.Stop();
                     drawerinnerpanel.Size = new Size(220, 56);
-                    panel3.Size = new Size(220, 186);
-
                 }
             }
             else
@@ -44,7 +43,6 @@ namespace SparePart
                     sliderbarExpand = true;
                     Slidebartimer.Stop();
                     drawerinnerpanel.Size = new Size(220, 249);
-                    panel3.Size = new Size(220, 40);
 
                 }
             }
@@ -53,26 +51,20 @@ namespace SparePart
         private void MenuButton_Click(object sender, EventArgs e)
         {
             Slidebartimer.Start();
+            MenuButton.Visible = false;
+            outofstocklb.Visible = false;
         }
 
-        private void Adminpage_Load(object sender, EventArgs e)
+        private void MenubtnDrawer_Click(object sender, EventArgs e)
         {
-            Pagecalling.loadform(new AdminDashboard(), Mainpanel);
+            Slidebartimer.Start();
         }
 
-
-
-        private void Adminpage_KeyDown(object sender, KeyEventArgs e)
+        private void Dashboardbtn_Click(object sender, EventArgs e)
         {
-            if (e.KeyCode == Keys.Escape)
-            {
-                Application.Exit();
-            }
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
+            Adminpage adminPage = new Adminpage();
+            adminPage.Show();
+            this.Hide();
         }
 
         private void Logoutbutton_Click(object sender, EventArgs e)
@@ -80,23 +72,6 @@ namespace SparePart
             LoginPage loginPage = new LoginPage();
             loginPage.Show();
             this.Hide();
-        }
-
-        private void Dashboardbtn_Click(object sender, EventArgs e)
-        {
-            Pagecalling.loadform(new AdminDashboard(), Mainpanel);
-        }
-
-        private void Outofstockbtn_Click(object sender, EventArgs e)
-        {
-            Adminoutofstoke outofstoke = new Adminoutofstoke();
-            outofstoke.Show();
-            this.Hide();
-        }
-
-        private void Mainpanel_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }

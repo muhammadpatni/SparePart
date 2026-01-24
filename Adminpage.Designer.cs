@@ -51,6 +51,7 @@
             Dashboardbtn = new Button();
             panel3 = new Panel();
             Mainpanel = new Panel();
+            Dashboardselected = new Panel();
             drawerinnerpanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)MenuButton).BeginInit();
@@ -216,7 +217,7 @@
             // 
             // Admindrawerpnl
             // 
-            Admindrawerpnl.BackColor = Color.FromArgb(253, 253, 253);
+            Admindrawerpnl.BackColor = Color.White;
             Admindrawerpnl.Controls.Add(panel5);
             Admindrawerpnl.Controls.Add(panel6);
             Admindrawerpnl.Controls.Add(panel4);
@@ -284,9 +285,11 @@
             Outofstockbtn.TabIndex = 12;
             Outofstockbtn.Text = "Out Of Stock";
             Outofstockbtn.UseVisualStyleBackColor = false;
+            Outofstockbtn.Click += Outofstockbtn_Click;
             // 
             // panel4
             // 
+            panel4.Controls.Add(Dashboardselected);
             panel4.Controls.Add(Dashboardbtn);
             panel4.Dock = DockStyle.Top;
             panel4.Location = new Point(0, 289);
@@ -330,6 +333,15 @@
             Mainpanel.Name = "Mainpanel";
             Mainpanel.Size = new Size(755, 503);
             Mainpanel.TabIndex = 11;
+            Mainpanel.Paint += Mainpanel_Paint;
+            // 
+            // Dashboardselected
+            // 
+            Dashboardselected.BackColor = Color.FromArgb(72, 118, 255);
+            Dashboardselected.Location = new Point(183, 16);
+            Dashboardselected.Name = "Dashboardselected";
+            Dashboardselected.Size = new Size(13, 25);
+            Dashboardselected.TabIndex = 0;
             // 
             // Adminpage
             // 
@@ -387,5 +399,6 @@
         private Label label2;
         private PictureBox pictureBox1;
         private Panel Mainpanel;
+        private Panel Dashboardselected;
     }
 }
