@@ -63,6 +63,16 @@ namespace SparePart.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap add_box_24dp_FFFFFF {
+            get {
+                object obj = ResourceManager.GetObject("add_box_24dp_FFFFFF", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Black_and_White_Bold_Automotive_Logo_removebg_preview {
             get {
                 object obj = ResourceManager.GetObject("Black_and_White_Bold_Automotive_Logo-removebg-preview", resourceCulture);
@@ -126,6 +136,16 @@ namespace SparePart.Properties {
         internal static System.Drawing.Bitmap inventory_2_24dp_FFFFFF {
             get {
                 object obj = ResourceManager.GetObject("inventory_2_24dp_FFFFFF", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap inventory_2_24dp_FFFFFF1 {
+            get {
+                object obj = ResourceManager.GetObject("inventory_2_24dp_FFFFFF1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

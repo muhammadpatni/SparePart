@@ -25,11 +25,14 @@ namespace SparePart
             if (sliderbarExpand)
             {
                 Admindrawerpnl.Width -= 10;
-                if (Admindrawerpnl.Width <= 55)
+                if (Admindrawerpnl.Width <= 61)
                 {
                     sliderbarExpand = false;
                     Slidebartimer.Stop();
-                    drawerinnerpanel.Size = new Size(220, 45);
+                    drawerinnerpanel.Size = new Size(220, 56);
+                    panel3.Size = new Size(220, 186);
+                    partextitlelb.Visible = true;
+
                 }
             }
             else
@@ -40,6 +43,9 @@ namespace SparePart
                     sliderbarExpand = true;
                     Slidebartimer.Stop();
                     drawerinnerpanel.Size = new Size(220, 202);
+                    panel3.Size = new Size(220, 40);
+                    partextitlelb.Visible = false;
+
                 }
             }
         }
@@ -77,6 +83,16 @@ namespace SparePart
         }
 
         private void button1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
         {
 
         }
