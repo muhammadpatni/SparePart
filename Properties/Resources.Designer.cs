@@ -123,6 +123,36 @@ namespace SparePart.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap do_not_disturb_alt_24dp_FFFFFF {
+            get {
+                object obj = ResourceManager.GetObject("do_not_disturb_alt_24dp_FFFFFF", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap edit_note_1000dp_FFFFFF {
+            get {
+                object obj = ResourceManager.GetObject("edit_note_1000dp_FFFFFF", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap edit_note_24dp_90A4AE {
+            get {
+                object obj = ResourceManager.GetObject("edit_note_24dp_90A4AE", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap hamburger {
             get {
                 object obj = ResourceManager.GetObject("hamburger", resourceCulture);
@@ -206,6 +236,16 @@ namespace SparePart.Properties {
         internal static System.Drawing.Bitmap power_settings_new_24dp_FF5252 {
             get {
                 object obj = ResourceManager.GetObject("power_settings_new_24dp_FF5252", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap search_24dp_FFFFFF {
+            get {
+                object obj = ResourceManager.GetObject("search_24dp_FFFFFF", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -139,6 +139,18 @@
   <data name="hamburger (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\hamburger (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="edit_note_24dp_90A4AE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\edit_note_24dp_90A4AE.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="do_not_disturb_alt_24dp_FFFFFF" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\do_not_disturb_alt_24dp_FFFFFF.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logo2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logo.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="inventory_2_24dp_FFFFFF" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\inventory_2_24dp_FFFFFF.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -169,13 +181,13 @@
   <data name="WhatsApp Image 2026-01-23 at 12.16.00 PM" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\WhatsApp Image 2026-01-23 at 12.16.00 PM.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="search_24dp_FFFFFF" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\search_24dp_FFFFFF.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="inventory_2_24dp_90A4AE" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\inventory_2_24dp_90A4AE.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="logo2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logo.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="edit_note_1000dp_FFFFFF" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\edit_note_1000dp_FFFFFF.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

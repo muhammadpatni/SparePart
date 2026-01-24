@@ -209,7 +209,9 @@
             // button1
             // 
             button1.BackColor = Color.FromArgb(22, 31, 50);
-            button1.Font = new Font("Roboto", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.ForeColor = Color.White;
             button1.Location = new Point(596, 324);
             button1.Name = "button1";
@@ -221,7 +223,9 @@
             // button2
             // 
             button2.BackColor = Color.White;
-            button2.Font = new Font("Roboto", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button2.Location = new Point(444, 324);
             button2.Name = "button2";
             button2.Size = new Size(141, 45);
@@ -233,7 +237,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(800, 382);
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(label4);

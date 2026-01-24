@@ -29,23 +29,19 @@ namespace SparePart
                 {
                     sliderbarExpand = false;
                     Slidebartimer.Stop();
-                    drawerinnerpanel.Size = new Size(220, 56);
-                    panel3.Size = new Size(220, 186);
-
+                    drawerinnerpanel.Size = new Size(220, 0);
+                  panel3.Size = new Size(220, 265);
                 }
             }
             else
             {
-
                 Admindrawerpnl.Width += 10;
                 if (Admindrawerpnl.Width >= 220)
                 {
-
                     sliderbarExpand = true;
                     Slidebartimer.Stop();
-                    drawerinnerpanel.Size = new Size(220, 249);
-                    panel3.Size = new Size(220, 40);
-
+                    drawerinnerpanel.Size = new Size(220, 225);
+                  panel3.Size = new Size(220, 40);
                 }
             }
         }
@@ -53,6 +49,7 @@ namespace SparePart
         private void MenuButton_Click(object sender, EventArgs e)
         {
             Slidebartimer.Start();
+
         }
 
         private void Adminpage_Load(object sender, EventArgs e)
@@ -95,6 +92,16 @@ namespace SparePart
         }
 
         private void Mainpanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void partextitlelb_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void drawerinnerpanel_Paint(object sender, PaintEventArgs e)
         {
 
         }

@@ -30,6 +30,7 @@
         {
             components = new System.ComponentModel.Container();
             drawerinnerpanel = new Panel();
+            panel8 = new Panel();
             pictureBox1 = new PictureBox();
             label3 = new Label();
             label2 = new Label();
@@ -41,17 +42,17 @@
             panel7 = new Panel();
             Productsbtn = new PictureBox();
             addnewproductbutton = new PictureBox();
-            partextitlelb = new Label();
+            Dashboardtitlelb = new Label();
             Admindrawerpnl = new Panel();
             panel5 = new Panel();
             Minquantitybtn = new Button();
             panel6 = new Panel();
             Outofstockbtn = new Button();
             panel4 = new Panel();
+            Dashboardselected = new Panel();
             Dashboardbtn = new Button();
             panel3 = new Panel();
             Mainpanel = new Panel();
-            Dashboardselected = new Panel();
             drawerinnerpanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)MenuButton).BeginInit();
@@ -69,21 +70,31 @@
             // drawerinnerpanel
             // 
             drawerinnerpanel.BackColor = Color.FromArgb(22, 31, 50);
+            drawerinnerpanel.Controls.Add(panel8);
             drawerinnerpanel.Controls.Add(pictureBox1);
             drawerinnerpanel.Controls.Add(label3);
             drawerinnerpanel.Controls.Add(label2);
-            drawerinnerpanel.Controls.Add(MenuButton);
             drawerinnerpanel.Dock = DockStyle.Top;
             drawerinnerpanel.Location = new Point(0, 0);
             drawerinnerpanel.Margin = new Padding(0);
             drawerinnerpanel.Name = "drawerinnerpanel";
-            drawerinnerpanel.Size = new Size(220, 249);
+            drawerinnerpanel.Size = new Size(220, 225);
             drawerinnerpanel.TabIndex = 0;
+            drawerinnerpanel.Paint += drawerinnerpanel_Paint;
+            // 
+            // panel8
+            // 
+            panel8.BackColor = Color.White;
+            panel8.Dock = DockStyle.Top;
+            panel8.Location = new Point(0, 0);
+            panel8.Name = "panel8";
+            panel8.Size = new Size(220, 2);
+            panel8.TabIndex = 0;
             // 
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.logo2;
-            pictureBox1.Location = new Point(49, 53);
+            pictureBox1.Location = new Point(49, 23);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(122, 110);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -95,7 +106,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.FromArgb(161, 165, 172);
-            label3.Location = new Point(28, 203);
+            label3.Location = new Point(28, 185);
             label3.Name = "label3";
             label3.Size = new Size(168, 15);
             label3.TabIndex = 16;
@@ -106,7 +117,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Black", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(21, 165);
+            label2.Location = new Point(21, 153);
             label2.Name = "label2";
             label2.Size = new Size(180, 30);
             label2.TabIndex = 15;
@@ -116,7 +127,7 @@
             // 
             MenuButton.BackColor = Color.Transparent;
             MenuButton.Image = Properties.Resources.hamburger__1_;
-            MenuButton.Location = new Point(8, 10);
+            MenuButton.Location = new Point(10, 11);
             MenuButton.Name = "MenuButton";
             MenuButton.Size = new Size(37, 32);
             MenuButton.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -128,7 +139,7 @@
             // 
             panel2.Controls.Add(Logoutbutton);
             panel2.Dock = DockStyle.Bottom;
-            panel2.Location = new Point(0, 496);
+            panel2.Location = new Point(0, 440);
             panel2.Name = "panel2";
             panel2.Size = new Size(220, 63);
             panel2.TabIndex = 9;
@@ -163,12 +174,13 @@
             // 
             panel1.BackColor = Color.FromArgb(22, 31, 50);
             panel1.Controls.Add(panel7);
-            panel1.Controls.Add(partextitlelb);
+            panel1.Controls.Add(Dashboardtitlelb);
+            panel1.Controls.Add(MenuButton);
             panel1.Dock = DockStyle.Top;
             panel1.Font = new Font("Segoe UI Black", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            panel1.Location = new Point(220, 0);
+            panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(755, 56);
+            panel1.Size = new Size(975, 56);
             panel1.TabIndex = 8;
             // 
             // panel7
@@ -176,7 +188,7 @@
             panel7.Controls.Add(Productsbtn);
             panel7.Controls.Add(addnewproductbutton);
             panel7.Dock = DockStyle.Right;
-            panel7.Location = new Point(661, 0);
+            panel7.Location = new Point(881, 0);
             panel7.Name = "panel7";
             panel7.Size = new Size(94, 56);
             panel7.TabIndex = 14;
@@ -203,17 +215,17 @@
             addnewproductbutton.TabIndex = 13;
             addnewproductbutton.TabStop = false;
             // 
-            // partextitlelb
+            // Dashboardtitlelb
             // 
-            partextitlelb.AutoSize = true;
-            partextitlelb.Font = new Font("Segoe UI Black", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            partextitlelb.ForeColor = Color.White;
-            partextitlelb.Location = new Point(432, 16);
-            partextitlelb.Name = "partextitlelb";
-            partextitlelb.Size = new Size(86, 25);
-            partextitlelb.TabIndex = 11;
-            partextitlelb.Text = "PARTEX";
-            partextitlelb.Visible = false;
+            Dashboardtitlelb.AutoSize = true;
+            Dashboardtitlelb.Font = new Font("Segoe UI Black", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Dashboardtitlelb.ForeColor = Color.White;
+            Dashboardtitlelb.Location = new Point(625, 15);
+            Dashboardtitlelb.Name = "Dashboardtitlelb";
+            Dashboardtitlelb.Size = new Size(135, 25);
+            Dashboardtitlelb.TabIndex = 11;
+            Dashboardtitlelb.Text = "DASHBOARD";
+            Dashboardtitlelb.Click += partextitlelb_Click;
             // 
             // Admindrawerpnl
             // 
@@ -225,16 +237,16 @@
             Admindrawerpnl.Controls.Add(panel2);
             Admindrawerpnl.Controls.Add(drawerinnerpanel);
             Admindrawerpnl.Dock = DockStyle.Left;
-            Admindrawerpnl.Location = new Point(0, 0);
+            Admindrawerpnl.Location = new Point(0, 56);
             Admindrawerpnl.Name = "Admindrawerpnl";
-            Admindrawerpnl.Size = new Size(220, 559);
+            Admindrawerpnl.Size = new Size(220, 503);
             Admindrawerpnl.TabIndex = 10;
             // 
             // panel5
             // 
             panel5.Controls.Add(Minquantitybtn);
             panel5.Dock = DockStyle.Top;
-            panel5.Location = new Point(0, 405);
+            panel5.Location = new Point(0, 381);
             panel5.Name = "panel5";
             panel5.Size = new Size(220, 58);
             panel5.TabIndex = 14;
@@ -262,7 +274,7 @@
             // 
             panel6.Controls.Add(Outofstockbtn);
             panel6.Dock = DockStyle.Top;
-            panel6.Location = new Point(0, 347);
+            panel6.Location = new Point(0, 323);
             panel6.Name = "panel6";
             panel6.Size = new Size(220, 58);
             panel6.TabIndex = 15;
@@ -292,10 +304,18 @@
             panel4.Controls.Add(Dashboardselected);
             panel4.Controls.Add(Dashboardbtn);
             panel4.Dock = DockStyle.Top;
-            panel4.Location = new Point(0, 289);
+            panel4.Location = new Point(0, 265);
             panel4.Name = "panel4";
             panel4.Size = new Size(220, 58);
             panel4.TabIndex = 13;
+            // 
+            // Dashboardselected
+            // 
+            Dashboardselected.BackColor = Color.FromArgb(30, 41, 59);
+            Dashboardselected.Location = new Point(190, 16);
+            Dashboardselected.Name = "Dashboardselected";
+            Dashboardselected.Size = new Size(7, 25);
+            Dashboardselected.TabIndex = 0;
             // 
             // Dashboardbtn
             // 
@@ -320,7 +340,7 @@
             // panel3
             // 
             panel3.Dock = DockStyle.Top;
-            panel3.Location = new Point(0, 249);
+            panel3.Location = new Point(0, 225);
             panel3.Name = "panel3";
             panel3.Size = new Size(220, 40);
             panel3.TabIndex = 13;
@@ -335,14 +355,6 @@
             Mainpanel.TabIndex = 11;
             Mainpanel.Paint += Mainpanel_Paint;
             // 
-            // Dashboardselected
-            // 
-            Dashboardselected.BackColor = Color.FromArgb(72, 118, 255);
-            Dashboardselected.Location = new Point(183, 16);
-            Dashboardselected.Name = "Dashboardselected";
-            Dashboardselected.Size = new Size(13, 25);
-            Dashboardselected.TabIndex = 0;
-            // 
             // Adminpage
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -350,8 +362,8 @@
             BackColor = Color.White;
             ClientSize = new Size(975, 559);
             Controls.Add(Mainpanel);
-            Controls.Add(panel1);
             Controls.Add(Admindrawerpnl);
+            Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             KeyPreview = true;
             Name = "Adminpage";
@@ -391,7 +403,7 @@
         private Button Minquantitybtn;
         private Panel panel6;
         private Button Outofstockbtn;
-        private Label partextitlelb;
+        private Label Dashboardtitlelb;
         private PictureBox addnewproductbutton;
         private PictureBox Productsbtn;
         private Panel panel7;
@@ -400,5 +412,6 @@
         private PictureBox pictureBox1;
         private Panel Mainpanel;
         private Panel Dashboardselected;
+        private Panel panel8;
     }
 }

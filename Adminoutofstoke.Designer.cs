@@ -30,8 +30,10 @@
         {
             components = new System.ComponentModel.Container();
             panel1 = new Panel();
-            outofstocklb = new Label();
-            MenuButton = new PictureBox();
+            Outofstokelb1 = new Label();
+            MenubtnDrawer = new PictureBox();
+            pictureBox2 = new PictureBox();
+            textBox1 = new TextBox();
             Admindrawerpnl = new Panel();
             panel5 = new Panel();
             Minquantitybtn = new Button();
@@ -44,13 +46,15 @@
             panel2 = new Panel();
             Logoutbutton = new Button();
             drawerinnerpanel = new Panel();
+            panel8 = new Panel();
             pictureBox1 = new PictureBox();
             label3 = new Label();
             label1 = new Label();
-            MenubtnDrawer = new PictureBox();
             Slidebartimer = new System.Windows.Forms.Timer(components);
+            panel7 = new Panel();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)MenuButton).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)MenubtnDrawer).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             Admindrawerpnl.SuspendLayout();
             panel5.SuspendLayout();
             panel6.SuspendLayout();
@@ -58,42 +62,61 @@
             panel2.SuspendLayout();
             drawerinnerpanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)MenubtnDrawer).BeginInit();
+            panel7.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(22, 31, 50);
-            panel1.Controls.Add(outofstocklb);
-            panel1.Controls.Add(MenuButton);
+            panel1.Controls.Add(Outofstokelb1);
+            panel1.Controls.Add(MenubtnDrawer);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1039, 126);
+            panel1.Size = new Size(1039, 56);
             panel1.TabIndex = 0;
             // 
-            // outofstocklb
+            // Outofstokelb1
             // 
-            outofstocklb.AutoSize = true;
-            outofstocklb.Font = new Font("Segoe UI Black", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            outofstocklb.ForeColor = Color.White;
-            outofstocklb.Location = new Point(77, 13);
-            outofstocklb.Name = "outofstocklb";
-            outofstocklb.Size = new Size(165, 30);
-            outofstocklb.TabIndex = 16;
-            outofstocklb.Text = "OUT OF STOCK";
+            Outofstokelb1.AutoSize = true;
+            Outofstokelb1.Font = new Font("Segoe UI Black", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Outofstokelb1.ForeColor = Color.White;
+            Outofstokelb1.Location = new Point(625, 15);
+            Outofstokelb1.Name = "Outofstokelb1";
+            Outofstokelb1.Size = new Size(165, 30);
+            Outofstokelb1.TabIndex = 18;
+            Outofstokelb1.Text = "OUT OF STOCK";
             // 
-            // MenuButton
+            // MenubtnDrawer
             // 
-            MenuButton.BackColor = Color.Transparent;
-            MenuButton.Image = Properties.Resources.hamburger__1_;
-            MenuButton.Location = new Point(12, 12);
-            MenuButton.Name = "MenuButton";
-            MenuButton.Size = new Size(37, 32);
-            MenuButton.SizeMode = PictureBoxSizeMode.StretchImage;
-            MenuButton.TabIndex = 1;
-            MenuButton.TabStop = false;
-            MenuButton.Click += MenuButton_Click;
+            MenubtnDrawer.BackColor = Color.Transparent;
+            MenubtnDrawer.Image = Properties.Resources.hamburger__1_;
+            MenubtnDrawer.Location = new Point(10, 11);
+            MenubtnDrawer.Name = "MenubtnDrawer";
+            MenubtnDrawer.Size = new Size(37, 32);
+            MenubtnDrawer.SizeMode = PictureBoxSizeMode.StretchImage;
+            MenubtnDrawer.TabIndex = 0;
+            MenubtnDrawer.TabStop = false;
+            MenubtnDrawer.Click += MenubtnDrawer_Click;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.BackColor = Color.FromArgb(30, 41, 59);
+            pictureBox2.Image = Properties.Resources.search_24dp_FFFFFF;
+            pictureBox2.Location = new Point(11, 8);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(29, 35);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 17;
+            pictureBox2.TabStop = false;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(46, 8);
+            textBox1.Multiline = true;
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(482, 35);
+            textBox1.TabIndex = 12;
             // 
             // Admindrawerpnl
             // 
@@ -105,18 +128,18 @@
             Admindrawerpnl.Controls.Add(panel2);
             Admindrawerpnl.Controls.Add(drawerinnerpanel);
             Admindrawerpnl.Dock = DockStyle.Left;
-            Admindrawerpnl.Location = new Point(0, 0);
+            Admindrawerpnl.Location = new Point(0, 56);
             Admindrawerpnl.Name = "Admindrawerpnl";
-            Admindrawerpnl.Size = new Size(0, 526);
+            Admindrawerpnl.Size = new Size(220, 470);
             Admindrawerpnl.TabIndex = 11;
             // 
             // panel5
             // 
             panel5.Controls.Add(Minquantitybtn);
             panel5.Dock = DockStyle.Top;
-            panel5.Location = new Point(0, 405);
+            panel5.Location = new Point(0, 381);
             panel5.Name = "panel5";
-            panel5.Size = new Size(0, 58);
+            panel5.Size = new Size(220, 58);
             panel5.TabIndex = 14;
             // 
             // Minquantitybtn
@@ -143,17 +166,17 @@
             panel6.Controls.Add(Dashboardselected);
             panel6.Controls.Add(Outofstockbtn);
             panel6.Dock = DockStyle.Top;
-            panel6.Location = new Point(0, 347);
+            panel6.Location = new Point(0, 323);
             panel6.Name = "panel6";
-            panel6.Size = new Size(0, 58);
+            panel6.Size = new Size(220, 58);
             panel6.TabIndex = 15;
             // 
             // Dashboardselected
             // 
-            Dashboardselected.BackColor = Color.FromArgb(72, 118, 255);
-            Dashboardselected.Location = new Point(183, 16);
+            Dashboardselected.BackColor = Color.FromArgb(30, 41, 59);
+            Dashboardselected.Location = new Point(190, 16);
             Dashboardselected.Name = "Dashboardselected";
-            Dashboardselected.Size = new Size(13, 25);
+            Dashboardselected.Size = new Size(7, 25);
             Dashboardselected.TabIndex = 16;
             // 
             // Outofstockbtn
@@ -179,9 +202,9 @@
             // 
             panel4.Controls.Add(Dashboardbtn);
             panel4.Dock = DockStyle.Top;
-            panel4.Location = new Point(0, 289);
+            panel4.Location = new Point(0, 265);
             panel4.Name = "panel4";
-            panel4.Size = new Size(0, 58);
+            panel4.Size = new Size(220, 58);
             panel4.TabIndex = 13;
             // 
             // Dashboardbtn
@@ -207,18 +230,18 @@
             // panel3
             // 
             panel3.Dock = DockStyle.Top;
-            panel3.Location = new Point(0, 249);
+            panel3.Location = new Point(0, 225);
             panel3.Name = "panel3";
-            panel3.Size = new Size(0, 40);
+            panel3.Size = new Size(220, 40);
             panel3.TabIndex = 13;
             // 
             // panel2
             // 
             panel2.Controls.Add(Logoutbutton);
             panel2.Dock = DockStyle.Bottom;
-            panel2.Location = new Point(0, 463);
+            panel2.Location = new Point(0, 407);
             panel2.Name = "panel2";
-            panel2.Size = new Size(0, 63);
+            panel2.Size = new Size(220, 63);
             panel2.TabIndex = 9;
             // 
             // Logoutbutton
@@ -244,21 +267,30 @@
             // drawerinnerpanel
             // 
             drawerinnerpanel.BackColor = Color.FromArgb(22, 31, 50);
+            drawerinnerpanel.Controls.Add(panel8);
             drawerinnerpanel.Controls.Add(pictureBox1);
             drawerinnerpanel.Controls.Add(label3);
             drawerinnerpanel.Controls.Add(label1);
-            drawerinnerpanel.Controls.Add(MenubtnDrawer);
             drawerinnerpanel.Dock = DockStyle.Top;
             drawerinnerpanel.Location = new Point(0, 0);
             drawerinnerpanel.Margin = new Padding(0);
             drawerinnerpanel.Name = "drawerinnerpanel";
-            drawerinnerpanel.Size = new Size(0, 249);
+            drawerinnerpanel.Size = new Size(220, 225);
             drawerinnerpanel.TabIndex = 0;
+            // 
+            // panel8
+            // 
+            panel8.BackColor = Color.White;
+            panel8.Dock = DockStyle.Top;
+            panel8.Location = new Point(0, 0);
+            panel8.Name = "panel8";
+            panel8.Size = new Size(220, 2);
+            panel8.TabIndex = 18;
             // 
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.logo2;
-            pictureBox1.Location = new Point(49, 53);
+            pictureBox1.Location = new Point(49, 23);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(122, 110);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -270,7 +302,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.FromArgb(161, 165, 172);
-            label3.Location = new Point(28, 203);
+            label3.Location = new Point(28, 185);
             label3.Name = "label3";
             label3.Size = new Size(168, 15);
             label3.TabIndex = 16;
@@ -281,28 +313,26 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Black", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(21, 165);
+            label1.Location = new Point(21, 153);
             label1.Name = "label1";
             label1.Size = new Size(180, 30);
             label1.TabIndex = 15;
             label1.Text = "PARTEX ADMIN";
             // 
-            // MenubtnDrawer
-            // 
-            MenubtnDrawer.BackColor = Color.Transparent;
-            MenubtnDrawer.Image = Properties.Resources.hamburger__1_;
-            MenubtnDrawer.Location = new Point(8, 10);
-            MenubtnDrawer.Name = "MenubtnDrawer";
-            MenubtnDrawer.Size = new Size(37, 32);
-            MenubtnDrawer.SizeMode = PictureBoxSizeMode.StretchImage;
-            MenubtnDrawer.TabIndex = 0;
-            MenubtnDrawer.TabStop = false;
-            MenubtnDrawer.Click += MenubtnDrawer_Click;
-            // 
             // Slidebartimer
             // 
-            Slidebartimer.Interval = 5;
+            Slidebartimer.Interval = 3;
             Slidebartimer.Tick += Slidebartimer_Tick;
+            // 
+            // panel7
+            // 
+            panel7.BackColor = Color.FromArgb(30, 41, 59);
+            panel7.Controls.Add(textBox1);
+            panel7.Controls.Add(pictureBox2);
+            panel7.Location = new Point(400, 70);
+            panel7.Name = "panel7";
+            panel7.Size = new Size(540, 51);
+            panel7.TabIndex = 18;
             // 
             // Adminoutofstoke
             // 
@@ -310,15 +340,17 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(248, 250, 252);
             ClientSize = new Size(1039, 526);
-            Controls.Add(panel1);
             Controls.Add(Admindrawerpnl);
+            Controls.Add(panel1);
+            Controls.Add(panel7);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Adminoutofstoke";
             Text = "Adminoutofstoke";
             WindowState = FormWindowState.Maximized;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)MenuButton).EndInit();
+            ((System.ComponentModel.ISupportInitialize)MenubtnDrawer).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             Admindrawerpnl.ResumeLayout(false);
             panel5.ResumeLayout(false);
             panel6.ResumeLayout(false);
@@ -327,15 +359,14 @@
             drawerinnerpanel.ResumeLayout(false);
             drawerinnerpanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)MenubtnDrawer).EndInit();
+            panel7.ResumeLayout(false);
+            panel7.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
 
         private Panel panel1;
-        private PictureBox MenuButton;
-        private Label outofstocklb;
         private Panel Admindrawerpnl;
         private Panel panel5;
         private Button Minquantitybtn;
@@ -353,5 +384,10 @@
         private PictureBox MenubtnDrawer;
         private System.Windows.Forms.Timer Slidebartimer;
         private Panel Dashboardselected;
+        private TextBox textBox1;
+        private PictureBox pictureBox2;
+        private Label Outofstokelb1;
+        private Panel panel7;
+        private Panel panel8;
     }
 }

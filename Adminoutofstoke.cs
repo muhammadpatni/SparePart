@@ -12,7 +12,7 @@ namespace SparePart
 {
     public partial class Adminoutofstoke : Form
     {
-        private bool sliderbarExpand = false;
+        private bool sliderbarExpand = true;
 
         public Adminoutofstoke()
         {
@@ -24,35 +24,27 @@ namespace SparePart
             if (sliderbarExpand)
             {
                 Admindrawerpnl.Width -= 10;
-                if (Admindrawerpnl.Width <= 0)
+                if (Admindrawerpnl.Width <= 61)
                 {
-                    MenuButton.Visible = true;
-                    outofstocklb.Visible = true;
                     sliderbarExpand = false;
                     Slidebartimer.Stop();
-                    drawerinnerpanel.Size = new Size(220, 56);
+                    drawerinnerpanel.Size = new Size(220, 0);
+                    panel3.Size = new Size(220, 265);
                 }
             }
             else
             {
-
                 Admindrawerpnl.Width += 10;
                 if (Admindrawerpnl.Width >= 220)
                 {
 
                     sliderbarExpand = true;
                     Slidebartimer.Stop();
-                    drawerinnerpanel.Size = new Size(220, 249);
+                    drawerinnerpanel.Size = new Size(220, 225);
+                    panel3.Size = new Size(220, 40);
 
                 }
             }
-        }
-
-        private void MenuButton_Click(object sender, EventArgs e)
-        {
-            Slidebartimer.Start();
-            MenuButton.Visible = false;
-            outofstocklb.Visible = false;
         }
 
         private void MenubtnDrawer_Click(object sender, EventArgs e)
