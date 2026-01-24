@@ -98,11 +98,6 @@
             panel2.Size = new Size(220, 249);
             panel2.TabIndex = 0;
             // 
-            // Slidebartimer
-            // 
-            Slidebartimer.Interval = 10;
-            Slidebartimer.Tick += Slidebartimer_Tick;
-            // 
             // MenuButton
             // 
             MenuButton.BackColor = Color.FromArgb(22, 31, 50);
@@ -157,7 +152,6 @@
         private System.Windows.Forms.Timer Slidebartimer;
         private Panel panel1;
         private Panel panel2;
-        private System.Windows.Forms.Timer Slidebartimer;
         private PictureBox MenuButton;
         private FlowLayoutPanel Employeedrawerpnl;
     }
