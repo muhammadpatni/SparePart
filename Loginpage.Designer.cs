@@ -37,19 +37,20 @@
             LoginBtn = new Button();
             UserNameTxtBox = new TextBox();
             LoginPnl = new Panel();
-            pictureBox1 = new PictureBox();
+            label2 = new Label();
+            label1 = new Label();
+            label3 = new Label();
             panel2.SuspendLayout();
             LoginPnl.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // panel2
             // 
-            panel2.BackColor = Color.Black;
+            panel2.BackColor = Color.White;
             panel2.Controls.Add(textBox1);
-            panel2.Location = new Point(94, 124);
+            panel2.Location = new Point(161, 238);
             panel2.Name = "panel2";
-            panel2.Size = new Size(211, 2);
+            panel2.Size = new Size(250, 2);
             panel2.TabIndex = 5;
             // 
             // textBox1
@@ -66,19 +67,20 @@
             // 
             // panel1
             // 
-            panel1.BackColor = Color.Black;
-            panel1.Location = new Point(94, 65);
+            panel1.BackColor = Color.White;
+            panel1.Location = new Point(161, 161);
             panel1.Name = "panel1";
-            panel1.Size = new Size(211, 2);
+            panel1.Size = new Size(250, 2);
             panel1.TabIndex = 4;
             // 
             // EmployeeRadioBtn
             // 
             EmployeeRadioBtn.AutoSize = true;
-            EmployeeRadioBtn.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
-            EmployeeRadioBtn.Location = new Point(211, 164);
+            EmployeeRadioBtn.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            EmployeeRadioBtn.ForeColor = Color.White;
+            EmployeeRadioBtn.Location = new Point(291, 266);
             EmployeeRadioBtn.Name = "EmployeeRadioBtn";
-            EmployeeRadioBtn.Size = new Size(77, 19);
+            EmployeeRadioBtn.Size = new Size(100, 25);
             EmployeeRadioBtn.TabIndex = 3;
             EmployeeRadioBtn.TabStop = true;
             EmployeeRadioBtn.Text = "Employee";
@@ -87,10 +89,11 @@
             // AdminRadioBtn
             // 
             AdminRadioBtn.AutoSize = true;
-            AdminRadioBtn.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
-            AdminRadioBtn.Location = new Point(105, 164);
+            AdminRadioBtn.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            AdminRadioBtn.ForeColor = Color.White;
+            AdminRadioBtn.Location = new Point(185, 266);
             AdminRadioBtn.Name = "AdminRadioBtn";
-            AdminRadioBtn.Size = new Size(61, 19);
+            AdminRadioBtn.Size = new Size(76, 25);
             AdminRadioBtn.TabIndex = 3;
             AdminRadioBtn.TabStop = true;
             AdminRadioBtn.Text = "Admin";
@@ -98,25 +101,28 @@
             // 
             // PasswordTxtBox
             // 
-            PasswordTxtBox.BackColor = Color.FromArgb(239, 242, 247);
+            PasswordTxtBox.BackColor = Color.FromArgb(22, 31, 50);
             PasswordTxtBox.BorderStyle = BorderStyle.None;
             PasswordTxtBox.Font = new Font("Segoe UI", 9F);
-            PasswordTxtBox.ForeColor = Color.Black;
-            PasswordTxtBox.Location = new Point(94, 100);
+            PasswordTxtBox.ForeColor = Color.White;
+            PasswordTxtBox.Location = new Point(161, 214);
             PasswordTxtBox.Multiline = true;
             PasswordTxtBox.Name = "PasswordTxtBox";
-            PasswordTxtBox.PlaceholderText = "Password";
-            PasswordTxtBox.Size = new Size(211, 34);
+            PasswordTxtBox.Size = new Size(250, 34);
             PasswordTxtBox.TabIndex = 3;
+            PasswordTxtBox.TextChanged += PasswordTxtBox_TextChanged;
             PasswordTxtBox.KeyDown += PasswordTxtBox_KeyDown;
             // 
             // LoginBtn
             // 
-            LoginBtn.BackColor = Color.DodgerBlue;
+            LoginBtn.BackColor = Color.White;
+            LoginBtn.FlatAppearance.BorderSize = 0;
+            LoginBtn.FlatStyle = FlatStyle.Flat;
             LoginBtn.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            LoginBtn.Location = new Point(94, 204);
+            LoginBtn.ForeColor = Color.FromArgb(22, 31, 50);
+            LoginBtn.Location = new Point(161, 318);
             LoginBtn.Name = "LoginBtn";
-            LoginBtn.Size = new Size(211, 40);
+            LoginBtn.Size = new Size(250, 40);
             LoginBtn.TabIndex = 1;
             LoginBtn.Text = "Login";
             LoginBtn.UseVisualStyleBackColor = false;
@@ -124,22 +130,24 @@
             // 
             // UserNameTxtBox
             // 
-            UserNameTxtBox.BackColor = Color.FromArgb(239, 242, 247);
+            UserNameTxtBox.BackColor = Color.FromArgb(22, 31, 50);
             UserNameTxtBox.BorderStyle = BorderStyle.None;
             UserNameTxtBox.Font = new Font("Segoe UI", 9F);
-            UserNameTxtBox.ForeColor = Color.Black;
-            UserNameTxtBox.Location = new Point(94, 41);
+            UserNameTxtBox.ForeColor = Color.White;
+            UserNameTxtBox.Location = new Point(161, 137);
             UserNameTxtBox.Multiline = true;
             UserNameTxtBox.Name = "UserNameTxtBox";
-            UserNameTxtBox.PlaceholderText = "Username";
-            UserNameTxtBox.Size = new Size(211, 34);
+            UserNameTxtBox.Size = new Size(250, 34);
             UserNameTxtBox.TabIndex = 3;
             UserNameTxtBox.KeyDown += UserNameTxtBox_KeyDown;
             // 
             // LoginPnl
             // 
-            LoginPnl.BackColor = Color.FromArgb(239, 242, 247);
+            LoginPnl.BackColor = Color.FromArgb(22, 31, 50);
             LoginPnl.BorderStyle = BorderStyle.FixedSingle;
+            LoginPnl.Controls.Add(label3);
+            LoginPnl.Controls.Add(label2);
+            LoginPnl.Controls.Add(label1);
             LoginPnl.Controls.Add(panel2);
             LoginPnl.Controls.Add(PasswordTxtBox);
             LoginPnl.Controls.Add(panel1);
@@ -147,21 +155,45 @@
             LoginPnl.Controls.Add(EmployeeRadioBtn);
             LoginPnl.Controls.Add(AdminRadioBtn);
             LoginPnl.Controls.Add(UserNameTxtBox);
-            LoginPnl.Location = new Point(181, 99);
+            LoginPnl.Location = new Point(75, 25);
             LoginPnl.Name = "LoginPnl";
-            LoginPnl.Size = new Size(397, 310);
+            LoginPnl.Size = new Size(575, 407);
             LoginPnl.TabIndex = 3;
+            LoginPnl.Paint += LoginPnl_Paint;
             // 
-            // pictureBox1
+            // label2
             // 
-            pictureBox1.Dock = DockStyle.Fill;
-            pictureBox1.Image = Properties.Resources.WhatsApp_Image_2026_01_23_at_12_16_00_PM;
-            pictureBox1.Location = new Point(0, 0);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(759, 508);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(161, 109);
+            label2.Name = "label2";
+            label2.Size = new Size(78, 20);
+            label2.TabIndex = 7;
+            label2.Text = "Username";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(161, 186);
+            label1.Name = "label1";
+            label1.Size = new Size(73, 20);
+            label1.TabIndex = 6;
+            label1.Text = "Password";
+            label1.Click += label1_Click;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI Black", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.White;
+            label3.Location = new Point(229, 32);
+            label3.Name = "label3";
+            label3.Size = new Size(121, 45);
+            label3.TabIndex = 8;
+            label3.Text = "LOGIN";
             // 
             // LoginPage
             // 
@@ -170,7 +202,6 @@
             BackColor = Color.White;
             ClientSize = new Size(759, 508);
             Controls.Add(LoginPnl);
-            Controls.Add(pictureBox1);
             FormBorderStyle = FormBorderStyle.None;
             KeyPreview = true;
             Name = "LoginPage";
@@ -183,7 +214,6 @@
             panel2.PerformLayout();
             LoginPnl.ResumeLayout(false);
             LoginPnl.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -196,7 +226,9 @@
         private Button LoginBtn;
         private TextBox UserNameTxtBox;
         private Panel LoginPnl;
-        private PictureBox pictureBox1;
         private TextBox textBox1;
+        private Label label1;
+        private Label label2;
+        private Label label3;
     }
 }
