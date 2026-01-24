@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SparePart
 {
-    public partial class Updateproduct : Form
+    public partial class Updateproductform : Form
     {
-        public Updateproduct()
+        public Updateproductform()
         {
             InitializeComponent();
         }

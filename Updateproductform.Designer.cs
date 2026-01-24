@@ -1,6 +1,6 @@
 ﻿namespace SparePart
 {
-    partial class Updateproduct
+    partial class Updateproductform
     {
         /// <summary>
         /// Required designer variable.
