@@ -35,8 +35,8 @@
             pictureBox1 = new PictureBox();
             Employeedrawerpnl = new FlowLayoutPanel();
             panel2 = new Panel();
-            MenuButton = new PictureBox();
             Slidebartimer = new System.Windows.Forms.Timer(components);
+            MenuButton = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             Employeedrawerpnl.SuspendLayout();
             panel2.SuspendLayout();
@@ -96,27 +96,29 @@
             // 
             // panel2
             // 
-            panel2.BackColor = Color.BlanchedAlmond;
+            panel2.BackColor = Color.FromArgb(22, 31, 50);
             panel2.Controls.Add(MenuButton);
             panel2.Location = new Point(3, 3);
             panel2.Name = "panel2";
-            panel2.Size = new Size(218, 100);
+            panel2.Size = new Size(220, 249);
             panel2.TabIndex = 0;
-            // 
-            // MenuButton
-            // 
-            MenuButton.BackColor = Color.SandyBrown;
-            MenuButton.Location = new Point(9, 10);
-            MenuButton.Name = "MenuButton";
-            MenuButton.Size = new Size(58, 42);
-            MenuButton.TabIndex = 0;
-            MenuButton.TabStop = false;
-            MenuButton.Click += MenuButton_Click;
             // 
             // Slidebartimer
             // 
             Slidebartimer.Interval = 10;
             Slidebartimer.Tick += Slidebartimer_Tick;
+            // 
+            // MenuButton
+            // 
+            MenuButton.BackColor = Color.FromArgb(22, 31, 50);
+            MenuButton.Image = Properties.Resources.hamburger__1_;
+            MenuButton.Location = new Point(9, 10);
+            MenuButton.Name = "MenuButton";
+            MenuButton.Size = new Size(58, 42);
+            MenuButton.SizeMode = PictureBoxSizeMode.StretchImage;
+            MenuButton.TabIndex = 0;
+            MenuButton.TabStop = false;
+            MenuButton.Click += MenuButton_Click;
             // 
             // Employeepage
             // 
@@ -150,7 +152,7 @@
         private PictureBox pictureBox1;
         private FlowLayoutPanel Employeedrawerpnl;
         private Panel panel2;
-        private PictureBox MenuButton;
         private System.Windows.Forms.Timer Slidebartimer;
+        private PictureBox MenuButton;
     }
 }
