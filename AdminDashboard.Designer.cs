@@ -1,6 +1,6 @@
 ﻿namespace SparePart
 {
-    partial class Dashboard
+    partial class AdminDashboard
     {
         /// <summary>
         /// Required designer variable.

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SparePart
 {
-    public partial class Dashboard : Form
+    public partial class AdminDashboard : Form
     {
-        public Dashboard()
+        public AdminDashboard()
         {
             InitializeComponent();
         }

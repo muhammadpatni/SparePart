@@ -55,48 +55,12 @@ namespace SparePart
             Slidebartimer.Start();
         }
 
-        private void Admindrawerpnl_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void Adminpage_Load(object sender, EventArgs e)
         {
-            Pagecalling.loadform(new Dashboard(), Mainpanel);
-
+            Pagecalling.loadform(new AdminDashboard(), Mainpanel);
         }
 
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
 
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            LoginPage loginPage = new LoginPage();
-            loginPage.Show();
-            this.Hide();
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void Adminpage_KeyDown(object sender, KeyEventArgs e)
         {
@@ -106,19 +70,21 @@ namespace SparePart
             }
         }
 
-        private void label3_Click(object sender, EventArgs e)
+        private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
         }
 
-        private void label2_Click_1(object sender, EventArgs e)
+        private void Logoutbutton_Click(object sender, EventArgs e)
         {
-
+            LoginPage loginPage = new LoginPage();
+            loginPage.Show();
+            this.Hide();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void Dashboardbtn_Click(object sender, EventArgs e)
         {
-
+            Pagecalling.loadform(new AdminDashboard(), Mainpanel);
         }
     }
 }

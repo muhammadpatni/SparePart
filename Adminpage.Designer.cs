@@ -78,7 +78,6 @@
             drawerinnerpanel.Name = "drawerinnerpanel";
             drawerinnerpanel.Size = new Size(220, 249);
             drawerinnerpanel.TabIndex = 0;
-            drawerinnerpanel.Paint += panel2_Paint;
             // 
             // pictureBox1
             // 
@@ -100,7 +99,6 @@
             label3.Size = new Size(168, 15);
             label3.TabIndex = 16;
             label3.Text = "SPARE PARTS MANAGEMENT";
-            label3.Click += label3_Click;
             // 
             // label2
             // 
@@ -133,6 +131,7 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(220, 63);
             panel2.TabIndex = 9;
+            panel2.Paint += panel2_Paint;
             // 
             // Logoutbutton
             // 
@@ -152,7 +151,7 @@
             Logoutbutton.TabIndex = 11;
             Logoutbutton.Text = "LOG OUT";
             Logoutbutton.UseVisualStyleBackColor = false;
-            Logoutbutton.Click += button1_Click;
+            Logoutbutton.Click += Logoutbutton_Click;
             // 
             // Slidebartimer
             // 
@@ -202,7 +201,6 @@
             addnewproductbutton.SizeMode = PictureBoxSizeMode.StretchImage;
             addnewproductbutton.TabIndex = 13;
             addnewproductbutton.TabStop = false;
-            addnewproductbutton.Click += pictureBox2_Click;
             // 
             // partextitlelb
             // 
@@ -215,7 +213,6 @@
             partextitlelb.TabIndex = 11;
             partextitlelb.Text = "PARTEX";
             partextitlelb.Visible = false;
-            partextitlelb.Click += label2_Click;
             // 
             // Admindrawerpnl
             // 
@@ -315,7 +312,7 @@
             Dashboardbtn.TabIndex = 12;
             Dashboardbtn.Text = "Dashboard";
             Dashboardbtn.UseVisualStyleBackColor = false;
-            Dashboardbtn.Click += button1_Click_1;
+            Dashboardbtn.Click += Dashboardbtn_Click;
             // 
             // panel3
             // 
