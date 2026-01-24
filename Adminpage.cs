@@ -29,6 +29,7 @@ namespace SparePart
                 {
                     sliderbarExpand = false;
                     Slidebartimer.Stop();
+                    drawerinnerpanel.Size = new Size(220, 45);
                 }
             }
             else
@@ -38,6 +39,7 @@ namespace SparePart
                 {
                     sliderbarExpand = true;
                     Slidebartimer.Stop();
+                    drawerinnerpanel.Size = new Size(220, 202);
                 }
             }
         }
@@ -53,6 +55,28 @@ namespace SparePart
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Adminpage_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            LoginPage loginPage = new LoginPage();
+            loginPage.Show();
+            this.Hide();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
         {
 
         }

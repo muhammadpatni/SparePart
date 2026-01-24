@@ -73,6 +73,26 @@ namespace SparePart.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap dashboard_24dp_90A4AE {
+            get {
+                object obj = ResourceManager.GetObject("dashboard_24dp_90A4AE", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap dashboards {
+            get {
+                object obj = ResourceManager.GetObject("dashboards", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap hamburger {
             get {
                 object obj = ResourceManager.GetObject("hamburger", resourceCulture);
@@ -86,6 +106,46 @@ namespace SparePart.Properties {
         internal static System.Drawing.Bitmap hamburger__1_ {
             get {
                 object obj = ResourceManager.GetObject("hamburger (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap inventory_2_24dp_90A4AE {
+            get {
+                object obj = ResourceManager.GetObject("inventory_2_24dp_90A4AE", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap inventory_2_24dp_FFFFFF {
+            get {
+                object obj = ResourceManager.GetObject("inventory_2_24dp_FFFFFF", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap power_settings_new_24dp_FF5252 {
+            get {
+                object obj = ResourceManager.GetObject("power_settings_new_24dp_FF5252", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap warning_amber_24dp_90A4AE {
+            get {
+                object obj = ResourceManager.GetObject("warning_amber_24dp_90A4AE", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
