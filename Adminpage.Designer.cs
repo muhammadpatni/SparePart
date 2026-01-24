@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            label1 = new Label();
             drawerinnerpanel = new Panel();
             pictureBox1 = new PictureBox();
             label3 = new Label();
@@ -51,6 +50,7 @@
             panel4 = new Panel();
             Dashboardbtn = new Button();
             panel3 = new Panel();
+            Mainpanel = new Panel();
             drawerinnerpanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)MenuButton).BeginInit();
@@ -64,16 +64,6 @@
             panel6.SuspendLayout();
             panel4.SuspendLayout();
             SuspendLayout();
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(355, 127);
-            label1.Name = "label1";
-            label1.Size = new Size(46, 15);
-            label1.TabIndex = 0;
-            label1.Text = "ADMIN";
-            label1.Click += label1_Click;
             // 
             // drawerinnerpanel
             // 
@@ -335,14 +325,23 @@
             panel3.Size = new Size(220, 40);
             panel3.TabIndex = 13;
             // 
+            // Mainpanel
+            // 
+            Mainpanel.BackColor = Color.Gray;
+            Mainpanel.Dock = DockStyle.Fill;
+            Mainpanel.Location = new Point(220, 56);
+            Mainpanel.Name = "Mainpanel";
+            Mainpanel.Size = new Size(755, 503);
+            Mainpanel.TabIndex = 11;
+            // 
             // Adminpage
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(975, 559);
+            Controls.Add(Mainpanel);
             Controls.Add(panel1);
-            Controls.Add(label1);
             Controls.Add(Admindrawerpnl);
             FormBorderStyle = FormBorderStyle.None;
             KeyPreview = true;
@@ -366,12 +365,9 @@
             panel6.ResumeLayout(false);
             panel4.ResumeLayout(false);
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
-
-        private Label label1;
         private Panel drawerinnerpanel;
         private PictureBox MenuButton;
         private System.Windows.Forms.Timer Slidebartimer;
@@ -393,5 +389,6 @@
         private Label label3;
         private Label label2;
         private PictureBox pictureBox1;
+        private Panel Mainpanel;
     }
 }
