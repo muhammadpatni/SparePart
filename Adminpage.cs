@@ -27,11 +27,12 @@ namespace SparePart
                 Admindrawerpnl.Width -= 10;
                 if (Admindrawerpnl.Width <= 61)
                 {
+                    partextitlelb.Visible = true;
                     sliderbarExpand = false;
                     Slidebartimer.Stop();
                     drawerinnerpanel.Size = new Size(220, 56);
                     panel3.Size = new Size(220, 186);
-                    partextitlelb.Visible = true;
+                   
 
                 }
             }
@@ -40,11 +41,12 @@ namespace SparePart
                 Admindrawerpnl.Width += 10;
                 if (Admindrawerpnl.Width >= 220)
                 {
+                    partextitlelb.Visible = false;
                     sliderbarExpand = true;
                     Slidebartimer.Stop();
                     drawerinnerpanel.Size = new Size(220, 202);
                     panel3.Size = new Size(220, 40);
-                    partextitlelb.Visible = false;
+                   
 
                 }
             }
