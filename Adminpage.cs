@@ -36,7 +36,7 @@ namespace SparePart
             }
             else
             {
-                
+
                 Admindrawerpnl.Width += 10;
                 if (Admindrawerpnl.Width >= 220)
                 {
@@ -111,6 +111,11 @@ namespace SparePart
         }
 
         private void label2_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }
