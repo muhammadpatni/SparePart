@@ -52,6 +52,9 @@
             label1 = new Label();
             Slidebartimer = new System.Windows.Forms.Timer(components);
             panel7 = new Panel();
+            all_stocks_are = new Label();
+            Mainpanel = new FlowLayoutPanel();
+            panel9 = new Panel();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)MenubtnDrawer).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -63,6 +66,8 @@
             drawerinnerpanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel7.SuspendLayout();
+            Mainpanel.SuspendLayout();
+            panel9.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -81,7 +86,7 @@
             Outofstokelb1.AutoSize = true;
             Outofstokelb1.Font = new Font("Segoe UI Black", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Outofstokelb1.ForeColor = Color.White;
-            Outofstokelb1.Location = new Point(625, 15);
+            Outofstokelb1.Location = new Point(605, 15);
             Outofstokelb1.Name = "Outofstokelb1";
             Outofstokelb1.Size = new Size(165, 30);
             Outofstokelb1.TabIndex = 18;
@@ -102,10 +107,10 @@
             // pictureBox2
             // 
             pictureBox2.BackColor = Color.FromArgb(30, 41, 59);
-            pictureBox2.Image = Properties.Resources.search_24dp_FFFFFF;
-            pictureBox2.Location = new Point(11, 8);
+            pictureBox2.Image = Properties.Resources.search_1000dp_FFFFFF;
+            pictureBox2.Location = new Point(3, 8);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(29, 35);
+            pictureBox2.Size = new Size(37, 35);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox2.TabIndex = 17;
             pictureBox2.TabStop = false;
@@ -130,7 +135,7 @@
             Admindrawerpnl.Dock = DockStyle.Left;
             Admindrawerpnl.Location = new Point(0, 56);
             Admindrawerpnl.Name = "Admindrawerpnl";
-            Admindrawerpnl.Size = new Size(220, 470);
+            Admindrawerpnl.Size = new Size(220, 516);
             Admindrawerpnl.TabIndex = 11;
             // 
             // panel5
@@ -239,7 +244,7 @@
             // 
             panel2.Controls.Add(Logoutbutton);
             panel2.Dock = DockStyle.Bottom;
-            panel2.Location = new Point(0, 407);
+            panel2.Location = new Point(0, 453);
             panel2.Name = "panel2";
             panel2.Size = new Size(220, 63);
             panel2.TabIndex = 9;
@@ -329,24 +334,60 @@
             panel7.BackColor = Color.FromArgb(30, 41, 59);
             panel7.Controls.Add(textBox1);
             panel7.Controls.Add(pictureBox2);
-            panel7.Location = new Point(400, 70);
+            panel7.Location = new Point(208, 7);
             panel7.Name = "panel7";
             panel7.Size = new Size(540, 51);
             panel7.TabIndex = 18;
+            // 
+            // all_stocks_are
+            // 
+            all_stocks_are.AutoSize = true;
+            all_stocks_are.Font = new Font("Segoe UI", 12.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            all_stocks_are.ForeColor = Color.FromArgb(158, 158, 158);
+            all_stocks_are.Location = new Point(3, 0);
+            all_stocks_are.Name = "all_stocks_are";
+            all_stocks_are.Size = new Size(175, 23);
+            all_stocks_are.TabIndex = 19;
+            all_stocks_are.Text = "All stocks are healthy!";
+            all_stocks_are.Visible = false;
+            // 
+            // Mainpanel
+            // 
+            Mainpanel.AutoScroll = true;
+            Mainpanel.BackColor = Color.FromArgb(248, 250, 252);
+            Mainpanel.Controls.Add(all_stocks_are);
+            Mainpanel.Dock = DockStyle.Fill;
+            Mainpanel.ForeColor = Color.DarkOrchid;
+            Mainpanel.Location = new Point(220, 124);
+            Mainpanel.Name = "Mainpanel";
+            Mainpanel.Size = new Size(819, 448);
+            Mainpanel.TabIndex = 19;
+            // 
+            // panel9
+            // 
+            panel9.Controls.Add(panel7);
+            panel9.Dock = DockStyle.Top;
+            panel9.Location = new Point(220, 56);
+            panel9.Name = "panel9";
+            panel9.Size = new Size(819, 68);
+            panel9.TabIndex = 20;
+            panel9.Paint += panel9_Paint;
             // 
             // Adminoutofstoke
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(248, 250, 252);
-            ClientSize = new Size(1039, 526);
+            ClientSize = new Size(1039, 572);
+            Controls.Add(Mainpanel);
+            Controls.Add(panel9);
             Controls.Add(Admindrawerpnl);
             Controls.Add(panel1);
-            Controls.Add(panel7);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Adminoutofstoke";
             Text = "Adminoutofstoke";
             WindowState = FormWindowState.Maximized;
+            Load += Adminoutofstoke_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)MenubtnDrawer).EndInit();
@@ -361,6 +402,9 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel7.ResumeLayout(false);
             panel7.PerformLayout();
+            Mainpanel.ResumeLayout(false);
+            Mainpanel.PerformLayout();
+            panel9.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -389,5 +433,8 @@
         private Label Outofstokelb1;
         private Panel panel7;
         private Panel panel8;
+        private Label all_stocks_are;
+        private FlowLayoutPanel Mainpanel;
+        private Panel panel9;
     }
 }

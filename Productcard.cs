@@ -12,18 +12,34 @@ namespace SparePart
 {
     public partial class Productcard : UserControl
     {
+        int productID, price, minquantity, stock;
+        string productName; 
+        Image productImage;
+
         public Productcard()
         {
             InitializeComponent();
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
 
         }
 
-        private void namelb_Click(object sender, EventArgs e)
+        public void getproductcarddetais(int productID, string productName, int price, int minquantity, int stock, Image productImage)
         {
+            this.productID = productID;
+            this.productName = productName;
+            this.price = price;
+            this.minquantity = minquantity;
+            this.stock = stock;
+            this.productImage = productImage;
+        }
+
+        private void Productcard_Load(object sender, EventArgs e)
+        {
+
+            namelb.Text = productName;
+            Pricelb.Text = "Rs. " + price.ToString();
+            quantitylb.Text = stock.ToString()+" Pcs";
+            Minquantitylb.Text = "Min: " + minquantity.ToString();
+            Bigicon.Image = productImage;
 
         }
     }

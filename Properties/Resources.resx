@@ -124,14 +124,14 @@
   <data name="inventory_2_24dp_FFFFFF1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\inventory_2_24dp_FFFFFF1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="edit_note_1000dp_FFFFFF" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\edit_note_1000dp_FFFFFF.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="warning_amber_24dp_90A4AE" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\warning_amber_24dp_90A4AE.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="WhatsApp Image 2026-01-23 at 12.161" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\WhatsApp Image 2026-01-23 at 12.16.00 PM1.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="add_box_24dp_FFFFFF" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\add_box_24dp_FFFFFF.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="dashboards" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\dashboards.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -154,6 +154,9 @@
   <data name="inventory_2_24dp_FFFFFF" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\inventory_2_24dp_FFFFFF.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="block_1000dp_FFFFFF" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\block_1000dp_FFFFFF.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Black and White Bold Automotive Logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Black and White Bold Automotive Logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -172,8 +175,8 @@
   <data name="Black_and_White_Bold_Automotive_Logo-removebg-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Black_and_White_Bold_Automotive_Logo-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Black_and_White_Bold_Automotive_Logo-removebg-preview1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Black_and_White_Bold_Automotive_Logo-removebg-preview1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="add_box_24dp_FFFFFF" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\add_box_24dp_FFFFFF.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="dashboard_24dp_90A4AE" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\dashboard_24dp_90A4AE.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -184,10 +187,13 @@
   <data name="search_24dp_FFFFFF" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\search_24dp_FFFFFF.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Black_and_White_Bold_Automotive_Logo-removebg-preview1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Black_and_White_Bold_Automotive_Logo-removebg-preview1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="inventory_2_24dp_90A4AE" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\inventory_2_24dp_90A4AE.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="edit_note_1000dp_FFFFFF" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\edit_note_1000dp_FFFFFF.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="search_1000dp_FFFFFF" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\search_1000dp_FFFFFF.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

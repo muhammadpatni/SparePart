@@ -10,9 +10,11 @@ using System.Windows.Forms;
 
 namespace SparePart
 {
+
     public partial class Adminoutofstoke : Form
     {
         private bool sliderbarExpand = true;
+        DataTable? productsoutofstock = new DataTable();
 
         public Adminoutofstoke()
         {
@@ -64,6 +66,63 @@ namespace SparePart
             LoginPage loginPage = new LoginPage();
             loginPage.Show();
             this.Hide();
+        }
+
+        private void Adminoutofstoke_Load(object sender, EventArgs e)
+        {
+            loadproducts("SELECT * FROM Products WHERE Stock = 0 ");
+        }
+
+        private void LoadProductCards(DataTable productoutofstock)
+        {
+            Mainpanel.Controls.Clear();
+
+            foreach (DataRow row in productoutofstock.Rows)
+            {
+                Productcard card = new Productcard();
+
+                int productID = Convert.ToInt32(row["ProductID"]);
+                string productName = row["ProductName"].ToString();
+                int price = Convert.ToInt32(row["Price"]);
+                int minQuantity = Convert.ToInt32(row["lowstock"]);
+                int stock = Convert.ToInt32(row["Stock"]);
+
+                Image productImage = Properties.Resources.block_1000dp_FFFFFF;
+                card.getproductcarddetais(
+                    productID,
+                    productName,
+                    price,
+                    minQuantity,
+                    stock,
+                    productImage
+                );
+
+                card.Margin = new Padding(80, 10, 0, 10);
+                Mainpanel.Controls.Add(card);
+            }
+        }
+
+
+        void loadproducts(string query)
+        {
+            productsoutofstock = DatabaseManagement.retrieve(query);
+            if (productsoutofstock != null && productsoutofstock.Rows.Count > 0)
+            {
+                LoadProductCards(productsoutofstock);
+            }
+            else
+            {
+                all_stocks_are.Visible = true;
+
+            }
+
+
+
+        }
+
+        private void panel9_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
