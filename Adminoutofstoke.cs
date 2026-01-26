@@ -122,5 +122,10 @@ namespace SparePart
             adminPage.Show();
             this.Hide();
         }
+
+        private void Outofstockbtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

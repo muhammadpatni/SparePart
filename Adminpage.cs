@@ -81,7 +81,7 @@ namespace SparePart
 
         private void Dashboardbtn_Click(object sender, EventArgs e)
         {
-            Pagecalling.loadform(new AdminDashboard(), Mainpanel);
+            //Pagecalling.loadform(new AdminDashboard(), Mainpanel);
         }
 
         private void Outofstockbtn_Click(object sender, EventArgs e)

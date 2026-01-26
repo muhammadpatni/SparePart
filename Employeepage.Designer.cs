@@ -64,7 +64,6 @@
             // Slidebartimer
             // 
             Slidebartimer.Interval = 10;
-            Slidebartimer.Tick += Slidebartimer_Tick;
             // 
             // Admindrawerpnl
             // 

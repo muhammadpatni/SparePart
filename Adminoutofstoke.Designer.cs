@@ -208,6 +208,7 @@
             Outofstockbtn.TabIndex = 12;
             Outofstockbtn.Text = "Out Of Stock";
             Outofstockbtn.UseVisualStyleBackColor = false;
+            Outofstockbtn.Click += Outofstockbtn_Click;
             // 
             // panel4
             // 

@@ -28,14 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             panel1 = new Panel();
             Outofstokelb1 = new Label();
             MenubtnDrawer = new PictureBox();
             Admindrawerpnl = new Panel();
             panel5 = new Panel();
+            Dashboardselected = new Panel();
             Minquantitybtn = new Button();
             panel6 = new Panel();
-            Dashboardselected = new Panel();
             Outofstockbtn = new Button();
             panel4 = new Panel();
             Dashboardbtn = new Button();
@@ -47,6 +51,14 @@
             pictureBox1 = new PictureBox();
             label3 = new Label();
             label1 = new Label();
+            Slidebartimer = new System.Windows.Forms.Timer(components);
+            panel9 = new Panel();
+            panel7 = new Panel();
+            textBox1 = new TextBox();
+            pictureBox2 = new PictureBox();
+            panel10 = new Panel();
+            dataview = new DataGridView();
+            lbstatus = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)MenubtnDrawer).BeginInit();
             Admindrawerpnl.SuspendLayout();
@@ -56,6 +68,11 @@
             panel2.SuspendLayout();
             drawerinnerpanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panel9.SuspendLayout();
+            panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            panel10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataview).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -79,7 +96,6 @@
             Outofstokelb1.Size = new Size(136, 30);
             Outofstokelb1.TabIndex = 18;
             Outofstokelb1.Text = "LOW STOCK";
-            Outofstokelb1.Click += Outofstokelb1_Click;
             // 
             // MenubtnDrawer
             // 
@@ -91,6 +107,7 @@
             MenubtnDrawer.SizeMode = PictureBoxSizeMode.StretchImage;
             MenubtnDrawer.TabIndex = 0;
             MenubtnDrawer.TabStop = false;
+            MenubtnDrawer.Click += MenubtnDrawer_Click;
             // 
             // Admindrawerpnl
             // 
@@ -116,6 +133,14 @@
             panel5.Name = "panel5";
             panel5.Size = new Size(220, 58);
             panel5.TabIndex = 14;
+            // 
+            // Dashboardselected
+            // 
+            Dashboardselected.BackColor = Color.FromArgb(30, 41, 59);
+            Dashboardselected.Location = new Point(190, 16);
+            Dashboardselected.Name = "Dashboardselected";
+            Dashboardselected.Size = new Size(7, 25);
+            Dashboardselected.TabIndex = 16;
             // 
             // Minquantitybtn
             // 
@@ -145,14 +170,6 @@
             panel6.Size = new Size(220, 58);
             panel6.TabIndex = 15;
             // 
-            // Dashboardselected
-            // 
-            Dashboardselected.BackColor = Color.FromArgb(30, 41, 59);
-            Dashboardselected.Location = new Point(190, 16);
-            Dashboardselected.Name = "Dashboardselected";
-            Dashboardselected.Size = new Size(7, 25);
-            Dashboardselected.TabIndex = 16;
-            // 
             // Outofstockbtn
             // 
             Outofstockbtn.BackColor = Color.Transparent;
@@ -171,6 +188,7 @@
             Outofstockbtn.TabIndex = 12;
             Outofstockbtn.Text = "Out Of Stock";
             Outofstockbtn.UseVisualStyleBackColor = false;
+            Outofstockbtn.Click += Outofstockbtn_Click;
             // 
             // panel4
             // 
@@ -199,6 +217,7 @@
             Dashboardbtn.TabIndex = 12;
             Dashboardbtn.Text = "Dashboard";
             Dashboardbtn.UseVisualStyleBackColor = false;
+            Dashboardbtn.Click += Dashboardbtn_Click;
             // 
             // panel3
             // 
@@ -292,18 +311,136 @@
             label1.TabIndex = 15;
             label1.Text = "PARTEX ADMIN";
             // 
+            // Slidebartimer
+            // 
+            Slidebartimer.Interval = 3;
+            Slidebartimer.Tick += Slidebartimer_Tick;
+            // 
+            // panel9
+            // 
+            panel9.BackColor = Color.FromArgb(30, 41, 59);
+            panel9.Controls.Add(panel7);
+            panel9.Dock = DockStyle.Top;
+            panel9.Location = new Point(220, 56);
+            panel9.Name = "panel9";
+            panel9.Size = new Size(819, 68);
+            panel9.TabIndex = 21;
+            // 
+            // panel7
+            // 
+            panel7.BackColor = Color.FromArgb(30, 41, 59);
+            panel7.Controls.Add(textBox1);
+            panel7.Controls.Add(pictureBox2);
+            panel7.Location = new Point(256, 7);
+            panel7.Name = "panel7";
+            panel7.Size = new Size(540, 51);
+            panel7.TabIndex = 18;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(46, 8);
+            textBox1.Multiline = true;
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(482, 35);
+            textBox1.TabIndex = 12;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.BackColor = Color.FromArgb(30, 41, 59);
+            pictureBox2.Image = Properties.Resources.search_1000dp_FFFFFF;
+            pictureBox2.Location = new Point(3, 8);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(37, 35);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 17;
+            pictureBox2.TabStop = false;
+            // 
+            // panel10
+            // 
+            panel10.Controls.Add(dataview);
+            panel10.Controls.Add(lbstatus);
+            panel10.Dock = DockStyle.Fill;
+            panel10.Location = new Point(220, 124);
+            panel10.Name = "panel10";
+            panel10.Padding = new Padding(30);
+            panel10.Size = new Size(819, 448);
+            panel10.TabIndex = 23;
+            // 
+            // dataview
+            // 
+            dataview.AllowUserToAddRows = false;
+            dataview.AllowUserToDeleteRows = false;
+            dataview.AllowUserToResizeColumns = false;
+            dataview.AllowUserToResizeRows = false;
+            dataview.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataview.BackgroundColor = Color.FromArgb(248, 250, 252);
+            dataview.BorderStyle = BorderStyle.None;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(30, 41, 59);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(30, 41, 59);
+            dataGridViewCellStyle1.SelectionForeColor = Color.White;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
+            dataview.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataview.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = Color.White;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = Color.FromArgb(30, 41, 59);
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(99, 105, 118);
+            dataGridViewCellStyle2.SelectionForeColor = Color.White;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dataview.DefaultCellStyle = dataGridViewCellStyle2;
+            dataview.Dock = DockStyle.Fill;
+            dataview.EnableHeadersVisualStyles = false;
+            dataview.GridColor = Color.FromArgb(30, 41, 59);
+            dataview.Location = new Point(30, 30);
+            dataview.Margin = new Padding(50);
+            dataview.MultiSelect = false;
+            dataview.Name = "dataview";
+            dataview.ReadOnly = true;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = SystemColors.Control;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            dataview.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataview.RowHeadersVisible = false;
+            dataview.RowTemplate.DividerHeight = 2;
+            dataview.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataview.Size = new Size(759, 388);
+            dataview.TabIndex = 21;
+            dataview.VirtualMode = true;
+            // 
+            // lbstatus
+            // 
+            lbstatus.AutoSize = true;
+            lbstatus.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbstatus.ForeColor = Color.FromArgb(162, 162, 162);
+            lbstatus.Location = new Point(582, 315);
+            lbstatus.Name = "lbstatus";
+            lbstatus.Size = new Size(81, 21);
+            lbstatus.TabIndex = 19;
+            lbstatus.Text = "Loading...";
+            // 
             // AdminLowStock
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.White;
+            BackColor = Color.FromArgb(248, 250, 252);
             ClientSize = new Size(1039, 572);
+            Controls.Add(panel10);
+            Controls.Add(panel9);
             Controls.Add(Admindrawerpnl);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "AdminLowStock";
             Text = "AdminLowStock";
             WindowState = FormWindowState.Maximized;
+            Click += AdminLowStock_Click;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)MenubtnDrawer).EndInit();
@@ -315,6 +452,13 @@
             drawerinnerpanel.ResumeLayout(false);
             drawerinnerpanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            panel9.ResumeLayout(false);
+            panel7.ResumeLayout(false);
+            panel7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            panel10.ResumeLayout(false);
+            panel10.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataview).EndInit();
             ResumeLayout(false);
         }
 
@@ -339,5 +483,13 @@
         private PictureBox pictureBox1;
         private Label label3;
         private Label label1;
+        private System.Windows.Forms.Timer Slidebartimer;
+        private Panel panel9;
+        private Panel panel7;
+        private TextBox textBox1;
+        private PictureBox pictureBox2;
+        private Panel panel10;
+        private DataGridView dataview;
+        private Label lbstatus;
     }
 }
