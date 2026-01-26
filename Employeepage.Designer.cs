@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Employeepage));
             Slidebartimer = new System.Windows.Forms.Timer(components);
             Admindrawerpnl = new Panel();
             panel5 = new Panel();
@@ -50,6 +51,9 @@
             Outofstokelb1 = new Label();
             MenubtnDrawer = new PictureBox();
             panel7 = new Panel();
+            label2 = new Label();
+            textBox1 = new TextBox();
+            pictureBox2 = new PictureBox();
             Admindrawerpnl.SuspendLayout();
             panel5.SuspendLayout();
             panel6.SuspendLayout();
@@ -59,6 +63,8 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)MenubtnDrawer).BeginInit();
+            panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // Slidebartimer
@@ -107,14 +113,14 @@
             Minquantitybtn.FlatStyle = FlatStyle.Flat;
             Minquantitybtn.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Minquantitybtn.ForeColor = Color.FromArgb(74, 82, 97);
-            Minquantitybtn.Image = Properties.Resources.warning_amber_24dp_90A4AE;
+            Minquantitybtn.Image = (Image)resources.GetObject("Minquantitybtn.Image");
             Minquantitybtn.ImageAlign = ContentAlignment.MiddleLeft;
             Minquantitybtn.Location = new Point(5, 10);
             Minquantitybtn.Name = "Minquantitybtn";
             Minquantitybtn.Padding = new Padding(10, 0, 0, 0);
             Minquantitybtn.Size = new Size(194, 37);
             Minquantitybtn.TabIndex = 12;
-            Minquantitybtn.Text = " Min. Quantity";
+            Minquantitybtn.Text = "Pending Bills";
             Minquantitybtn.UseVisualStyleBackColor = false;
             // 
             // panel6
@@ -135,14 +141,14 @@
             Outofstockbtn.FlatStyle = FlatStyle.Flat;
             Outofstockbtn.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Outofstockbtn.ForeColor = Color.FromArgb(74, 82, 97);
-            Outofstockbtn.Image = Properties.Resources.inventory_2_24dp_90A4AE;
+            Outofstockbtn.Image = (Image)resources.GetObject("Outofstockbtn.Image");
             Outofstockbtn.ImageAlign = ContentAlignment.MiddleLeft;
             Outofstockbtn.Location = new Point(5, 10);
             Outofstockbtn.Name = "Outofstockbtn";
             Outofstockbtn.Padding = new Padding(10, 0, 0, 0);
             Outofstockbtn.Size = new Size(194, 37);
             Outofstockbtn.TabIndex = 12;
-            Outofstockbtn.Text = "Out Of Stock";
+            Outofstockbtn.Text = "Return";
             Outofstockbtn.UseVisualStyleBackColor = false;
             // 
             // panel4
@@ -163,15 +169,16 @@
             Dashboardbtn.FlatStyle = FlatStyle.Flat;
             Dashboardbtn.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Dashboardbtn.ForeColor = Color.FromArgb(74, 82, 97);
-            Dashboardbtn.Image = Properties.Resources.dashboard_24dp_90A4AE;
+            Dashboardbtn.Image = (Image)resources.GetObject("Dashboardbtn.Image");
             Dashboardbtn.ImageAlign = ContentAlignment.MiddleLeft;
             Dashboardbtn.Location = new Point(5, 10);
             Dashboardbtn.Name = "Dashboardbtn";
             Dashboardbtn.Padding = new Padding(10, 0, 0, 0);
             Dashboardbtn.Size = new Size(194, 37);
             Dashboardbtn.TabIndex = 12;
-            Dashboardbtn.Text = "Dashboard";
+            Dashboardbtn.Text = "Billing";
             Dashboardbtn.UseVisualStyleBackColor = false;
+            Dashboardbtn.Click += Dashboardbtn_Click;
             // 
             // panel3
             // 
@@ -247,7 +254,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.FromArgb(161, 165, 172);
-            label3.Location = new Point(28, 185);
+            label3.Location = new Point(29, 185);
             label3.Name = "label3";
             label3.Size = new Size(168, 15);
             label3.TabIndex = 16;
@@ -258,15 +265,15 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Black", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(21, 153);
+            label1.Location = new Point(0, 155);
             label1.Name = "label1";
-            label1.Size = new Size(180, 30);
+            label1.Size = new Size(227, 30);
             label1.TabIndex = 15;
-            label1.Text = "PARTEX ADMIN";
+            label1.Text = "EMPLOYEES PORTAL";
             // 
             // panel1
             // 
-            panel1.BackColor = Color.FromArgb(22, 31, 50);
+            panel1.BackColor = Color.White;
             panel1.Controls.Add(Outofstokelb1);
             panel1.Controls.Add(MenubtnDrawer);
             panel1.Dock = DockStyle.Top;
@@ -279,17 +286,17 @@
             // 
             Outofstokelb1.AutoSize = true;
             Outofstokelb1.Font = new Font("Segoe UI Black", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Outofstokelb1.ForeColor = Color.White;
+            Outofstokelb1.ForeColor = Color.Black;
             Outofstokelb1.Location = new Point(605, 15);
             Outofstokelb1.Name = "Outofstokelb1";
-            Outofstokelb1.Size = new Size(165, 30);
+            Outofstokelb1.Size = new Size(159, 30);
             Outofstokelb1.TabIndex = 18;
-            Outofstokelb1.Text = "OUT OF STOCK";
+            Outofstokelb1.Text = "BILLING PAGE";
             // 
             // MenubtnDrawer
             // 
             MenubtnDrawer.BackColor = Color.Transparent;
-            MenubtnDrawer.Image = Properties.Resources.hamburger__1_;
+            MenubtnDrawer.Image = (Image)resources.GetObject("MenubtnDrawer.Image");
             MenubtnDrawer.Location = new Point(10, 11);
             MenubtnDrawer.Name = "MenubtnDrawer";
             MenubtnDrawer.Size = new Size(37, 32);
@@ -299,11 +306,44 @@
             // 
             // panel7
             // 
+            panel7.Controls.Add(textBox1);
+            panel7.Controls.Add(pictureBox2);
+            panel7.Controls.Add(label2);
             panel7.Dock = DockStyle.Fill;
             panel7.Location = new Point(220, 56);
             panel7.Name = "panel7";
             panel7.Size = new Size(1014, 531);
             panel7.TabIndex = 15;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Roboto", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.Black;
+            label2.Location = new Point(33, 23);
+            label2.Name = "label2";
+            label2.Size = new Size(163, 25);
+            label2.TabIndex = 18;
+            label2.Text = "Select Products";
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(81, 51);
+            textBox1.Multiline = true;
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(482, 35);
+            textBox1.TabIndex = 19;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.BackColor = Color.White;
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(38, 51);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(37, 35);
+            pictureBox2.SizeMode = PictureBoxSizeMode.CenterImage;
+            pictureBox2.TabIndex = 20;
+            pictureBox2.TabStop = false;
             // 
             // Employeepage
             // 
@@ -330,6 +370,9 @@
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)MenubtnDrawer).EndInit();
+            panel7.ResumeLayout(false);
+            panel7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
         }
 
@@ -355,5 +398,8 @@
         private Label Outofstokelb1;
         private PictureBox MenubtnDrawer;
         private Panel panel7;
+        private Label label2;
+        private TextBox textBox1;
+        private PictureBox pictureBox2;
     }
 }

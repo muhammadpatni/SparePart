@@ -13,12 +13,16 @@ namespace SparePart
     public partial class Employeepage : Form
     {
 
-        bool sliderbarExpand =true;
+        bool sliderbarExpand = true;
 
         public Employeepage()
         {
             InitializeComponent();
         }
-        
+
+        private void Dashboardbtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
