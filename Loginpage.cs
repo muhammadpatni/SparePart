@@ -86,13 +86,13 @@ namespace SparePart
                 UserNameTxtBox.Focus();
                 return false;
             }
-            if (PasswordTxtBox.Text.Trim() == "")
+            else if (PasswordTxtBox.Text.Trim() == "")
             {
                 MessageBox.Show("Please enter password", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 PasswordTxtBox.Focus();
                 return false;
             }
-            if (!AdminRadioBtn.Checked && !EmployeeRadioBtn.Checked)
+            else if (!AdminRadioBtn.Checked && !EmployeeRadioBtn.Checked)
             {
                 MessageBox.Show("Please select user type", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 PasswordTxtBox.Focus();

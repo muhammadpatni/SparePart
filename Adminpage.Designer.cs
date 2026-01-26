@@ -34,7 +34,6 @@
             pictureBox1 = new PictureBox();
             label3 = new Label();
             label2 = new Label();
-            MenuButton = new PictureBox();
             panel2 = new Panel();
             Logoutbutton = new Button();
             Slidebartimer = new System.Windows.Forms.Timer(components);
@@ -55,7 +54,6 @@
             Mainpanel = new Panel();
             drawerinnerpanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)MenuButton).BeginInit();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
             panel7.SuspendLayout();
@@ -123,18 +121,6 @@
             label2.TabIndex = 15;
             label2.Text = "PARTEX ADMIN";
             // 
-            // MenuButton
-            // 
-            MenuButton.BackColor = Color.Transparent;
-            MenuButton.Image = Properties.Resources.hamburger__1_;
-            MenuButton.Location = new Point(10, 11);
-            MenuButton.Name = "MenuButton";
-            MenuButton.Size = new Size(37, 32);
-            MenuButton.SizeMode = PictureBoxSizeMode.StretchImage;
-            MenuButton.TabIndex = 0;
-            MenuButton.TabStop = false;
-            MenuButton.Click += MenuButton_Click;
-            // 
             // panel2
             // 
             panel2.Controls.Add(Logoutbutton);
@@ -175,7 +161,6 @@
             panel1.BackColor = Color.FromArgb(22, 31, 50);
             panel1.Controls.Add(panel7);
             panel1.Controls.Add(Dashboardtitlelb);
-            panel1.Controls.Add(MenuButton);
             panel1.Dock = DockStyle.Top;
             panel1.Font = new Font("Segoe UI Black", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             panel1.Location = new Point(0, 0);
@@ -214,6 +199,7 @@
             addnewproductbutton.SizeMode = PictureBoxSizeMode.StretchImage;
             addnewproductbutton.TabIndex = 13;
             addnewproductbutton.TabStop = false;
+            addnewproductbutton.Click += addnewproductbutton_Click;
             // 
             // Dashboardtitlelb
             // 
@@ -375,7 +361,6 @@
             drawerinnerpanel.ResumeLayout(false);
             drawerinnerpanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)MenuButton).EndInit();
             panel2.ResumeLayout(false);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
@@ -391,7 +376,6 @@
 
         #endregion
         private Panel drawerinnerpanel;
-        private PictureBox MenuButton;
         private System.Windows.Forms.Timer Slidebartimer;
         private Panel panel1;
         private Panel panel2;
@@ -411,8 +395,8 @@
         private Label label3;
         private Label label2;
         private PictureBox pictureBox1;
-        private Panel Mainpanel;
         private Panel Dashboardselected;
         private Panel panel8;
+        private Panel Mainpanel;
     }
 }

@@ -13,7 +13,6 @@ namespace SparePart
 
     public partial class Adminoutofstoke : Form
     {
-        private bool sliderbarExpand = true;
         DataTable? productsoutofstock = new DataTable();
 
         public Adminoutofstoke()
@@ -25,45 +24,7 @@ namespace SparePart
                 null, dataview, new object[] { true });
         }
 
-        private void Slidebartimer_Tick(object sender, EventArgs e)
-        {
-            dataview.SuspendLayout();
-            if (sliderbarExpand)
-            {
-                Admindrawerpnl.Width -= 10;
-                if (Admindrawerpnl.Width <= 61)
-                {
-                    sliderbarExpand = false;
-                    Slidebartimer.Stop();
-                    FinishAnimation();
-                }
-            }
-            else
-            {
-                Admindrawerpnl.Width += 10;
-                if (Admindrawerpnl.Width >= 220)
-                {
-
-                    sliderbarExpand = true;
-                    Slidebartimer.Stop();
-                    FinishAnimation();
-
-                }
-            }
-            dataview.ResumeLayout();
-        }
-
-        private void FinishAnimation()
-        {
-            dataview.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            drawerinnerpanel.Size = new Size(220, sliderbarExpand ? 225 : 0);
-            panel3.Size = new Size(220, sliderbarExpand ? 40 : 265);
-        }
-        private void MenubtnDrawer_Click(object sender, EventArgs e)
-        {
-            dataview.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
-            Slidebartimer.Start();
-        }
+        
 
         private void Dashboardbtn_Click(object sender, EventArgs e)
         {
@@ -81,7 +42,7 @@ namespace SparePart
 
         private async void Adminoutofstoke_Load(object sender, EventArgs e)
         {
-            await loadproducts("SELECT * FROM Products WHERE Stock = 0 ");
+            await loadproducts("SELECT * FROM Products WHERE Stock = 0");
         }
 
         async Task loadproducts(string query)
@@ -125,6 +86,89 @@ namespace SparePart
 
         private void Outofstockbtn_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void Adminoutofstoke_KeyDown(object sender, KeyEventArgs e)
+        {
+
+            if (e.KeyCode == Keys.Escape)
+            {
+                Application.Exit();
+            }
+            else if (e.KeyCode == Keys.X)
+            {
+                Logoutbutton.PerformClick();
+            }
+            else if (e.KeyCode == Keys.F1)
+            {
+                Minquantitybtn.PerformClick();
+            }
+            else if (e.KeyCode == Keys.F && e.Control)
+            {
+                searcchtxt.Focus();
+            }
+        }
+
+        private void dataview_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (dataview.CurrentRow != null)
+                {
+                    string id = dataview.CurrentRow.Cells[0].Value.ToString();
+                    string name = dataview.CurrentRow.Cells[1].Value.ToString();
+                    string price = dataview.CurrentRow.Cells[2].Value.ToString();
+                    string stock = dataview.CurrentRow.Cells[3].Value.ToString();
+                    string lowstock = dataview.CurrentRow.Cells[4].Value.ToString();
+
+                    Updateproductform updateForm = new Updateproductform(false);
+                    updateForm.settextboxes(id, name, price, stock, lowstock);
+                    updateForm.ShowDialog();
+
+                    e.Handled = true;
+                }
+            }
+        }
+
+        private void searcchtxt_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Tab)
+            {
+                e.SuppressKeyPress = true;
+                dataview.Focus();
+            }
+        }
+
+        private void searcchtxt_TextChanged(object sender, EventArgs e)
+        {
+            Searchproduct($"SELECT * FROM Products WHERE ProductName LIKE '%{searcchtxt.Text}%' AND Stock <= lowstock ");
+        }
+
+        void Searchproduct(string query)
+        {
+            dataview.Visible = false;
+            lbstatus.Visible = true;
+            try
+            {
+                DataTable dt = DatabaseManagement.retrieve(query);
+
+                if (dt != null && dt.Rows.Count > 0)
+                {
+                    productsoutofstock = dt;
+                    dataview.DataSource = productsoutofstock;
+                    dataview.Visible = true;
+                    lbstatus.Visible = false;
+                }
+                else
+                {
+                    lbstatus.Text = "All stock are healthy by this name";
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
 
         }
     }

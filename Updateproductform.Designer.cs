@@ -31,21 +31,21 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Updateproductform));
             panel1 = new Panel();
             pictureBox1 = new PictureBox();
-            label1 = new Label();
-            textBox1 = new TextBox();
+            Pagetitlelb = new Label();
+            productnametxt = new TextBox();
             pictureBox2 = new PictureBox();
             label2 = new Label();
-            textBox2 = new TextBox();
+            stocktxt = new TextBox();
             pictureBox3 = new PictureBox();
             label3 = new Label();
-            textBox3 = new TextBox();
+            pricetxt = new TextBox();
             pictureBox4 = new PictureBox();
             label4 = new Label();
-            textBox4 = new TextBox();
+            lowstocktxt = new TextBox();
             pictureBox5 = new PictureBox();
             label5 = new Label();
-            button1 = new Button();
-            button2 = new Button();
+            Confirmbtn = new Button();
+            Discardbtn = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -58,7 +58,7 @@
             // 
             panel1.BackColor = Color.FromArgb(22, 31, 50);
             panel1.Controls.Add(pictureBox1);
-            panel1.Controls.Add(label1);
+            panel1.Controls.Add(Pagetitlelb);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
@@ -75,24 +75,26 @@
             pictureBox1.TabIndex = 2;
             pictureBox1.TabStop = false;
             // 
-            // label1
+            // Pagetitlelb
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(294, 18);
-            label1.Name = "label1";
-            label1.Size = new Size(234, 30);
-            label1.TabIndex = 1;
-            label1.Text = "UPDATE SPARE PARTS";
+            Pagetitlelb.AutoSize = true;
+            Pagetitlelb.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Pagetitlelb.ForeColor = Color.White;
+            Pagetitlelb.Location = new Point(294, 18);
+            Pagetitlelb.Name = "Pagetitlelb";
+            Pagetitlelb.Size = new Size(234, 30);
+            Pagetitlelb.TabIndex = 1;
+            Pagetitlelb.Text = "UPDATE SPARE PARTS";
             // 
-            // textBox1
+            // productnametxt
             // 
-            textBox1.Location = new Point(82, 88);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(688, 43);
-            textBox1.TabIndex = 1;
+            productnametxt.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
+            productnametxt.Location = new Point(82, 88);
+            productnametxt.Multiline = true;
+            productnametxt.Name = "productnametxt";
+            productnametxt.Size = new Size(688, 43);
+            productnametxt.TabIndex = 1;
+            productnametxt.KeyDown += productnametxt_KeyDown;
             // 
             // pictureBox2
             // 
@@ -114,15 +116,18 @@
             label2.Size = new Size(96, 17);
             label2.TabIndex = 3;
             label2.Text = "Product Name";
-            label2.Click += label2_Click;
             // 
-            // textBox2
+            // stocktxt
             // 
-            textBox2.Location = new Point(454, 160);
-            textBox2.Multiline = true;
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(316, 43);
-            textBox2.TabIndex = 1;
+            stocktxt.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
+            stocktxt.ForeColor = Color.Black;
+            stocktxt.Location = new Point(454, 160);
+            stocktxt.Multiline = true;
+            stocktxt.Name = "stocktxt";
+            stocktxt.Size = new Size(316, 43);
+            stocktxt.TabIndex = 1;
+            stocktxt.TextChanged += stocktxt_TextChanged;
+            stocktxt.KeyDown += stocktxt_KeyDown;
             // 
             // pictureBox3
             // 
@@ -144,15 +149,17 @@
             label3.Size = new Size(41, 17);
             label3.TabIndex = 3;
             label3.Text = "Stock";
-            label3.Click += label2_Click;
             // 
-            // textBox3
+            // pricetxt
             // 
-            textBox3.Location = new Point(82, 160);
-            textBox3.Multiline = true;
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(316, 43);
-            textBox3.TabIndex = 1;
+            pricetxt.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
+            pricetxt.Location = new Point(82, 160);
+            pricetxt.Multiline = true;
+            pricetxt.Name = "pricetxt";
+            pricetxt.Size = new Size(316, 43);
+            pricetxt.TabIndex = 1;
+            pricetxt.TextChanged += pricetxt_TextChanged;
+            pricetxt.KeyDown += pricetxt_KeyDown;
             // 
             // pictureBox4
             // 
@@ -174,15 +181,16 @@
             label4.Size = new Size(37, 17);
             label4.TabIndex = 3;
             label4.Text = "Price";
-            label4.Click += label2_Click;
             // 
-            // textBox4
+            // lowstocktxt
             // 
-            textBox4.Location = new Point(82, 237);
-            textBox4.Multiline = true;
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(688, 43);
-            textBox4.TabIndex = 1;
+            lowstocktxt.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
+            lowstocktxt.Location = new Point(82, 237);
+            lowstocktxt.Multiline = true;
+            lowstocktxt.Name = "lowstocktxt";
+            lowstocktxt.Size = new Size(688, 43);
+            lowstocktxt.TabIndex = 1;
+            lowstocktxt.KeyDown += lowstocktxt_KeyDown;
             // 
             // pictureBox5
             // 
@@ -204,42 +212,45 @@
             label5.Size = new Size(163, 17);
             label5.TabIndex = 3;
             label5.Text = "Low Stock Alert (Min Qty)";
-            label5.Click += label2_Click;
             // 
-            // button1
+            // Confirmbtn
             // 
-            button1.BackColor = Color.FromArgb(22, 31, 50);
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(596, 324);
-            button1.Name = "button1";
-            button1.Size = new Size(174, 45);
-            button1.TabIndex = 4;
-            button1.Text = "Confirm Update";
-            button1.UseVisualStyleBackColor = false;
+            Confirmbtn.BackColor = Color.FromArgb(22, 31, 50);
+            Confirmbtn.FlatAppearance.BorderSize = 0;
+            Confirmbtn.FlatStyle = FlatStyle.Flat;
+            Confirmbtn.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Confirmbtn.ForeColor = Color.White;
+            Confirmbtn.Location = new Point(596, 324);
+            Confirmbtn.Name = "Confirmbtn";
+            Confirmbtn.Size = new Size(174, 45);
+            Confirmbtn.TabIndex = 4;
+            Confirmbtn.TabStop = false;
+            Confirmbtn.Text = "Confirm Update";
+            Confirmbtn.UseVisualStyleBackColor = false;
+            Confirmbtn.Click += Confirmbtn_Click;
             // 
-            // button2
+            // Discardbtn
             // 
-            button2.BackColor = Color.White;
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button2.Location = new Point(444, 324);
-            button2.Name = "button2";
-            button2.Size = new Size(141, 45);
-            button2.TabIndex = 4;
-            button2.Text = "Discard";
-            button2.UseVisualStyleBackColor = false;
+            Discardbtn.BackColor = Color.White;
+            Discardbtn.FlatAppearance.BorderSize = 0;
+            Discardbtn.FlatStyle = FlatStyle.Flat;
+            Discardbtn.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Discardbtn.Location = new Point(444, 324);
+            Discardbtn.Name = "Discardbtn";
+            Discardbtn.Size = new Size(141, 45);
+            Discardbtn.TabIndex = 4;
+            Discardbtn.TabStop = false;
+            Discardbtn.Text = "Discard";
+            Discardbtn.UseVisualStyleBackColor = false;
+            Discardbtn.Click += Discardbtn_Click;
             // 
             // Updateproductform
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 382);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(Discardbtn);
+            Controls.Add(Confirmbtn);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label5);
@@ -248,15 +259,19 @@
             Controls.Add(pictureBox3);
             Controls.Add(pictureBox5);
             Controls.Add(pictureBox2);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox4);
-            Controls.Add(textBox1);
+            Controls.Add(pricetxt);
+            Controls.Add(stocktxt);
+            Controls.Add(lowstocktxt);
+            Controls.Add(productnametxt);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
+            KeyPreview = true;
             Name = "Updateproductform";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Updateproduct";
+            Load += Updateproductform_Load;
+            Shown += Updateproductform_Shown;
+            KeyDown += Updateproductform_KeyDown;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -271,21 +286,21 @@
         #endregion
 
         private Panel panel1;
-        private Label label1;
+        private Label Pagetitlelb;
         private PictureBox pictureBox1;
-        private TextBox textBox1;
+        private TextBox productnametxt;
         private PictureBox pictureBox2;
         private Label label2;
-        private TextBox textBox2;
+        private TextBox stocktxt;
         private PictureBox pictureBox3;
         private Label label3;
-        private TextBox textBox3;
+        private TextBox pricetxt;
         private PictureBox pictureBox4;
         private Label label4;
-        private TextBox textBox4;
+        private TextBox lowstocktxt;
         private PictureBox pictureBox5;
         private Label label5;
-        private Button button1;
-        private Button button2;
+        private Button Confirmbtn;
+        private Button Discardbtn;
     }
 }

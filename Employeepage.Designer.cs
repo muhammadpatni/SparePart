@@ -48,8 +48,8 @@
             label1 = new Label();
             panel1 = new Panel();
             Outofstokelb1 = new Label();
-            MenubtnDrawer = new PictureBox();
             panel7 = new Panel();
+            MenubtnDrawer = new PictureBox();
             Admindrawerpnl.SuspendLayout();
             panel5.SuspendLayout();
             panel6.SuspendLayout();
@@ -286,6 +286,14 @@
             Outofstokelb1.TabIndex = 18;
             Outofstokelb1.Text = "OUT OF STOCK";
             // 
+            // panel7
+            // 
+            panel7.Dock = DockStyle.Fill;
+            panel7.Location = new Point(220, 56);
+            panel7.Name = "panel7";
+            panel7.Size = new Size(1014, 531);
+            panel7.TabIndex = 15;
+            // 
             // MenubtnDrawer
             // 
             MenubtnDrawer.BackColor = Color.Transparent;
@@ -296,14 +304,6 @@
             MenubtnDrawer.SizeMode = PictureBoxSizeMode.StretchImage;
             MenubtnDrawer.TabIndex = 0;
             MenubtnDrawer.TabStop = false;
-            // 
-            // panel7
-            // 
-            panel7.Dock = DockStyle.Fill;
-            panel7.Location = new Point(220, 56);
-            panel7.Name = "panel7";
-            panel7.Size = new Size(1014, 531);
-            panel7.TabIndex = 15;
             // 
             // Employeepage
             // 
@@ -353,7 +353,7 @@
         private Label label1;
         private Panel panel1;
         private Label Outofstokelb1;
-        private PictureBox MenubtnDrawer;
         private Panel panel7;
+        private PictureBox MenubtnDrawer;
     }
 }

@@ -28,15 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             panel1 = new Panel();
             Outofstokelb1 = new Label();
-            MenubtnDrawer = new PictureBox();
             pictureBox2 = new PictureBox();
-            textBox1 = new TextBox();
+            searcchtxt = new TextBox();
             Admindrawerpnl = new Panel();
             panel5 = new Panel();
             Minquantitybtn = new Button();
@@ -53,14 +51,12 @@
             pictureBox1 = new PictureBox();
             label3 = new Label();
             label1 = new Label();
-            Slidebartimer = new System.Windows.Forms.Timer(components);
             panel7 = new Panel();
             panel9 = new Panel();
             dataview = new DataGridView();
             lbstatus = new Label();
             panel10 = new Panel();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)MenubtnDrawer).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             Admindrawerpnl.SuspendLayout();
             panel5.SuspendLayout();
@@ -79,7 +75,6 @@
             // 
             panel1.BackColor = Color.FromArgb(22, 31, 50);
             panel1.Controls.Add(Outofstokelb1);
-            panel1.Controls.Add(MenubtnDrawer);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
@@ -97,18 +92,6 @@
             Outofstokelb1.TabIndex = 18;
             Outofstokelb1.Text = "OUT OF STOCK";
             // 
-            // MenubtnDrawer
-            // 
-            MenubtnDrawer.BackColor = Color.Transparent;
-            MenubtnDrawer.Image = Properties.Resources.hamburger__1_;
-            MenubtnDrawer.Location = new Point(10, 11);
-            MenubtnDrawer.Name = "MenubtnDrawer";
-            MenubtnDrawer.Size = new Size(37, 32);
-            MenubtnDrawer.SizeMode = PictureBoxSizeMode.StretchImage;
-            MenubtnDrawer.TabIndex = 0;
-            MenubtnDrawer.TabStop = false;
-            MenubtnDrawer.Click += MenubtnDrawer_Click;
-            // 
             // pictureBox2
             // 
             pictureBox2.BackColor = Color.FromArgb(30, 41, 59);
@@ -120,13 +103,15 @@
             pictureBox2.TabIndex = 17;
             pictureBox2.TabStop = false;
             // 
-            // textBox1
+            // searcchtxt
             // 
-            textBox1.Location = new Point(46, 8);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(482, 35);
-            textBox1.TabIndex = 12;
+            searcchtxt.Location = new Point(46, 8);
+            searcchtxt.Multiline = true;
+            searcchtxt.Name = "searcchtxt";
+            searcchtxt.Size = new Size(482, 35);
+            searcchtxt.TabIndex = 12;
+            searcchtxt.TextChanged += searcchtxt_TextChanged;
+            searcchtxt.KeyDown += searcchtxt_KeyDown;
             // 
             // Admindrawerpnl
             // 
@@ -331,15 +316,10 @@
             label1.TabIndex = 15;
             label1.Text = "PARTEX ADMIN";
             // 
-            // Slidebartimer
-            // 
-            Slidebartimer.Interval = 3;
-            Slidebartimer.Tick += Slidebartimer_Tick;
-            // 
             // panel7
             // 
             panel7.BackColor = Color.FromArgb(30, 41, 59);
-            panel7.Controls.Add(textBox1);
+            panel7.Controls.Add(searcchtxt);
             panel7.Controls.Add(pictureBox2);
             panel7.Location = new Point(256, 7);
             panel7.Name = "panel7";
@@ -405,6 +385,7 @@
             dataview.Size = new Size(759, 388);
             dataview.TabIndex = 21;
             dataview.VirtualMode = true;
+            dataview.KeyDown += dataview_KeyDown;
             // 
             // lbstatus
             // 
@@ -439,13 +420,14 @@
             Controls.Add(Admindrawerpnl);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
+            KeyPreview = true;
             Name = "Adminoutofstoke";
             Text = "Adminoutofstoke";
             WindowState = FormWindowState.Maximized;
             Load += Adminoutofstoke_Load;
+            KeyDown += Adminoutofstoke_KeyDown;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)MenubtnDrawer).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             Admindrawerpnl.ResumeLayout(false);
             panel5.ResumeLayout(false);
@@ -481,10 +463,8 @@
         private PictureBox pictureBox1;
         private Label label3;
         private Label label1;
-        private PictureBox MenubtnDrawer;
-        private System.Windows.Forms.Timer Slidebartimer;
         private Panel Dashboardselected;
-        private TextBox textBox1;
+        private TextBox searcchtxt;
         private PictureBox pictureBox2;
         private Panel panel7;
         private Panel panel8;

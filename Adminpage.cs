@@ -13,7 +13,7 @@ namespace SparePart
     public partial class Adminpage : Form
     {
 
-        bool sliderbarExpand = true;
+        //bool sliderbarExpand = true;
 
         public Adminpage()
         {
@@ -22,33 +22,33 @@ namespace SparePart
 
         private void Slidebartimer_Tick(object sender, EventArgs e)
         {
-            if (sliderbarExpand)
-            {
-                Admindrawerpnl.Width -= 10;
-                if (Admindrawerpnl.Width <= 61)
-                {
-                    sliderbarExpand = false;
-                    Slidebartimer.Stop();
-                    drawerinnerpanel.Size = new Size(220, 0);
-                    panel3.Size = new Size(220, 265);
-                }
-            }
-            else
-            {
-                Admindrawerpnl.Width += 10;
-                if (Admindrawerpnl.Width >= 220)
-                {
-                    sliderbarExpand = true;
-                    Slidebartimer.Stop();
-                    drawerinnerpanel.Size = new Size(220, 225);
-                    panel3.Size = new Size(220, 40);
-                }
-            }
+            //    if (sliderbarExpand)
+            //    {
+            //        Admindrawerpnl.Width -= 10;
+            //        if (Admindrawerpnl.Width <= 61)
+            //        {
+            //            sliderbarExpand = false;
+            //            Slidebartimer.Stop();
+            //            drawerinnerpanel.Size = new Size(220, 0);
+            //            panel3.Size = new Size(220, 265);
+            //        }
+            //    }
+            //    else
+            //    {
+            //        Admindrawerpnl.Width += 10;
+            //        if (Admindrawerpnl.Width >= 220)
+            //        {
+            //            sliderbarExpand = true;
+            //            Slidebartimer.Stop();
+            //            drawerinnerpanel.Size = new Size(220, 225);
+            //            panel3.Size = new Size(220, 40);
+            //        }
+            //    }
         }
 
         private void MenuButton_Click(object sender, EventArgs e)
         {
-            Slidebartimer.Start();
+            //Slidebartimer.Start();
 
         }
 
@@ -65,6 +65,20 @@ namespace SparePart
             {
                 Application.Exit();
             }
+            else if (e.KeyCode == Keys.X)
+            {
+                Logoutbutton.PerformClick();
+            }
+            else if (e.KeyCode == Keys.F1)
+            {
+                Outofstockbtn.PerformClick();
+            }
+          else if (e.KeyCode == Keys.P)
+            {
+                Updateproductform updateproductform = new Updateproductform(true);
+                updateproductform.ShowDialog();
+            }
+
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
@@ -111,6 +125,13 @@ namespace SparePart
             AdminLowStock adminPage = new AdminLowStock();
             adminPage.Show();
             this.Hide();
+
+        }
+
+        private void addnewproductbutton_Click(object sender, EventArgs e)
+        {
+            Updateproductform updateproductform = new Updateproductform(true);
+            updateproductform.ShowDialog();
 
         }
     }
