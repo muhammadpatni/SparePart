@@ -56,6 +56,7 @@
             panel7 = new Panel();
             label14 = new Label();
             label15 = new Label();
+            label2 = new Label();
             RevenuPnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
@@ -76,9 +77,9 @@
             RevenuPnl.Controls.Add(label3);
             RevenuPnl.Controls.Add(pictureBox1);
             RevenuPnl.Controls.Add(TotalRevenuTxt);
-            RevenuPnl.Location = new Point(34, 25);
+            RevenuPnl.Location = new Point(114, 80);
             RevenuPnl.Name = "RevenuPnl";
-            RevenuPnl.Size = new Size(153, 104);
+            RevenuPnl.Size = new Size(191, 104);
             RevenuPnl.TabIndex = 0;
             // 
             // label3
@@ -115,11 +116,12 @@
             // 
             // panel2
             // 
+            panel2.BackColor = Color.White;
             panel2.Controls.Add(label13);
             panel2.Controls.Add(label12);
-            panel2.Location = new Point(34, 216);
+            panel2.Location = new Point(114, 244);
             panel2.Name = "panel2";
-            panel2.Size = new Size(483, 284);
+            panel2.Size = new Size(601, 316);
             panel2.TabIndex = 0;
             // 
             // label13
@@ -151,9 +153,9 @@
             InventoryPnl.Controls.Add(label1);
             InventoryPnl.Controls.Add(pictureBox2);
             InventoryPnl.Controls.Add(TotalinventoryTxt);
-            InventoryPnl.Location = new Point(200, 25);
+            InventoryPnl.Location = new Point(324, 80);
             InventoryPnl.Name = "InventoryPnl";
-            InventoryPnl.Size = new Size(153, 104);
+            InventoryPnl.Size = new Size(191, 104);
             InventoryPnl.TabIndex = 0;
             // 
             // label1
@@ -195,9 +197,9 @@
             OutOfStockPnl.Controls.Add(label5);
             OutOfStockPnl.Controls.Add(pictureBox3);
             OutOfStockPnl.Controls.Add(OutofStockTxt);
-            OutOfStockPnl.Location = new Point(366, 25);
+            OutOfStockPnl.Location = new Point(536, 80);
             OutOfStockPnl.Name = "OutOfStockPnl";
-            OutOfStockPnl.Size = new Size(153, 104);
+            OutOfStockPnl.Size = new Size(191, 104);
             OutOfStockPnl.TabIndex = 0;
             // 
             // label5
@@ -234,12 +236,13 @@
             // 
             // LowStcokPnl
             // 
+            LowStcokPnl.BackColor = Color.White;
             LowStcokPnl.Controls.Add(label7);
             LowStcokPnl.Controls.Add(pictureBox4);
             LowStcokPnl.Controls.Add(LowStockTxt);
-            LowStcokPnl.Location = new Point(531, 25);
+            LowStcokPnl.Location = new Point(739, 80);
             LowStcokPnl.Name = "LowStcokPnl";
-            LowStcokPnl.Size = new Size(153, 104);
+            LowStcokPnl.Size = new Size(191, 104);
             LowStcokPnl.TabIndex = 0;
             // 
             // label7
@@ -277,13 +280,14 @@
             // 
             // UdharPnl
             // 
+            UdharPnl.BackColor = Color.White;
             UdharPnl.Controls.Add(PendingCustomerTxt);
             UdharPnl.Controls.Add(label9);
             UdharPnl.Controls.Add(pictureBox5);
             UdharPnl.Controls.Add(UdharStatusTxt);
-            UdharPnl.Location = new Point(697, 25);
+            UdharPnl.Location = new Point(947, 80);
             UdharPnl.Name = "UdharPnl";
-            UdharPnl.Size = new Size(153, 104);
+            UdharPnl.Size = new Size(191, 104);
             UdharPnl.TabIndex = 0;
             UdharPnl.Paint += panel6_Paint;
             // 
@@ -332,11 +336,12 @@
             // 
             // panel7
             // 
+            panel7.BackColor = Color.White;
             panel7.Controls.Add(label14);
             panel7.Controls.Add(label15);
-            panel7.Location = new Point(531, 216);
+            panel7.Location = new Point(721, 244);
             panel7.Name = "panel7";
-            panel7.Size = new Size(319, 284);
+            panel7.Size = new Size(417, 316);
             panel7.TabIndex = 0;
             // 
             // label14
@@ -362,12 +367,24 @@
             label15.Text = "Inventory Health";
             label15.Click += label4_Click;
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.Black;
+            label2.Location = new Point(117, 22);
+            label2.Name = "label2";
+            label2.Size = new Size(206, 25);
+            label2.TabIndex = 5;
+            label2.Text = "Busness Overview";
+            // 
             // AdminDashboard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(248, 250, 252);
             ClientSize = new Size(1166, 553);
+            Controls.Add(label2);
             Controls.Add(panel7);
             Controls.Add(panel2);
             Controls.Add(UdharPnl);
@@ -398,6 +415,7 @@
             panel7.ResumeLayout(false);
             panel7.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -429,5 +447,6 @@
         private Panel panel7;
         private Label label14;
         private Label label15;
+        private Label label2;
     }
 }
