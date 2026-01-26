@@ -19,10 +19,15 @@ namespace SparePart
         public Adminoutofstoke()
         {
             InitializeComponent();
+
+            typeof(DataGridView).InvokeMember("DoubleBuffered",
+                System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.SetProperty,
+                null, dataview, new object[] { true });
         }
 
         private void Slidebartimer_Tick(object sender, EventArgs e)
         {
+            dataview.SuspendLayout();
             if (sliderbarExpand)
             {
                 Admindrawerpnl.Width -= 10;
@@ -30,8 +35,7 @@ namespace SparePart
                 {
                     sliderbarExpand = false;
                     Slidebartimer.Stop();
-                    drawerinnerpanel.Size = new Size(220, 0);
-                    panel3.Size = new Size(220, 265);
+                    FinishAnimation();
                 }
             }
             else
@@ -42,15 +46,22 @@ namespace SparePart
 
                     sliderbarExpand = true;
                     Slidebartimer.Stop();
-                    drawerinnerpanel.Size = new Size(220, 225);
-                    panel3.Size = new Size(220, 40);
+                    FinishAnimation();
 
                 }
             }
+            dataview.ResumeLayout();
         }
 
+        private void FinishAnimation()
+        {
+            dataview.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            drawerinnerpanel.Size = new Size(220, sliderbarExpand ? 225 : 0);
+            panel3.Size = new Size(220, sliderbarExpand ? 40 : 265);
+        }
         private void MenubtnDrawer_Click(object sender, EventArgs e)
         {
+            dataview.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
             Slidebartimer.Start();
         }
 
@@ -68,56 +79,36 @@ namespace SparePart
             this.Hide();
         }
 
-        private void Adminoutofstoke_Load(object sender, EventArgs e)
+        private async void Adminoutofstoke_Load(object sender, EventArgs e)
         {
-            loadproducts("SELECT * FROM Products WHERE Stock = 0 ");
+          await loadproducts("SELECT * FROM Products WHERE Stock = 0 ");
         }
 
-        private void LoadProductCards(DataTable productoutofstock)
+        async Task loadproducts(string query)
         {
-            Mainpanel.Controls.Clear();
-
-            foreach (DataRow row in productoutofstock.Rows)
+            dataview.Visible=false;
+            lbstatus.Visible=true;
+            try
             {
-                Productcard card = new Productcard();
+                DataTable dt = await Task.Run(() => DatabaseManagement.retrieve(query));
 
-                int productID = Convert.ToInt32(row["ProductID"]);
-                string productName = row["ProductName"].ToString();
-                int price = Convert.ToInt32(row["Price"]);
-                int minQuantity = Convert.ToInt32(row["lowstock"]);
-                int stock = Convert.ToInt32(row["Stock"]);
-
-                Image productImage = Properties.Resources.block_1000dp_FFFFFF;
-                card.getproductcarddetais(
-                    productID,
-                    productName,
-                    price,
-                    minQuantity,
-                    stock,
-                    productImage
-                );
-
-                card.Margin = new Padding(80, 10, 0, 10);
-                Mainpanel.Controls.Add(card);
+                if (dt != null && dt.Rows.Count > 0)
+                {
+                    productsoutofstock = dt;
+                    dataview.DataSource = productsoutofstock;
+                    dataview.Visible = true;
+                    lbstatus.Visible = false;
+                }
+                else
+                {
+                    lbstatus.Text = "All stock are healthy!";
+                }
             }
-        }
-
-
-        void loadproducts(string query)
-        {
-            productsoutofstock = DatabaseManagement.retrieve(query);
-            if (productsoutofstock != null && productsoutofstock.Rows.Count > 0)
+            catch (Exception ex)
             {
-                LoadProductCards(productsoutofstock);
+                MessageBox.Show("Error: " + ex.Message);
             }
-            else
-            {
-                all_stocks_are.Visible = true;
-
-            }
-
-
-
+            
         }
 
         private void panel9_Paint(object sender, PaintEventArgs e)

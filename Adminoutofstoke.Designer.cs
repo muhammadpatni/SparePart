@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             panel1 = new Panel();
             Outofstokelb1 = new Label();
             MenubtnDrawer = new PictureBox();
@@ -52,9 +55,10 @@
             label1 = new Label();
             Slidebartimer = new System.Windows.Forms.Timer(components);
             panel7 = new Panel();
-            all_stocks_are = new Label();
-            Mainpanel = new FlowLayoutPanel();
             panel9 = new Panel();
+            dataview = new DataGridView();
+            lbstatus = new Label();
+            panel10 = new Panel();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)MenubtnDrawer).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -66,8 +70,9 @@
             drawerinnerpanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel7.SuspendLayout();
-            Mainpanel.SuspendLayout();
             panel9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataview).BeginInit();
+            panel10.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -334,37 +339,14 @@
             panel7.BackColor = Color.FromArgb(30, 41, 59);
             panel7.Controls.Add(textBox1);
             panel7.Controls.Add(pictureBox2);
-            panel7.Location = new Point(208, 7);
+            panel7.Location = new Point(256, 7);
             panel7.Name = "panel7";
             panel7.Size = new Size(540, 51);
             panel7.TabIndex = 18;
             // 
-            // all_stocks_are
-            // 
-            all_stocks_are.AutoSize = true;
-            all_stocks_are.Font = new Font("Segoe UI", 12.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            all_stocks_are.ForeColor = Color.FromArgb(158, 158, 158);
-            all_stocks_are.Location = new Point(3, 0);
-            all_stocks_are.Name = "all_stocks_are";
-            all_stocks_are.Size = new Size(175, 23);
-            all_stocks_are.TabIndex = 19;
-            all_stocks_are.Text = "All stocks are healthy!";
-            all_stocks_are.Visible = false;
-            // 
-            // Mainpanel
-            // 
-            Mainpanel.AutoScroll = true;
-            Mainpanel.BackColor = Color.FromArgb(248, 250, 252);
-            Mainpanel.Controls.Add(all_stocks_are);
-            Mainpanel.Dock = DockStyle.Fill;
-            Mainpanel.ForeColor = Color.DarkOrchid;
-            Mainpanel.Location = new Point(220, 124);
-            Mainpanel.Name = "Mainpanel";
-            Mainpanel.Size = new Size(819, 448);
-            Mainpanel.TabIndex = 19;
-            // 
             // panel9
             // 
+            panel9.BackColor = Color.FromArgb(30, 41, 59);
             panel9.Controls.Add(panel7);
             panel9.Dock = DockStyle.Top;
             panel9.Location = new Point(220, 56);
@@ -373,13 +355,84 @@
             panel9.TabIndex = 20;
             panel9.Paint += panel9_Paint;
             // 
+            // dataview
+            // 
+            dataview.AllowUserToAddRows = false;
+            dataview.AllowUserToDeleteRows = false;
+            dataview.AllowUserToResizeColumns = false;
+            dataview.AllowUserToResizeRows = false;
+            dataview.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataview.BackgroundColor = Color.FromArgb(248, 250, 252);
+            dataview.BorderStyle = BorderStyle.None;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(30, 41, 59);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(30, 41, 59);
+            dataGridViewCellStyle1.SelectionForeColor = Color.White;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
+            dataview.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataview.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = Color.White;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = Color.FromArgb(30, 41, 59);
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(99, 105, 118);
+            dataGridViewCellStyle2.SelectionForeColor = Color.White;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dataview.DefaultCellStyle = dataGridViewCellStyle2;
+            dataview.Dock = DockStyle.Fill;
+            dataview.EnableHeadersVisualStyles = false;
+            dataview.GridColor = Color.FromArgb(30, 41, 59);
+            dataview.Location = new Point(30, 30);
+            dataview.Margin = new Padding(50);
+            dataview.MultiSelect = false;
+            dataview.Name = "dataview";
+            dataview.ReadOnly = true;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = SystemColors.Control;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            dataview.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataview.RowHeadersVisible = false;
+            dataview.RowTemplate.DividerHeight = 2;
+            dataview.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataview.Size = new Size(759, 388);
+            dataview.TabIndex = 21;
+            dataview.VirtualMode = true;
+            // 
+            // lbstatus
+            // 
+            lbstatus.AutoSize = true;
+            lbstatus.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbstatus.ForeColor = Color.FromArgb(162, 162, 162);
+            lbstatus.Location = new Point(552, 285);
+            lbstatus.Name = "lbstatus";
+            lbstatus.Size = new Size(81, 21);
+            lbstatus.TabIndex = 19;
+            lbstatus.Text = "Loading...";
+            // 
+            // panel10
+            // 
+            panel10.Controls.Add(dataview);
+            panel10.Controls.Add(lbstatus);
+            panel10.Dock = DockStyle.Fill;
+            panel10.Location = new Point(220, 124);
+            panel10.Name = "panel10";
+            panel10.Padding = new Padding(30);
+            panel10.Size = new Size(819, 448);
+            panel10.TabIndex = 22;
+            // 
             // Adminoutofstoke
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(248, 250, 252);
             ClientSize = new Size(1039, 572);
-            Controls.Add(Mainpanel);
+            Controls.Add(panel10);
             Controls.Add(panel9);
             Controls.Add(Admindrawerpnl);
             Controls.Add(panel1);
@@ -402,9 +455,10 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel7.ResumeLayout(false);
             panel7.PerformLayout();
-            Mainpanel.ResumeLayout(false);
-            Mainpanel.PerformLayout();
             panel9.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataview).EndInit();
+            panel10.ResumeLayout(false);
+            panel10.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -430,11 +484,12 @@
         private Panel Dashboardselected;
         private TextBox textBox1;
         private PictureBox pictureBox2;
-        private Label Outofstokelb1;
         private Panel panel7;
         private Panel panel8;
-        private Label all_stocks_are;
-        private FlowLayoutPanel Mainpanel;
         private Panel panel9;
+        private DataGridView dataview;
+        private Label Outofstokelb1;
+        private Label lbstatus;
+        private Panel panel10;
     }
 }

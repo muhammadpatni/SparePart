@@ -72,6 +72,7 @@
             // 
             // RevenuPnl
             // 
+            RevenuPnl.BackColor = Color.White;
             RevenuPnl.Controls.Add(label3);
             RevenuPnl.Controls.Add(pictureBox1);
             RevenuPnl.Controls.Add(TotalRevenuTxt);
@@ -104,11 +105,11 @@
             // TotalRevenuTxt
             // 
             TotalRevenuTxt.AutoSize = true;
-            TotalRevenuTxt.Font = new Font("Roboto", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            TotalRevenuTxt.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             TotalRevenuTxt.ForeColor = Color.Black;
             TotalRevenuTxt.Location = new Point(26, 72);
             TotalRevenuTxt.Name = "TotalRevenuTxt";
-            TotalRevenuTxt.Size = new Size(89, 25);
+            TotalRevenuTxt.Size = new Size(99, 25);
             TotalRevenuTxt.TabIndex = 2;
             TotalRevenuTxt.Text = "Rs 4443";
             // 
@@ -135,17 +136,18 @@
             // label12
             // 
             label12.AutoSize = true;
-            label12.Font = new Font("Roboto", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label12.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label12.ForeColor = Color.Black;
             label12.Location = new Point(37, 28);
             label12.Name = "label12";
-            label12.Size = new Size(214, 25);
+            label12.Size = new Size(244, 25);
             label12.TabIndex = 2;
             label12.Text = "Weekly Revenu Trend";
             label12.Click += label4_Click;
             // 
             // InventoryPnl
             // 
+            InventoryPnl.BackColor = Color.White;
             InventoryPnl.Controls.Add(label1);
             InventoryPnl.Controls.Add(pictureBox2);
             InventoryPnl.Controls.Add(TotalinventoryTxt);
@@ -178,17 +180,18 @@
             // TotalinventoryTxt
             // 
             TotalinventoryTxt.AutoSize = true;
-            TotalinventoryTxt.Font = new Font("Roboto", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            TotalinventoryTxt.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             TotalinventoryTxt.ForeColor = Color.Black;
             TotalinventoryTxt.Location = new Point(43, 72);
             TotalinventoryTxt.Name = "TotalinventoryTxt";
-            TotalinventoryTxt.Size = new Size(36, 25);
+            TotalinventoryTxt.Size = new Size(38, 25);
             TotalinventoryTxt.TabIndex = 2;
             TotalinventoryTxt.Text = "15";
             TotalinventoryTxt.Click += label4_Click;
             // 
             // OutOfStockPnl
             // 
+            OutOfStockPnl.BackColor = Color.White;
             OutOfStockPnl.Controls.Add(label5);
             OutOfStockPnl.Controls.Add(pictureBox3);
             OutOfStockPnl.Controls.Add(OutofStockTxt);
@@ -221,11 +224,11 @@
             // OutofStockTxt
             // 
             OutofStockTxt.AutoSize = true;
-            OutofStockTxt.Font = new Font("Roboto", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            OutofStockTxt.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             OutofStockTxt.ForeColor = Color.Black;
             OutofStockTxt.Location = new Point(51, 72);
             OutofStockTxt.Name = "OutofStockTxt";
-            OutofStockTxt.Size = new Size(36, 25);
+            OutofStockTxt.Size = new Size(38, 25);
             OutofStockTxt.TabIndex = 2;
             OutofStockTxt.Text = "44";
             // 
@@ -263,11 +266,11 @@
             // LowStockTxt
             // 
             LowStockTxt.AutoSize = true;
-            LowStockTxt.Font = new Font("Roboto", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            LowStockTxt.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             LowStockTxt.ForeColor = Color.Black;
             LowStockTxt.Location = new Point(54, 72);
             LowStockTxt.Name = "LowStockTxt";
-            LowStockTxt.Size = new Size(36, 25);
+            LowStockTxt.Size = new Size(38, 25);
             LowStockTxt.TabIndex = 2;
             LowStockTxt.Text = "43";
             LowStockTxt.Click += label8_Click;
@@ -319,11 +322,11 @@
             // UdharStatusTxt
             // 
             UdharStatusTxt.AutoSize = true;
-            UdharStatusTxt.Font = new Font("Roboto", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            UdharStatusTxt.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             UdharStatusTxt.ForeColor = Color.Black;
             UdharStatusTxt.Location = new Point(13, 55);
             UdharStatusTxt.Name = "UdharStatusTxt";
-            UdharStatusTxt.Size = new Size(89, 25);
+            UdharStatusTxt.Size = new Size(99, 25);
             UdharStatusTxt.TabIndex = 2;
             UdharStatusTxt.Text = "Rs 4443";
             // 
@@ -350,11 +353,11 @@
             // label15
             // 
             label15.AutoSize = true;
-            label15.Font = new Font("Roboto", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label15.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label15.ForeColor = Color.Black;
             label15.Location = new Point(13, 28);
             label15.Name = "label15";
-            label15.Size = new Size(169, 25);
+            label15.Size = new Size(184, 25);
             label15.TabIndex = 2;
             label15.Text = "Inventory Health";
             label15.Click += label4_Click;
@@ -364,7 +367,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(248, 250, 252);
-            ClientSize = new Size(864, 553);
+            ClientSize = new Size(1166, 553);
             Controls.Add(panel7);
             Controls.Add(panel2);
             Controls.Add(UdharPnl);
