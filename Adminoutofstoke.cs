@@ -81,13 +81,13 @@ namespace SparePart
 
         private async void Adminoutofstoke_Load(object sender, EventArgs e)
         {
-          await loadproducts("SELECT * FROM Products WHERE Stock = 0 ");
+            await loadproducts("SELECT * FROM Products WHERE Stock = 0 ");
         }
 
         async Task loadproducts(string query)
         {
-            dataview.Visible=false;
-            lbstatus.Visible=true;
+            dataview.Visible = false;
+            lbstatus.Visible = true;
             try
             {
                 DataTable dt = await Task.Run(() => DatabaseManagement.retrieve(query));
@@ -108,12 +108,19 @@ namespace SparePart
             {
                 MessageBox.Show("Error: " + ex.Message);
             }
-            
+
         }
 
         private void panel9_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void Minquantitybtn_Click(object sender, EventArgs e)
+        {
+            AdminLowStock adminPage = new AdminLowStock();
+            adminPage.Show();
+            this.Hide();
         }
     }
 }

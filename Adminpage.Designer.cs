@@ -269,6 +269,7 @@
             Minquantitybtn.TabIndex = 12;
             Minquantitybtn.Text = " Min. Quantity";
             Minquantitybtn.UseVisualStyleBackColor = false;
+            Minquantitybtn.Click += Minquantitybtn_Click;
             // 
             // panel6
             // 

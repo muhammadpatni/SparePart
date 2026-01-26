@@ -30,7 +30,7 @@ namespace SparePart
                     sliderbarExpand = false;
                     Slidebartimer.Stop();
                     drawerinnerpanel.Size = new Size(220, 0);
-                  panel3.Size = new Size(220, 265);
+                    panel3.Size = new Size(220, 265);
                 }
             }
             else
@@ -41,7 +41,7 @@ namespace SparePart
                     sliderbarExpand = true;
                     Slidebartimer.Stop();
                     drawerinnerpanel.Size = new Size(220, 225);
-                  panel3.Size = new Size(220, 40);
+                    panel3.Size = new Size(220, 40);
                 }
             }
         }
@@ -103,6 +103,14 @@ namespace SparePart
 
         private void drawerinnerpanel_Paint(object sender, PaintEventArgs e)
         {
+
+        }
+
+        private void Minquantitybtn_Click(object sender, EventArgs e)
+        {
+            AdminLowStock adminPage = new AdminLowStock();
+            adminPage.Show();
+            this.Hide();
 
         }
     }
