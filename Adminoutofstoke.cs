@@ -108,9 +108,13 @@ namespace SparePart
             {
                 searcchtxt.Focus();
             }
+            else if (e.KeyCode == Keys.Tab)
+            {
+                dataview.Focus();
+            }
         }
 
-        private void dataview_KeyDown(object sender, KeyEventArgs e)
+        private async void dataview_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
@@ -125,8 +129,10 @@ namespace SparePart
                     Updateproductform updateForm = new Updateproductform(false);
                     updateForm.settextboxes(id, name, price, stock, lowstock);
                     updateForm.ShowDialog();
-
                     e.Handled = true;
+                await loadproducts("SELECT * FROM Products WHERE Stock = 0");
+                    searcchtxt.Clear();
+                    searcchtxt.Focus();
                 }
             }
         }

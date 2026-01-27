@@ -110,6 +110,7 @@
             searcchtxt.Name = "searcchtxt";
             searcchtxt.Size = new Size(482, 35);
             searcchtxt.TabIndex = 12;
+            searcchtxt.TabStop = false;
             searcchtxt.TextChanged += searcchtxt_TextChanged;
             searcchtxt.KeyDown += searcchtxt_KeyDown;
             // 
@@ -153,6 +154,7 @@
             Minquantitybtn.Padding = new Padding(10, 0, 0, 0);
             Minquantitybtn.Size = new Size(194, 37);
             Minquantitybtn.TabIndex = 12;
+            Minquantitybtn.TabStop = false;
             Minquantitybtn.Text = " Min. Quantity";
             Minquantitybtn.UseVisualStyleBackColor = false;
             Minquantitybtn.Click += Minquantitybtn_Click;
@@ -191,6 +193,7 @@
             Outofstockbtn.Padding = new Padding(10, 0, 0, 0);
             Outofstockbtn.Size = new Size(194, 37);
             Outofstockbtn.TabIndex = 12;
+            Outofstockbtn.TabStop = false;
             Outofstockbtn.Text = "Out Of Stock";
             Outofstockbtn.UseVisualStyleBackColor = false;
             Outofstockbtn.Click += Outofstockbtn_Click;
@@ -220,6 +223,7 @@
             Dashboardbtn.Padding = new Padding(10, 0, 0, 0);
             Dashboardbtn.Size = new Size(194, 37);
             Dashboardbtn.TabIndex = 12;
+            Dashboardbtn.TabStop = false;
             Dashboardbtn.Text = "Dashboard";
             Dashboardbtn.UseVisualStyleBackColor = false;
             Dashboardbtn.Click += Dashboardbtn_Click;
@@ -257,6 +261,7 @@
             Logoutbutton.Padding = new Padding(10, 0, 0, 0);
             Logoutbutton.Size = new Size(194, 37);
             Logoutbutton.TabIndex = 11;
+            Logoutbutton.TabStop = false;
             Logoutbutton.Text = "LOG OUT";
             Logoutbutton.UseVisualStyleBackColor = false;
             Logoutbutton.Click += Logoutbutton_Click;
@@ -384,6 +389,7 @@
             dataview.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataview.Size = new Size(759, 388);
             dataview.TabIndex = 21;
+            dataview.TabStop = false;
             dataview.VirtualMode = true;
             dataview.KeyDown += dataview_KeyDown;
             // 

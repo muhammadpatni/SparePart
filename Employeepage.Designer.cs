@@ -1,6 +1,6 @@
 ﻿namespace SparePart
 {
-    partial class Employeebilling
+    partial class Employeepage
     {
         /// <summary>
         /// Required designer variable.

@@ -320,6 +320,7 @@
             // 
             // searchtxt
             // 
+            searchtxt.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             searchtxt.Location = new Point(46, 8);
             searchtxt.Multiline = true;
             searchtxt.Name = "searchtxt";
