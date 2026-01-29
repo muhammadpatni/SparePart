@@ -73,12 +73,17 @@ namespace SparePart
             {
                 Outofstockbtn.PerformClick();
             }
-          else if (e.KeyCode == Keys.P)
+            else if (e.KeyCode == Keys.P && e.Control)
+            {
+                Adminallproducts adminallproducts = new Adminallproducts();
+                adminallproducts.Show();
+                this.Hide();
+            }
+            else if (e.KeyCode == Keys.P)
             {
                 Updateproductform updateproductform = new Updateproductform(true);
                 updateproductform.ShowDialog();
             }
-
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
@@ -133,6 +138,13 @@ namespace SparePart
             Updateproductform updateproductform = new Updateproductform(true);
             updateproductform.ShowDialog();
 
+        }
+
+        private void Productsbtn_Click(object sender, EventArgs e)
+        {
+            Adminallproducts adminallproducts = new Adminallproducts();
+            adminallproducts.Show();
+            this.Hide();
         }
     }
 }

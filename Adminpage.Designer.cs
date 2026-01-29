@@ -188,6 +188,7 @@
             Productsbtn.SizeMode = PictureBoxSizeMode.StretchImage;
             Productsbtn.TabIndex = 12;
             Productsbtn.TabStop = false;
+            Productsbtn.Click += Productsbtn_Click;
             // 
             // addnewproductbutton
             // 

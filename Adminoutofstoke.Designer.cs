@@ -105,6 +105,7 @@
             // 
             // searcchtxt
             // 
+            searcchtxt.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             searcchtxt.Location = new Point(46, 8);
             searcchtxt.Multiline = true;
             searcchtxt.Name = "searcchtxt";
