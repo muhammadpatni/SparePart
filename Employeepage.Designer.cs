@@ -69,7 +69,7 @@
             label7 = new Label();
             panel15 = new Panel();
             discounttxt = new TextBox();
-            sabtotallb = new Label();
+            subtotallb = new Label();
             label6 = new Label();
             label5 = new Label();
             panel11 = new Panel();
@@ -456,7 +456,7 @@
             panel14.Controls.Add(label7);
             panel14.Controls.Add(panel15);
             panel14.Controls.Add(discounttxt);
-            panel14.Controls.Add(sabtotallb);
+            panel14.Controls.Add(subtotallb);
             panel14.Controls.Add(label6);
             panel14.Controls.Add(label5);
             panel14.Dock = DockStyle.Bottom;
@@ -551,19 +551,19 @@
             discounttxt.TabIndex = 18;
             discounttxt.TabStop = false;
             // 
-            // sabtotallb
+            // subtotallb
             // 
-            sabtotallb.AutoSize = true;
-            sabtotallb.BackColor = Color.Transparent;
-            sabtotallb.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            sabtotallb.ForeColor = Color.FromArgb(30, 41, 59);
-            sabtotallb.Location = new Point(370, 7);
-            sabtotallb.Name = "sabtotallb";
-            sabtotallb.RightToLeft = RightToLeft.Yes;
-            sabtotallb.Size = new Size(53, 20);
-            sabtotallb.TabIndex = 25;
-            sabtotallb.Text = "RS 0.0";
-            sabtotallb.TextAlign = ContentAlignment.MiddleRight;
+            subtotallb.AutoSize = true;
+            subtotallb.BackColor = Color.Transparent;
+            subtotallb.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            subtotallb.ForeColor = Color.FromArgb(30, 41, 59);
+            subtotallb.Location = new Point(370, 7);
+            subtotallb.Name = "subtotallb";
+            subtotallb.RightToLeft = RightToLeft.Yes;
+            subtotallb.Size = new Size(53, 20);
+            subtotallb.TabIndex = 25;
+            subtotallb.Text = "RS 0.0";
+            subtotallb.TextAlign = ContentAlignment.MiddleRight;
             // 
             // label6
             // 
@@ -886,7 +886,7 @@
         private PictureBox pictureBox3;
         private Label lbstatus;
         private Panel panel14;
-        private Label sabtotallb;
+        private Label subtotallb;
         private Label label6;
         private Label label5;
         private TextBox discounttxt;

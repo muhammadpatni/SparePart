@@ -127,6 +127,35 @@ namespace SparePart
 
         }
 
+        private void CalculateBill()
+        {
+            decimal subtotal = 0m;
+            decimal discount = 0m;
+
+            foreach (DataGridViewRow row in cartview.Rows)
+            {
+                //if (row.IsNewRow) continue; 
+
+                object cellValue = row.Cells[3].Value;
+                if (cellValue != null)
+                {
+                    subtotal += Convert.ToDecimal(cellValue);
+                }
+            }
+
+           subtotallb.Text ="RS "+ subtotal.ToString("0.00");
+
+            if (!string.IsNullOrWhiteSpace(discounttxt.Text))
+            {
+                decimal.TryParse(discounttxt.Text, out discount);
+            }
+
+            decimal payable = subtotal - discount;
+            if (payable < 0) payable = 0;
+
+            Payablelb.Text = payable.ToString("0.00");
+        }
+
         private void searcchtxt_TextChanged(object sender, EventArgs e)
         {
             Searchproduct($"SELECT * FROM Products WHERE ProductName LIKE '%{searcchtxt.Text}%' AND Stock > 0 ");
@@ -239,7 +268,7 @@ namespace SparePart
 
                                 row.Cells[2].Value = oldQty + pQty;
                                 row.Cells[3].Value = oldTotal + pTotal;
-
+                                CalculateBill();
                                 productFound = true;
                                 break; 
                             }
@@ -248,12 +277,13 @@ namespace SparePart
                         if (!productFound)
                         {
                             cartview.Rows.Add(pName, pPrice, pQty, pTotal);
-
+                            CalculateBill();
                             e.Handled = true;
                             await loadproducts("SELECT * FROM Products WHERE Stock >0");
                             searcchtxt.Clear();
                             searcchtxt.Focus();
                         }
+
                     }
                 }
             }
