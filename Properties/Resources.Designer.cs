@@ -73,6 +73,16 @@ namespace SparePart.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap add_shopping_cart_1000dp_1E293B {
+            get {
+                object obj = ResourceManager.GetObject("add_shopping_cart_1000dp_1E293B", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Black_and_White_Bold_Automotive_Logo {
             get {
                 object obj = ResourceManager.GetObject("Black and White Bold Automotive Logo", resourceCulture);
@@ -136,6 +146,26 @@ namespace SparePart.Properties {
         internal static System.Drawing.Bitmap dashboards {
             get {
                 object obj = ResourceManager.GetObject("dashboards", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap delete_16dp_BB271A {
+            get {
+                object obj = ResourceManager.GetObject("delete_16dp_BB271A", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap delete_40dp_BB271A {
+            get {
+                object obj = ResourceManager.GetObject("delete_40dp_BB271A", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -96,7 +96,7 @@ namespace SparePart
             {
                 Application.Exit();
             }
-            else if (e.KeyCode == Keys.X)
+            else if (e.KeyCode == Keys.X && (!searcchtxt.Focused))
             {
                 Logoutbutton.PerformClick();
             }

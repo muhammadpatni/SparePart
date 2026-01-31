@@ -28,9 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Employeepage));
+            DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle13 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle14 = new DataGridViewCellStyle();
             Admindrawerpnl = new Panel();
             panel5 = new Panel();
             Savedbillsbtn = new Button();
@@ -50,11 +55,17 @@
             Outofstokelb1 = new Label();
             panel1 = new Panel();
             panel7 = new Panel();
-            Cartpanel = new FlowLayoutPanel();
+            cartpanel = new Panel();
+            cartview = new DataGridView();
+            Productname = new DataGridViewTextBoxColumn();
+            Price = new DataGridViewTextBoxColumn();
+            Quantity = new DataGridViewTextBoxColumn();
+            Total = new DataGridViewTextBoxColumn();
+            Delete = new DataGridViewImageColumn();
             panel14 = new Panel();
             button2 = new Button();
             Printbtn = new Button();
-            label8 = new Label();
+            Payablelb = new Label();
             label7 = new Label();
             panel15 = new Panel();
             discounttxt = new TextBox();
@@ -85,6 +96,8 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
             panel7.SuspendLayout();
+            cartpanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)cartview).BeginInit();
             panel14.SuspendLayout();
             panel11.SuspendLayout();
             panel13.SuspendLayout();
@@ -297,11 +310,11 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Black", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(21, 153);
+            label1.Location = new Point(3, 153);
             label1.Name = "label1";
-            label1.Size = new Size(180, 30);
+            label1.Size = new Size(215, 30);
             label1.TabIndex = 15;
-            label1.Text = "PARTEX ADMIN";
+            label1.Text = "PARTEX EMPLOYEE";
             // 
             // Outofstokelb1
             // 
@@ -328,7 +341,7 @@
             // panel7
             // 
             panel7.BackColor = Color.White;
-            panel7.Controls.Add(Cartpanel);
+            panel7.Controls.Add(cartpanel);
             panel7.Controls.Add(panel14);
             panel7.Controls.Add(panel11);
             panel7.Dock = DockStyle.Right;
@@ -339,22 +352,107 @@
             panel7.TabIndex = 21;
             panel7.Paint += panel7_Paint;
             // 
-            // Cartpanel
+            // cartpanel
             // 
-            Cartpanel.BackColor = Color.White;
-            Cartpanel.Dock = DockStyle.Fill;
-            Cartpanel.Location = new Point(0, 151);
-            Cartpanel.Name = "Cartpanel";
-            Cartpanel.Size = new Size(473, 133);
-            Cartpanel.TabIndex = 2;
-            Cartpanel.Paint += Cartpanel_Paint;
+            cartpanel.Controls.Add(cartview);
+            cartpanel.Dock = DockStyle.Fill;
+            cartpanel.Location = new Point(0, 151);
+            cartpanel.Name = "cartpanel";
+            cartpanel.Padding = new Padding(5);
+            cartpanel.Size = new Size(473, 133);
+            cartpanel.TabIndex = 2;
+            // 
+            // cartview
+            // 
+            cartview.AllowUserToAddRows = false;
+            cartview.AllowUserToDeleteRows = false;
+            cartview.AllowUserToResizeColumns = false;
+            cartview.AllowUserToResizeRows = false;
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = Color.White;
+            dataGridViewCellStyle8.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle8.ForeColor = Color.FromArgb(53, 63, 79);
+            dataGridViewCellStyle8.SelectionBackColor = Color.Gray;
+            dataGridViewCellStyle8.SelectionForeColor = Color.White;
+            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.False;
+            cartview.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle8;
+            cartview.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            cartview.BackgroundColor = Color.White;
+            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = Color.White;
+            dataGridViewCellStyle9.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle9.ForeColor = Color.FromArgb(53, 63, 79);
+            dataGridViewCellStyle9.SelectionBackColor = Color.White;
+            dataGridViewCellStyle9.SelectionForeColor = Color.FromArgb(53, 63, 79);
+            dataGridViewCellStyle9.WrapMode = DataGridViewTriState.False;
+            cartview.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            cartview.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            cartview.Columns.AddRange(new DataGridViewColumn[] { Productname, Price, Quantity, Total, Delete });
+            cartview.Dock = DockStyle.Fill;
+            cartview.EnableHeadersVisualStyles = false;
+            cartview.GridColor = Color.FromArgb(53, 63, 79);
+            cartview.Location = new Point(5, 5);
+            cartview.Name = "cartview";
+            cartview.RowHeadersVisible = false;
+            dataGridViewCellStyle11.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = Color.White;
+            dataGridViewCellStyle11.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle11.ForeColor = Color.FromArgb(53, 63, 79);
+            dataGridViewCellStyle11.SelectionBackColor = Color.Gray;
+            dataGridViewCellStyle11.SelectionForeColor = Color.White;
+            dataGridViewCellStyle11.WrapMode = DataGridViewTriState.False;
+            cartview.RowsDefaultCellStyle = dataGridViewCellStyle11;
+            cartview.RowTemplate.DividerHeight = 2;
+            cartview.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            cartview.Size = new Size(463, 123);
+            cartview.TabIndex = 0;
+            cartview.TabStop = false;
+            cartview.CellContentClick += cartview_CellContentClick;
+            // 
+            // Productname
+            // 
+            Productname.FillWeight = 280F;
+            Productname.HeaderText = "ProductName";
+            Productname.Name = "Productname";
+            // 
+            // Price
+            // 
+            Price.FillWeight = 150F;
+            Price.HeaderText = "Price";
+            Price.Name = "Price";
+            // 
+            // Quantity
+            // 
+            Quantity.HeaderText = "Qty.";
+            Quantity.Name = "Quantity";
+            // 
+            // Total
+            // 
+            Total.HeaderText = "Total";
+            Total.Name = "Total";
+            // 
+            // Delete
+            // 
+            dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = Color.White;
+            dataGridViewCellStyle10.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle10.ForeColor = Color.Red;
+            dataGridViewCellStyle10.NullValue = resources.GetObject("dataGridViewCellStyle10.NullValue");
+            dataGridViewCellStyle10.SelectionBackColor = Color.White;
+            dataGridViewCellStyle10.SelectionForeColor = Color.Red;
+            Delete.DefaultCellStyle = dataGridViewCellStyle10;
+            Delete.HeaderText = "";
+            Delete.Image = Properties.Resources.delete_16dp_BB271A;
+            Delete.Name = "Delete";
+            Delete.Resizable = DataGridViewTriState.True;
+            Delete.SortMode = DataGridViewColumnSortMode.Automatic;
             // 
             // panel14
             // 
             panel14.BackColor = Color.FromArgb(250, 250, 250);
             panel14.Controls.Add(button2);
             panel14.Controls.Add(Printbtn);
-            panel14.Controls.Add(label8);
+            panel14.Controls.Add(Payablelb);
             panel14.Controls.Add(label7);
             panel14.Controls.Add(panel15);
             panel14.Controls.Add(discounttxt);
@@ -407,17 +505,17 @@
             Printbtn.UseVisualStyleBackColor = false;
             Printbtn.Click += button1_Click;
             // 
-            // label8
+            // Payablelb
             // 
-            label8.AutoSize = true;
-            label8.BackColor = Color.Transparent;
-            label8.Font = new Font("Segoe UI Black", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label8.ForeColor = Color.FromArgb(22, 31, 50);
-            label8.Location = new Point(370, 82);
-            label8.Name = "label8";
-            label8.Size = new Size(46, 30);
-            label8.TabIndex = 26;
-            label8.Text = "0.0";
+            Payablelb.AutoSize = true;
+            Payablelb.BackColor = Color.Transparent;
+            Payablelb.Font = new Font("Segoe UI Black", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Payablelb.ForeColor = Color.FromArgb(22, 31, 50);
+            Payablelb.Location = new Point(370, 82);
+            Payablelb.Name = "Payablelb";
+            Payablelb.Size = new Size(46, 30);
+            Payablelb.TabIndex = 26;
+            Payablelb.Text = "0.0";
             // 
             // label7
             // 
@@ -608,23 +706,23 @@
             dataview.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataview.BackgroundColor = Color.FromArgb(241, 245, 249);
             dataview.BorderStyle = BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(30, 41, 59);
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.ForeColor = Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(30, 41, 59);
-            dataGridViewCellStyle1.SelectionForeColor = Color.White;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
-            dataview.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle12.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.BackColor = Color.FromArgb(30, 41, 59);
+            dataGridViewCellStyle12.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle12.ForeColor = Color.White;
+            dataGridViewCellStyle12.SelectionBackColor = Color.FromArgb(30, 41, 59);
+            dataGridViewCellStyle12.SelectionForeColor = Color.White;
+            dataGridViewCellStyle12.WrapMode = DataGridViewTriState.False;
+            dataview.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
             dataview.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = Color.White;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = Color.FromArgb(30, 41, 59);
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(99, 105, 118);
-            dataGridViewCellStyle2.SelectionForeColor = Color.White;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dataview.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle13.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle13.BackColor = Color.White;
+            dataGridViewCellStyle13.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle13.ForeColor = Color.FromArgb(30, 41, 59);
+            dataGridViewCellStyle13.SelectionBackColor = Color.FromArgb(99, 105, 118);
+            dataGridViewCellStyle13.SelectionForeColor = Color.White;
+            dataGridViewCellStyle13.WrapMode = DataGridViewTriState.False;
+            dataview.DefaultCellStyle = dataGridViewCellStyle13;
             dataview.Dock = DockStyle.Fill;
             dataview.EnableHeadersVisualStyles = false;
             dataview.GridColor = Color.FromArgb(30, 41, 59);
@@ -633,14 +731,14 @@
             dataview.MultiSelect = false;
             dataview.Name = "dataview";
             dataview.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = SystemColors.Control;
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            dataview.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle14.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = SystemColors.Control;
+            dataGridViewCellStyle14.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle14.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle14.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = DataGridViewTriState.False;
+            dataview.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
             dataview.RowHeadersVisible = false;
             dataview.RowTemplate.DividerHeight = 2;
             dataview.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -649,6 +747,7 @@
             dataview.TabStop = false;
             dataview.VirtualMode = true;
             dataview.CellContentClick += dataview_CellContentClick;
+            dataview.KeyDown += dataview_KeyDown;
             // 
             // lbstatus
             // 
@@ -690,6 +789,7 @@
             searcchtxt.TabIndex = 12;
             searcchtxt.TabStop = false;
             searcchtxt.TextChanged += searcchtxt_TextChanged;
+            searcchtxt.KeyDown += searcchtxt_KeyDown;
             // 
             // pictureBox2
             // 
@@ -712,6 +812,7 @@
             Controls.Add(panel1);
             Controls.Add(Admindrawerpnl);
             FormBorderStyle = FormBorderStyle.None;
+            KeyPreview = true;
             Name = "Employeepage";
             Text = "Employeebilling";
             WindowState = FormWindowState.Maximized;
@@ -728,6 +829,8 @@
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel7.ResumeLayout(false);
+            cartpanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)cartview).EndInit();
             panel14.ResumeLayout(false);
             panel14.PerformLayout();
             panel11.ResumeLayout(false);
@@ -783,15 +886,21 @@
         private PictureBox pictureBox3;
         private Label lbstatus;
         private Panel panel14;
-        private FlowLayoutPanel Cartpanel;
         private Label sabtotallb;
         private Label label6;
         private Label label5;
         private TextBox discounttxt;
-        private Label label8;
+        private Label Payablelb;
         private Label label7;
         private Panel panel15;
         private Button Printbtn;
         private Button button2;
+        private Panel cartpanel;
+        private DataGridView cartview;
+        private DataGridViewTextBoxColumn Productname;
+        private DataGridViewTextBoxColumn Price;
+        private DataGridViewTextBoxColumn Quantity;
+        private DataGridViewTextBoxColumn Total;
+        private DataGridViewImageColumn Delete;
     }
 }

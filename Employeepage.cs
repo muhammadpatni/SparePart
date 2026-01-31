@@ -127,15 +127,6 @@ namespace SparePart
 
         }
 
-        private void Employeepage_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Escape)
-            {
-                this.Close();
-            }
-
-        }
-
         private void searcchtxt_TextChanged(object sender, EventArgs e)
         {
             Searchproduct($"SELECT * FROM Products WHERE ProductName LIKE '%{searcchtxt.Text}%' AND Stock > 0 ");
@@ -168,5 +159,105 @@ namespace SparePart
             }
 
         }
+
+        private void Employeepage_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                Application.Exit();
+            }
+            else if(e.KeyCode==Keys.Tab && e.Control)
+            {
+                cartview.Focus();
+            }
+            else if (e.KeyCode == Keys.Tab)
+            {
+                dataview.Focus();
+            }
+            else if (e.KeyCode == Keys.X && (!searcchtxt.Focused))
+            {
+                Logoutbutton.PerformClick();
+            }
+            else if (e.KeyCode == Keys.F1)
+            {
+                Returnbtn.PerformClick();
+            }
+            else if (e.KeyCode == Keys.F && e.Control)
+            {
+                searcchtxt.Focus();
+            }
+
+        }
+
+        private void searcchtxt_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Tab)
+            {
+                e.SuppressKeyPress = true;
+                dataview.Focus();
+            }
+            else if (e.KeyCode == Keys.Tab && e.Control)
+            {
+                e.SuppressKeyPress = true;
+                cartview.Focus();
+            }
+        }
+
+        private void cartview_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private async void dataview_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (dataview.CurrentRow != null)
+                {
+                    string id = dataview.CurrentRow.Cells[0].Value.ToString();
+                    string name = dataview.CurrentRow.Cells[1].Value.ToString();
+                    string price = dataview.CurrentRow.Cells[2].Value.ToString();
+                    string stock = dataview.CurrentRow.Cells[3].Value.ToString();
+
+                    Cartandreturn cartBox = new Cartandreturn(id, name, price, stock);
+
+                    if (cartBox.ShowDialog() == DialogResult.OK)
+                    {
+                        string pName = cartBox.ReturnName;
+                        int pPrice = cartBox.ReturnPrice;
+                        int pQty = cartBox.ReturnQuantity;
+                        int pTotal = cartBox.ReturnTotal;
+
+                        bool productFound = false;
+
+                        foreach (DataGridViewRow row in cartview.Rows)
+                        {
+                            if (row.Cells[0].Value != null && row.Cells[0].Value.ToString() == pName)
+                            {
+                                int oldQty = Convert.ToInt32(row.Cells[2].Value);
+                                int oldTotal = Convert.ToInt32(row.Cells[3].Value);
+
+                                row.Cells[2].Value = oldQty + pQty;
+                                row.Cells[3].Value = oldTotal + pTotal;
+
+                                productFound = true;
+                                break; 
+                            }
+                        }
+
+                        if (!productFound)
+                        {
+                            cartview.Rows.Add(pName, pPrice, pQty, pTotal);
+
+                            e.Handled = true;
+                            await loadproducts("SELECT * FROM Products WHERE Stock >0");
+                            searcchtxt.Clear();
+                            searcchtxt.Focus();
+                        }
+                    }
+                }
+            }
+        }
     }
+    
 }

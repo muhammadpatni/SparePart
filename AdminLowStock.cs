@@ -109,7 +109,7 @@ namespace SparePart
             {
                 Application.Exit();
             }
-            else if (e.KeyCode == Keys.X)
+            else if (e.KeyCode == Keys.X && (!searchtxt.Focused))
             {
                 Logoutbutton.PerformClick();
             }
