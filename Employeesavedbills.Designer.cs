@@ -1,6 +1,6 @@
 ﻿namespace SparePart
 {
-    partial class AdminLowStock
+    partial class Employeesavedbills
     {
         /// <summary>
         /// Required designer variable.
@@ -31,16 +31,14 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            panel1 = new Panel();
-            Outofstokelb1 = new Label();
             Admindrawerpnl = new Panel();
             panel5 = new Panel();
             Dashboardselected = new Panel();
-            Minquantitybtn = new Button();
+            Savedbillsbtn = new Button();
             panel6 = new Panel();
-            Outofstockbtn = new Button();
+            Returnbtn = new Button();
             panel4 = new Panel();
-            Dashboardbtn = new Button();
+            Billingbtn = new Button();
             panel3 = new Panel();
             panel2 = new Panel();
             Logoutbutton = new Button();
@@ -49,14 +47,15 @@
             pictureBox1 = new PictureBox();
             label3 = new Label();
             label1 = new Label();
+            panel1 = new Panel();
+            Outofstokelb1 = new Label();
             panel9 = new Panel();
-            panel7 = new Panel();
-            searchtxt = new TextBox();
-            pictureBox2 = new PictureBox();
             panel10 = new Panel();
+            searcchtxt = new TextBox();
+            pictureBox2 = new PictureBox();
+            panel12 = new Panel();
             dataview = new DataGridView();
             lbstatus = new Label();
-            panel1.SuspendLayout();
             Admindrawerpnl.SuspendLayout();
             panel5.SuspendLayout();
             panel6.SuspendLayout();
@@ -64,33 +63,13 @@
             panel2.SuspendLayout();
             drawerinnerpanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panel1.SuspendLayout();
             panel9.SuspendLayout();
-            panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panel10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            panel12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataview).BeginInit();
             SuspendLayout();
-            // 
-            // panel1
-            // 
-            panel1.BackColor = Color.FromArgb(22, 31, 50);
-            panel1.Controls.Add(Outofstokelb1);
-            panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(1039, 56);
-            panel1.TabIndex = 1;
-            // 
-            // Outofstokelb1
-            // 
-            Outofstokelb1.AutoSize = true;
-            Outofstokelb1.Font = new Font("Segoe UI Black", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Outofstokelb1.ForeColor = Color.White;
-            Outofstokelb1.Location = new Point(605, 15);
-            Outofstokelb1.Name = "Outofstokelb1";
-            Outofstokelb1.Size = new Size(136, 30);
-            Outofstokelb1.TabIndex = 18;
-            Outofstokelb1.Text = "LOW STOCK";
             // 
             // Admindrawerpnl
             // 
@@ -102,15 +81,15 @@
             Admindrawerpnl.Controls.Add(panel2);
             Admindrawerpnl.Controls.Add(drawerinnerpanel);
             Admindrawerpnl.Dock = DockStyle.Left;
-            Admindrawerpnl.Location = new Point(0, 56);
+            Admindrawerpnl.Location = new Point(0, 0);
             Admindrawerpnl.Name = "Admindrawerpnl";
-            Admindrawerpnl.Size = new Size(220, 516);
-            Admindrawerpnl.TabIndex = 12;
+            Admindrawerpnl.Size = new Size(220, 572);
+            Admindrawerpnl.TabIndex = 13;
             // 
             // panel5
             // 
             panel5.Controls.Add(Dashboardselected);
-            panel5.Controls.Add(Minquantitybtn);
+            panel5.Controls.Add(Savedbillsbtn);
             panel5.Dock = DockStyle.Top;
             panel5.Location = new Point(0, 381);
             panel5.Name = "panel5";
@@ -125,86 +104,86 @@
             Dashboardselected.Size = new Size(7, 25);
             Dashboardselected.TabIndex = 16;
             // 
-            // Minquantitybtn
+            // Savedbillsbtn
             // 
-            Minquantitybtn.BackColor = Color.Transparent;
-            Minquantitybtn.FlatAppearance.BorderSize = 0;
-            Minquantitybtn.FlatAppearance.MouseDownBackColor = Color.WhiteSmoke;
-            Minquantitybtn.FlatAppearance.MouseOverBackColor = Color.WhiteSmoke;
-            Minquantitybtn.FlatStyle = FlatStyle.Flat;
-            Minquantitybtn.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Minquantitybtn.ForeColor = Color.FromArgb(74, 82, 97);
-            Minquantitybtn.Image = Properties.Resources.warning_amber_24dp_90A4AE;
-            Minquantitybtn.ImageAlign = ContentAlignment.MiddleLeft;
-            Minquantitybtn.Location = new Point(5, 10);
-            Minquantitybtn.Name = "Minquantitybtn";
-            Minquantitybtn.Padding = new Padding(10, 0, 0, 0);
-            Minquantitybtn.Size = new Size(194, 37);
-            Minquantitybtn.TabIndex = 12;
-            Minquantitybtn.TabStop = false;
-            Minquantitybtn.Text = " Min. Quantity";
-            Minquantitybtn.UseVisualStyleBackColor = false;
-            Minquantitybtn.Click += Minquantitybtn_Click;
+            Savedbillsbtn.BackColor = Color.Transparent;
+            Savedbillsbtn.FlatAppearance.BorderSize = 0;
+            Savedbillsbtn.FlatAppearance.MouseDownBackColor = Color.WhiteSmoke;
+            Savedbillsbtn.FlatAppearance.MouseOverBackColor = Color.WhiteSmoke;
+            Savedbillsbtn.FlatStyle = FlatStyle.Flat;
+            Savedbillsbtn.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Savedbillsbtn.ForeColor = Color.FromArgb(74, 82, 97);
+            Savedbillsbtn.Image = Properties.Resources.folder_special_24dp_90A4AE;
+            Savedbillsbtn.ImageAlign = ContentAlignment.MiddleLeft;
+            Savedbillsbtn.Location = new Point(5, 10);
+            Savedbillsbtn.Name = "Savedbillsbtn";
+            Savedbillsbtn.Padding = new Padding(10, 0, 0, 0);
+            Savedbillsbtn.Size = new Size(194, 37);
+            Savedbillsbtn.TabIndex = 12;
+            Savedbillsbtn.TabStop = false;
+            Savedbillsbtn.Text = "Saved Bills";
+            Savedbillsbtn.UseVisualStyleBackColor = false;
+            Savedbillsbtn.Click += Savedbillsbtn_Click;
             // 
             // panel6
             // 
-            panel6.Controls.Add(Outofstockbtn);
+            panel6.Controls.Add(Returnbtn);
             panel6.Dock = DockStyle.Top;
             panel6.Location = new Point(0, 323);
             panel6.Name = "panel6";
             panel6.Size = new Size(220, 58);
             panel6.TabIndex = 15;
             // 
-            // Outofstockbtn
+            // Returnbtn
             // 
-            Outofstockbtn.BackColor = Color.Transparent;
-            Outofstockbtn.FlatAppearance.BorderSize = 0;
-            Outofstockbtn.FlatAppearance.MouseDownBackColor = Color.WhiteSmoke;
-            Outofstockbtn.FlatAppearance.MouseOverBackColor = Color.WhiteSmoke;
-            Outofstockbtn.FlatStyle = FlatStyle.Flat;
-            Outofstockbtn.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Outofstockbtn.ForeColor = Color.FromArgb(74, 82, 97);
-            Outofstockbtn.Image = Properties.Resources.inventory_2_24dp_90A4AE;
-            Outofstockbtn.ImageAlign = ContentAlignment.MiddleLeft;
-            Outofstockbtn.Location = new Point(5, 10);
-            Outofstockbtn.Name = "Outofstockbtn";
-            Outofstockbtn.Padding = new Padding(10, 0, 0, 0);
-            Outofstockbtn.Size = new Size(194, 37);
-            Outofstockbtn.TabIndex = 12;
-            Outofstockbtn.TabStop = false;
-            Outofstockbtn.Text = "Out Of Stock";
-            Outofstockbtn.UseVisualStyleBackColor = false;
-            Outofstockbtn.Click += Outofstockbtn_Click;
+            Returnbtn.BackColor = Color.Transparent;
+            Returnbtn.FlatAppearance.BorderSize = 0;
+            Returnbtn.FlatAppearance.MouseDownBackColor = Color.WhiteSmoke;
+            Returnbtn.FlatAppearance.MouseOverBackColor = Color.WhiteSmoke;
+            Returnbtn.FlatStyle = FlatStyle.Flat;
+            Returnbtn.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Returnbtn.ForeColor = Color.FromArgb(74, 82, 97);
+            Returnbtn.Image = Properties.Resources.undo_24dp_90A4AE;
+            Returnbtn.ImageAlign = ContentAlignment.MiddleLeft;
+            Returnbtn.Location = new Point(5, 10);
+            Returnbtn.Name = "Returnbtn";
+            Returnbtn.Padding = new Padding(10, 0, 0, 0);
+            Returnbtn.Size = new Size(194, 37);
+            Returnbtn.TabIndex = 12;
+            Returnbtn.TabStop = false;
+            Returnbtn.Text = "Return";
+            Returnbtn.UseVisualStyleBackColor = false;
+            Returnbtn.Click += Returnbtn_Click;
             // 
             // panel4
             // 
-            panel4.Controls.Add(Dashboardbtn);
+            panel4.Controls.Add(Billingbtn);
             panel4.Dock = DockStyle.Top;
             panel4.Location = new Point(0, 265);
             panel4.Name = "panel4";
             panel4.Size = new Size(220, 58);
             panel4.TabIndex = 13;
             // 
-            // Dashboardbtn
+            // Billingbtn
             // 
-            Dashboardbtn.BackColor = Color.Transparent;
-            Dashboardbtn.FlatAppearance.BorderSize = 0;
-            Dashboardbtn.FlatAppearance.MouseDownBackColor = Color.WhiteSmoke;
-            Dashboardbtn.FlatAppearance.MouseOverBackColor = Color.WhiteSmoke;
-            Dashboardbtn.FlatStyle = FlatStyle.Flat;
-            Dashboardbtn.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Dashboardbtn.ForeColor = Color.FromArgb(74, 82, 97);
-            Dashboardbtn.Image = Properties.Resources.dashboard_24dp_90A4AE;
-            Dashboardbtn.ImageAlign = ContentAlignment.MiddleLeft;
-            Dashboardbtn.Location = new Point(5, 10);
-            Dashboardbtn.Name = "Dashboardbtn";
-            Dashboardbtn.Padding = new Padding(10, 0, 0, 0);
-            Dashboardbtn.Size = new Size(194, 37);
-            Dashboardbtn.TabIndex = 12;
-            Dashboardbtn.TabStop = false;
-            Dashboardbtn.Text = "Dashboard";
-            Dashboardbtn.UseVisualStyleBackColor = false;
-            Dashboardbtn.Click += Dashboardbtn_Click;
+            Billingbtn.BackColor = Color.Transparent;
+            Billingbtn.FlatAppearance.BorderSize = 0;
+            Billingbtn.FlatAppearance.MouseDownBackColor = Color.WhiteSmoke;
+            Billingbtn.FlatAppearance.MouseOverBackColor = Color.WhiteSmoke;
+            Billingbtn.FlatStyle = FlatStyle.Flat;
+            Billingbtn.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Billingbtn.ForeColor = Color.FromArgb(74, 82, 97);
+            Billingbtn.Image = Properties.Resources.point_of_sale_24dp_90A4AE;
+            Billingbtn.ImageAlign = ContentAlignment.MiddleLeft;
+            Billingbtn.Location = new Point(5, 10);
+            Billingbtn.Name = "Billingbtn";
+            Billingbtn.Padding = new Padding(10, 0, 0, 0);
+            Billingbtn.Size = new Size(194, 37);
+            Billingbtn.TabIndex = 12;
+            Billingbtn.TabStop = false;
+            Billingbtn.Text = "Billing";
+            Billingbtn.UseVisualStyleBackColor = false;
+            Billingbtn.Click += Billingbtn_Click;
             // 
             // panel3
             // 
@@ -218,7 +197,7 @@
             // 
             panel2.Controls.Add(Logoutbutton);
             panel2.Dock = DockStyle.Bottom;
-            panel2.Location = new Point(0, 453);
+            panel2.Location = new Point(0, 509);
             panel2.Name = "panel2";
             panel2.Size = new Size(220, 63);
             panel2.TabIndex = 9;
@@ -293,65 +272,88 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Black", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(21, 153);
+            label1.Location = new Point(3, 153);
             label1.Name = "label1";
-            label1.Size = new Size(180, 30);
+            label1.Size = new Size(215, 30);
             label1.TabIndex = 15;
-            label1.Text = "PARTEX ADMIN";
+            label1.Text = "PARTEX EMPLOYEE";
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.FromArgb(241, 245, 249);
+            panel1.Controls.Add(Outofstokelb1);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(220, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(819, 49);
+            panel1.TabIndex = 21;
+            // 
+            // Outofstokelb1
+            // 
+            Outofstokelb1.AutoSize = true;
+            Outofstokelb1.BackColor = Color.Transparent;
+            Outofstokelb1.Font = new Font("Segoe UI Black", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Outofstokelb1.ForeColor = Color.FromArgb(22, 31, 50);
+            Outofstokelb1.Location = new Point(6, 9);
+            Outofstokelb1.Name = "Outofstokelb1";
+            Outofstokelb1.Size = new Size(123, 30);
+            Outofstokelb1.TabIndex = 19;
+            Outofstokelb1.Text = "Saved Bills";
             // 
             // panel9
             // 
-            panel9.BackColor = Color.FromArgb(30, 41, 59);
-            panel9.Controls.Add(panel7);
+            panel9.BackColor = Color.FromArgb(241, 245, 249);
+            panel9.Controls.Add(panel10);
             panel9.Dock = DockStyle.Top;
-            panel9.Location = new Point(220, 56);
+            panel9.Location = new Point(220, 49);
             panel9.Name = "panel9";
             panel9.Size = new Size(819, 68);
-            panel9.TabIndex = 21;
+            panel9.TabIndex = 23;
             // 
-            // panel7
+            // panel10
             // 
-            panel7.BackColor = Color.FromArgb(30, 41, 59);
-            panel7.Controls.Add(searchtxt);
-            panel7.Controls.Add(pictureBox2);
-            panel7.Location = new Point(256, 7);
-            panel7.Name = "panel7";
-            panel7.Size = new Size(540, 51);
-            panel7.TabIndex = 18;
+            panel10.BackColor = Color.Transparent;
+            panel10.Controls.Add(searcchtxt);
+            panel10.Controls.Add(pictureBox2);
+            panel10.Location = new Point(189, 11);
+            panel10.Name = "panel10";
+            panel10.Size = new Size(469, 46);
+            panel10.TabIndex = 19;
             // 
-            // searchtxt
+            // searcchtxt
             // 
-            searchtxt.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            searchtxt.Location = new Point(46, 8);
-            searchtxt.Multiline = true;
-            searchtxt.Name = "searchtxt";
-            searchtxt.Size = new Size(482, 35);
-            searchtxt.TabIndex = 12;
-            searchtxt.TabStop = false;
-            searchtxt.TextChanged += searchtxt_TextChanged;
-            searchtxt.KeyDown += searchtxt_KeyDown;
+            searcchtxt.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            searcchtxt.Location = new Point(46, 6);
+            searcchtxt.Multiline = true;
+            searcchtxt.Name = "searcchtxt";
+            searcchtxt.Size = new Size(420, 35);
+            searcchtxt.TabIndex = 12;
+            searcchtxt.TabStop = false;
+            searcchtxt.TextChanged += searcchtxt_TextChanged;
+            searcchtxt.KeyDown += searcchtxt_KeyDown;
             // 
             // pictureBox2
             // 
-            pictureBox2.BackColor = Color.FromArgb(30, 41, 59);
-            pictureBox2.Image = Properties.Resources.search_1000dp_FFFFFF;
-            pictureBox2.Location = new Point(3, 8);
+            pictureBox2.BackColor = Color.Transparent;
+            pictureBox2.Image = Properties.Resources.search_1000dp_1E293B;
+            pictureBox2.Location = new Point(3, 6);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(37, 35);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox2.TabIndex = 17;
             pictureBox2.TabStop = false;
             // 
-            // panel10
+            // panel12
             // 
-            panel10.Controls.Add(dataview);
-            panel10.Controls.Add(lbstatus);
-            panel10.Dock = DockStyle.Fill;
-            panel10.Location = new Point(220, 124);
-            panel10.Name = "panel10";
-            panel10.Padding = new Padding(30);
-            panel10.Size = new Size(819, 448);
-            panel10.TabIndex = 23;
+            panel12.BackColor = Color.FromArgb(241, 245, 249);
+            panel12.Controls.Add(dataview);
+            panel12.Controls.Add(lbstatus);
+            panel12.Dock = DockStyle.Fill;
+            panel12.Location = new Point(220, 117);
+            panel12.Name = "panel12";
+            panel12.Padding = new Padding(10);
+            panel12.Size = new Size(819, 455);
+            panel12.TabIndex = 25;
             // 
             // dataview
             // 
@@ -360,7 +362,7 @@
             dataview.AllowUserToResizeColumns = false;
             dataview.AllowUserToResizeRows = false;
             dataview.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataview.BackgroundColor = Color.FromArgb(248, 250, 252);
+            dataview.BackgroundColor = Color.FromArgb(241, 245, 249);
             dataview.BorderStyle = BorderStyle.None;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = Color.FromArgb(30, 41, 59);
@@ -382,7 +384,7 @@
             dataview.Dock = DockStyle.Fill;
             dataview.EnableHeadersVisualStyles = false;
             dataview.GridColor = Color.FromArgb(30, 41, 59);
-            dataview.Location = new Point(30, 30);
+            dataview.Location = new Point(10, 10);
             dataview.Margin = new Padding(50);
             dataview.MultiSelect = false;
             dataview.Name = "dataview";
@@ -398,10 +400,11 @@
             dataview.RowHeadersVisible = false;
             dataview.RowTemplate.DividerHeight = 2;
             dataview.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataview.Size = new Size(759, 388);
-            dataview.TabIndex = 21;
+            dataview.Size = new Size(799, 435);
+            dataview.TabIndex = 22;
             dataview.TabStop = false;
             dataview.VirtualMode = true;
+            dataview.CellContentClick += dataview_CellContentClick;
             dataview.KeyDown += dataview_KeyDown;
             // 
             // lbstatus
@@ -409,31 +412,29 @@
             lbstatus.AutoSize = true;
             lbstatus.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lbstatus.ForeColor = Color.FromArgb(162, 162, 162);
-            lbstatus.Location = new Point(582, 315);
+            lbstatus.Location = new Point(321, 223);
             lbstatus.Name = "lbstatus";
             lbstatus.Size = new Size(81, 21);
-            lbstatus.TabIndex = 19;
+            lbstatus.TabIndex = 23;
             lbstatus.Text = "Loading...";
             // 
-            // AdminLowStock
+            // Employeesavedbills
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(248, 250, 252);
+            BackColor = Color.White;
             ClientSize = new Size(1039, 572);
-            Controls.Add(panel10);
+            Controls.Add(panel12);
             Controls.Add(panel9);
-            Controls.Add(Admindrawerpnl);
             Controls.Add(panel1);
+            Controls.Add(Admindrawerpnl);
             FormBorderStyle = FormBorderStyle.None;
             KeyPreview = true;
-            Name = "AdminLowStock";
-            Text = "AdminLowStock";
+            Name = "Employeesavedbills";
+            Text = "Employeesavedbills";
             WindowState = FormWindowState.Maximized;
-            Load += AdminLowStock_Load;
-            KeyDown += AdminLowStock_KeyDown;
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
+            Load += Employeesavedbills_Load;
+            KeyDown += Employeesavedbills_KeyDown;
             Admindrawerpnl.ResumeLayout(false);
             panel5.ResumeLayout(false);
             panel6.ResumeLayout(false);
@@ -442,28 +443,28 @@
             drawerinnerpanel.ResumeLayout(false);
             drawerinnerpanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             panel9.ResumeLayout(false);
-            panel7.ResumeLayout(false);
-            panel7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             panel10.ResumeLayout(false);
             panel10.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            panel12.ResumeLayout(false);
+            panel12.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataview).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private Panel panel1;
-        private Label Outofstokelb1;
         private Panel Admindrawerpnl;
         private Panel panel5;
         private Panel Dashboardselected;
-        private Button Minquantitybtn;
+        private Button Savedbillsbtn;
         private Panel panel6;
-        private Button Outofstockbtn;
+        private Button Returnbtn;
         private Panel panel4;
-        private Button Dashboardbtn;
+        private Button Billingbtn;
         private Panel panel3;
         private Panel panel2;
         private Button Logoutbutton;
@@ -472,11 +473,13 @@
         private PictureBox pictureBox1;
         private Label label3;
         private Label label1;
+        private Panel panel1;
+        private Label Outofstokelb1;
         private Panel panel9;
-        private Panel panel7;
-        private TextBox searchtxt;
-        private PictureBox pictureBox2;
         private Panel panel10;
+        private TextBox searcchtxt;
+        private PictureBox pictureBox2;
+        private Panel panel12;
         private DataGridView dataview;
         private Label lbstatus;
     }

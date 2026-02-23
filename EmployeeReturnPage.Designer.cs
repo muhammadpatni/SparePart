@@ -1,6 +1,6 @@
 ﻿namespace SparePart
 {
-    partial class Employeepage
+    partial class EmployeeReturnPage
     {
         /// <summary>
         /// Required designer variable.
@@ -28,31 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Employeepage));
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmployeeReturnPage));
+            DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle13 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle14 = new DataGridViewCellStyle();
             Admindrawerpnl = new Panel();
             panel5 = new Panel();
             Savedbillsbtn = new Button();
             panel6 = new Panel();
+            Dashboardselected = new Panel();
             Returnbtn = new Button();
             panel4 = new Panel();
-            Dashboardselected = new Panel();
             Billingbtn = new Button();
             panel3 = new Panel();
             panel2 = new Panel();
             Logoutbutton = new Button();
             drawerinnerpanel = new Panel();
+            panel8 = new Panel();
             pictureBox1 = new PictureBox();
             label3 = new Label();
             label1 = new Label();
-            Outofstokelb1 = new Label();
             panel1 = new Panel();
+            Outofstokelb1 = new Label();
             cartmainpanel = new Panel();
             cartpanel = new Panel();
             cartview = new DataGridView();
@@ -63,32 +64,21 @@
             Total = new DataGridViewTextBoxColumn();
             Delete = new DataGridViewImageColumn();
             panel14 = new Panel();
-            Savebtn = new Button();
-            Printbtn = new Button();
+            ConfirmReturn = new Button();
             Payablelb = new Label();
             label7 = new Label();
-            panel15 = new Panel();
-            discounttxt = new TextBox();
-            subtotallb = new Label();
-            label6 = new Label();
-            label5 = new Label();
             panel11 = new Panel();
-            panel13 = new Panel();
-            customernametxt = new TextBox();
+            invoicenumbertxt = new TextBox();
             pictureBox3 = new PictureBox();
-            Datetimelb = new Label();
-            Invoicelb = new Label();
             label2 = new Label();
-            Panelmain = new Panel();
-            panel12 = new Panel();
-            dataview = new DataGridView();
-            lbstatus = new Label();
+            label4 = new Label();
             panel9 = new Panel();
             panel10 = new Panel();
             searcchtxt = new TextBox();
             pictureBox2 = new PictureBox();
-            printPreviewDialog1 = new PrintPreviewDialog();
-            Receipt = new System.Drawing.Printing.PrintDocument();
+            panel12 = new Panel();
+            dataview = new DataGridView();
+            lbstatus = new Label();
             Admindrawerpnl.SuspendLayout();
             panel5.SuspendLayout();
             panel6.SuspendLayout();
@@ -102,14 +92,12 @@
             ((System.ComponentModel.ISupportInitialize)cartview).BeginInit();
             panel14.SuspendLayout();
             panel11.SuspendLayout();
-            panel13.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            Panelmain.SuspendLayout();
-            panel12.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataview).BeginInit();
             panel9.SuspendLayout();
             panel10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            panel12.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataview).BeginInit();
             SuspendLayout();
             // 
             // Admindrawerpnl
@@ -123,10 +111,9 @@
             Admindrawerpnl.Controls.Add(drawerinnerpanel);
             Admindrawerpnl.Dock = DockStyle.Left;
             Admindrawerpnl.Location = new Point(0, 0);
-            Admindrawerpnl.Margin = new Padding(0);
             Admindrawerpnl.Name = "Admindrawerpnl";
             Admindrawerpnl.Size = new Size(220, 535);
-            Admindrawerpnl.TabIndex = 12;
+            Admindrawerpnl.TabIndex = 13;
             // 
             // panel5
             // 
@@ -160,12 +147,21 @@
             // 
             // panel6
             // 
+            panel6.Controls.Add(Dashboardselected);
             panel6.Controls.Add(Returnbtn);
             panel6.Dock = DockStyle.Top;
             panel6.Location = new Point(0, 323);
             panel6.Name = "panel6";
             panel6.Size = new Size(220, 58);
             panel6.TabIndex = 15;
+            // 
+            // Dashboardselected
+            // 
+            Dashboardselected.BackColor = Color.FromArgb(30, 41, 59);
+            Dashboardselected.Location = new Point(190, 16);
+            Dashboardselected.Name = "Dashboardselected";
+            Dashboardselected.Size = new Size(7, 25);
+            Dashboardselected.TabIndex = 17;
             // 
             // Returnbtn
             // 
@@ -190,21 +186,12 @@
             // 
             // panel4
             // 
-            panel4.Controls.Add(Dashboardselected);
             panel4.Controls.Add(Billingbtn);
             panel4.Dock = DockStyle.Top;
             panel4.Location = new Point(0, 265);
             panel4.Name = "panel4";
             panel4.Size = new Size(220, 58);
             panel4.TabIndex = 13;
-            // 
-            // Dashboardselected
-            // 
-            Dashboardselected.BackColor = Color.FromArgb(30, 41, 59);
-            Dashboardselected.Location = new Point(190, 16);
-            Dashboardselected.Name = "Dashboardselected";
-            Dashboardselected.Size = new Size(7, 25);
-            Dashboardselected.TabIndex = 16;
             // 
             // Billingbtn
             // 
@@ -268,6 +255,7 @@
             // drawerinnerpanel
             // 
             drawerinnerpanel.BackColor = Color.FromArgb(22, 31, 50);
+            drawerinnerpanel.Controls.Add(panel8);
             drawerinnerpanel.Controls.Add(pictureBox1);
             drawerinnerpanel.Controls.Add(label3);
             drawerinnerpanel.Controls.Add(label1);
@@ -277,7 +265,15 @@
             drawerinnerpanel.Name = "drawerinnerpanel";
             drawerinnerpanel.Size = new Size(220, 225);
             drawerinnerpanel.TabIndex = 0;
-            drawerinnerpanel.Paint += drawerinnerpanel_Paint;
+            // 
+            // panel8
+            // 
+            panel8.BackColor = Color.White;
+            panel8.Dock = DockStyle.Top;
+            panel8.Location = new Point(0, 0);
+            panel8.Name = "panel8";
+            panel8.Size = new Size(220, 2);
+            panel8.TabIndex = 18;
             // 
             // pictureBox1
             // 
@@ -311,6 +307,16 @@
             label1.TabIndex = 15;
             label1.Text = "PARTEX EMPLOYEE";
             // 
+            // panel1
+            // 
+            panel1.BackColor = Color.FromArgb(241, 245, 249);
+            panel1.Controls.Add(Outofstokelb1);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(220, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(950, 49);
+            panel1.TabIndex = 21;
+            // 
             // Outofstokelb1
             // 
             Outofstokelb1.AutoSize = true;
@@ -319,19 +325,9 @@
             Outofstokelb1.ForeColor = Color.FromArgb(22, 31, 50);
             Outofstokelb1.Location = new Point(6, 9);
             Outofstokelb1.Name = "Outofstokelb1";
-            Outofstokelb1.Size = new Size(171, 30);
+            Outofstokelb1.Size = new Size(141, 30);
             Outofstokelb1.TabIndex = 19;
-            Outofstokelb1.Text = "Select Products";
-            // 
-            // panel1
-            // 
-            panel1.BackColor = Color.FromArgb(241, 245, 249);
-            panel1.Controls.Add(Outofstokelb1);
-            panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(472, 49);
-            panel1.TabIndex = 20;
+            Outofstokelb1.Text = "Sales Return";
             // 
             // cartmainpanel
             // 
@@ -340,20 +336,20 @@
             cartmainpanel.Controls.Add(panel14);
             cartmainpanel.Controls.Add(panel11);
             cartmainpanel.Dock = DockStyle.Right;
-            cartmainpanel.Location = new Point(472, 0);
+            cartmainpanel.Location = new Point(692, 49);
             cartmainpanel.Name = "cartmainpanel";
             cartmainpanel.Padding = new Padding(0, 0, 5, 0);
-            cartmainpanel.Size = new Size(478, 535);
-            cartmainpanel.TabIndex = 21;
+            cartmainpanel.Size = new Size(478, 486);
+            cartmainpanel.TabIndex = 22;
             // 
             // cartpanel
             // 
             cartpanel.Controls.Add(cartview);
             cartpanel.Dock = DockStyle.Fill;
-            cartpanel.Location = new Point(0, 133);
+            cartpanel.Location = new Point(0, 84);
             cartpanel.Name = "cartpanel";
             cartpanel.Padding = new Padding(5);
-            cartpanel.Size = new Size(473, 200);
+            cartpanel.Size = new Size(473, 276);
             cartpanel.TabIndex = 2;
             // 
             // cartview
@@ -362,24 +358,24 @@
             cartview.AllowUserToDeleteRows = false;
             cartview.AllowUserToResizeColumns = false;
             cartview.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = Color.White;
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.ForeColor = Color.FromArgb(53, 63, 79);
-            dataGridViewCellStyle1.SelectionBackColor = Color.Gray;
-            dataGridViewCellStyle1.SelectionForeColor = Color.White;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
-            cartview.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = Color.White;
+            dataGridViewCellStyle8.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle8.ForeColor = Color.FromArgb(53, 63, 79);
+            dataGridViewCellStyle8.SelectionBackColor = Color.Gray;
+            dataGridViewCellStyle8.SelectionForeColor = Color.White;
+            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.False;
+            cartview.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle8;
             cartview.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             cartview.BackgroundColor = Color.White;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = Color.White;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = Color.FromArgb(53, 63, 79);
-            dataGridViewCellStyle2.SelectionBackColor = Color.White;
-            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(53, 63, 79);
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            cartview.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = Color.White;
+            dataGridViewCellStyle9.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle9.ForeColor = Color.FromArgb(53, 63, 79);
+            dataGridViewCellStyle9.SelectionBackColor = Color.White;
+            dataGridViewCellStyle9.SelectionForeColor = Color.FromArgb(53, 63, 79);
+            dataGridViewCellStyle9.WrapMode = DataGridViewTriState.False;
+            cartview.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             cartview.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             cartview.Columns.AddRange(new DataGridViewColumn[] { Id, Productname, Price, Quantity, Total, Delete });
             cartview.Dock = DockStyle.Fill;
@@ -388,17 +384,17 @@
             cartview.Location = new Point(5, 5);
             cartview.Name = "cartview";
             cartview.RowHeadersVisible = false;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = Color.White;
-            dataGridViewCellStyle4.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle4.ForeColor = Color.FromArgb(53, 63, 79);
-            dataGridViewCellStyle4.SelectionBackColor = Color.Gray;
-            dataGridViewCellStyle4.SelectionForeColor = Color.White;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
-            cartview.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle11.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = Color.White;
+            dataGridViewCellStyle11.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle11.ForeColor = Color.FromArgb(53, 63, 79);
+            dataGridViewCellStyle11.SelectionBackColor = Color.Gray;
+            dataGridViewCellStyle11.SelectionForeColor = Color.White;
+            dataGridViewCellStyle11.WrapMode = DataGridViewTriState.False;
+            cartview.RowsDefaultCellStyle = dataGridViewCellStyle11;
             cartview.RowTemplate.DividerHeight = 2;
             cartview.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            cartview.Size = new Size(463, 190);
+            cartview.Size = new Size(463, 266);
             cartview.TabIndex = 0;
             cartview.TabStop = false;
             cartview.CellContentClick += cartview_CellContentClick;
@@ -434,14 +430,14 @@
             // 
             // Delete
             // 
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = Color.White;
-            dataGridViewCellStyle3.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle3.ForeColor = Color.Red;
-            dataGridViewCellStyle3.NullValue = resources.GetObject("dataGridViewCellStyle3.NullValue");
-            dataGridViewCellStyle3.SelectionBackColor = Color.White;
-            dataGridViewCellStyle3.SelectionForeColor = Color.Red;
-            Delete.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = Color.White;
+            dataGridViewCellStyle10.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle10.ForeColor = Color.Red;
+            dataGridViewCellStyle10.NullValue = resources.GetObject("dataGridViewCellStyle10.NullValue");
+            dataGridViewCellStyle10.SelectionBackColor = Color.White;
+            dataGridViewCellStyle10.SelectionForeColor = Color.Red;
+            Delete.DefaultCellStyle = dataGridViewCellStyle10;
             Delete.HeaderText = "";
             Delete.Image = Properties.Resources.delete_16dp_BB271A;
             Delete.Name = "Delete";
@@ -451,60 +447,35 @@
             // panel14
             // 
             panel14.BackColor = Color.FromArgb(250, 250, 250);
-            panel14.Controls.Add(Savebtn);
-            panel14.Controls.Add(Printbtn);
+            panel14.Controls.Add(ConfirmReturn);
             panel14.Controls.Add(Payablelb);
             panel14.Controls.Add(label7);
-            panel14.Controls.Add(panel15);
-            panel14.Controls.Add(discounttxt);
-            panel14.Controls.Add(subtotallb);
-            panel14.Controls.Add(label6);
-            panel14.Controls.Add(label5);
             panel14.Dock = DockStyle.Bottom;
-            panel14.Location = new Point(0, 333);
+            panel14.Location = new Point(0, 360);
             panel14.Name = "panel14";
-            panel14.Size = new Size(473, 202);
+            panel14.Size = new Size(473, 126);
             panel14.TabIndex = 1;
+            panel14.Paint += panel14_Paint;
             // 
-            // Savebtn
+            // ConfirmReturn
             // 
-            Savebtn.BackColor = Color.FromArgb(224, 224, 224);
-            Savebtn.FlatAppearance.BorderSize = 0;
-            Savebtn.FlatAppearance.MouseDownBackColor = Color.WhiteSmoke;
-            Savebtn.FlatAppearance.MouseOverBackColor = Color.WhiteSmoke;
-            Savebtn.FlatStyle = FlatStyle.Flat;
-            Savebtn.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Savebtn.ForeColor = Color.FromArgb(150, 149, 151);
-            Savebtn.ImageAlign = ContentAlignment.MiddleLeft;
-            Savebtn.Location = new Point(248, 129);
-            Savebtn.Name = "Savebtn";
-            Savebtn.Padding = new Padding(10, 0, 0, 0);
-            Savebtn.Size = new Size(194, 37);
-            Savebtn.TabIndex = 27;
-            Savebtn.TabStop = false;
-            Savebtn.Text = "SAVE";
-            Savebtn.UseVisualStyleBackColor = false;
-            Savebtn.Click += Savebtn_Click;
-            // 
-            // Printbtn
-            // 
-            Printbtn.BackColor = Color.FromArgb(224, 224, 224);
-            Printbtn.FlatAppearance.BorderSize = 0;
-            Printbtn.FlatAppearance.MouseDownBackColor = Color.WhiteSmoke;
-            Printbtn.FlatAppearance.MouseOverBackColor = Color.WhiteSmoke;
-            Printbtn.FlatStyle = FlatStyle.Flat;
-            Printbtn.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Printbtn.ForeColor = Color.FromArgb(150, 149, 151);
-            Printbtn.ImageAlign = ContentAlignment.MiddleLeft;
-            Printbtn.Location = new Point(22, 129);
-            Printbtn.Name = "Printbtn";
-            Printbtn.Padding = new Padding(10, 0, 0, 0);
-            Printbtn.Size = new Size(194, 37);
-            Printbtn.TabIndex = 17;
-            Printbtn.TabStop = false;
-            Printbtn.Text = "PRINT";
-            Printbtn.UseVisualStyleBackColor = false;
-            Printbtn.Click += Printbtn_Click;
+            ConfirmReturn.BackColor = Color.FromArgb(224, 224, 224);
+            ConfirmReturn.FlatAppearance.BorderSize = 0;
+            ConfirmReturn.FlatAppearance.MouseDownBackColor = Color.WhiteSmoke;
+            ConfirmReturn.FlatAppearance.MouseOverBackColor = Color.WhiteSmoke;
+            ConfirmReturn.FlatStyle = FlatStyle.Flat;
+            ConfirmReturn.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            ConfirmReturn.ForeColor = Color.FromArgb(150, 149, 151);
+            ConfirmReturn.ImageAlign = ContentAlignment.MiddleLeft;
+            ConfirmReturn.Location = new Point(22, 69);
+            ConfirmReturn.Name = "ConfirmReturn";
+            ConfirmReturn.Padding = new Padding(10, 0, 0, 0);
+            ConfirmReturn.Size = new Size(435, 37);
+            ConfirmReturn.TabIndex = 17;
+            ConfirmReturn.TabStop = false;
+            ConfirmReturn.Text = "CONFIRM RETURN";
+            ConfirmReturn.UseVisualStyleBackColor = false;
+            ConfirmReturn.Click += ConfirmReturn_Click;
             // 
             // Payablelb
             // 
@@ -512,7 +483,7 @@
             Payablelb.BackColor = Color.Transparent;
             Payablelb.Font = new Font("Segoe UI Black", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Payablelb.ForeColor = Color.FromArgb(22, 31, 50);
-            Payablelb.Location = new Point(370, 82);
+            Payablelb.Location = new Point(370, 18);
             Payablelb.Name = "Payablelb";
             Payablelb.Size = new Size(46, 30);
             Payablelb.TabIndex = 26;
@@ -524,145 +495,50 @@
             label7.BackColor = Color.Transparent;
             label7.Font = new Font("Segoe UI Black", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label7.ForeColor = Color.FromArgb(22, 31, 50);
-            label7.Location = new Point(17, 82);
+            label7.Location = new Point(17, 18);
             label7.Name = "label7";
-            label7.Size = new Size(153, 30);
+            label7.Size = new Size(177, 30);
             label7.TabIndex = 20;
-            label7.Text = "Total Payable";
-            // 
-            // panel15
-            // 
-            panel15.AllowDrop = true;
-            panel15.BackColor = Color.FromArgb(226, 223, 229);
-            panel15.Location = new Point(17, 70);
-            panel15.Name = "panel15";
-            panel15.Size = new Size(440, 3);
-            panel15.TabIndex = 24;
-            // 
-            // discounttxt
-            // 
-            discounttxt.BackColor = Color.FromArgb(250, 250, 250);
-            discounttxt.BorderStyle = BorderStyle.None;
-            discounttxt.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            discounttxt.ForeColor = Color.FromArgb(30, 41, 59);
-            discounttxt.Location = new Point(370, 35);
-            discounttxt.Multiline = true;
-            discounttxt.Name = "discounttxt";
-            discounttxt.PlaceholderText = "0";
-            discounttxt.Size = new Size(81, 35);
-            discounttxt.TabIndex = 18;
-            discounttxt.TabStop = false;
-            discounttxt.TextChanged += discounttxt_TextChanged;
-            // 
-            // subtotallb
-            // 
-            subtotallb.AutoSize = true;
-            subtotallb.BackColor = Color.Transparent;
-            subtotallb.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            subtotallb.ForeColor = Color.FromArgb(30, 41, 59);
-            subtotallb.Location = new Point(370, 7);
-            subtotallb.Name = "subtotallb";
-            subtotallb.RightToLeft = RightToLeft.Yes;
-            subtotallb.Size = new Size(53, 20);
-            subtotallb.TabIndex = 25;
-            subtotallb.Text = "RS 0.0";
-            subtotallb.TextAlign = ContentAlignment.MiddleRight;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.BackColor = Color.Transparent;
-            label6.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold);
-            label6.ForeColor = Color.FromArgb(117, 117, 117);
-            label6.Location = new Point(17, 35);
-            label6.Name = "label6";
-            label6.Size = new Size(69, 20);
-            label6.TabIndex = 24;
-            label6.Text = "Discount";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.BackColor = Color.Transparent;
-            label5.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold);
-            label5.ForeColor = Color.FromArgb(117, 117, 117);
-            label5.Location = new Point(17, 7);
-            label5.Name = "label5";
-            label5.Size = new Size(66, 20);
-            label5.TabIndex = 23;
-            label5.Text = "Subtotal";
+            label7.Text = "Refund Amount";
             // 
             // panel11
             // 
             panel11.BackColor = Color.FromArgb(22, 31, 50);
-            panel11.Controls.Add(panel13);
-            panel11.Controls.Add(Datetimelb);
-            panel11.Controls.Add(Invoicelb);
+            panel11.Controls.Add(invoicenumbertxt);
+            panel11.Controls.Add(pictureBox3);
             panel11.Controls.Add(label2);
+            panel11.Controls.Add(label4);
             panel11.Dock = DockStyle.Top;
             panel11.Location = new Point(0, 0);
             panel11.Name = "panel11";
-            panel11.Size = new Size(473, 133);
+            panel11.Size = new Size(473, 84);
             panel11.TabIndex = 0;
+            panel11.Paint += panel11_Paint;
             // 
-            // panel13
+            // invoicenumbertxt
             // 
-            panel13.BackColor = Color.Transparent;
-            panel13.Controls.Add(customernametxt);
-            panel13.Controls.Add(pictureBox3);
-            panel13.Location = new Point(14, 81);
-            panel13.Name = "panel13";
-            panel13.Size = new Size(452, 46);
-            panel13.TabIndex = 20;
-            // 
-            // customernametxt
-            // 
-            customernametxt.BackColor = Color.FromArgb(53, 63, 79);
-            customernametxt.BorderStyle = BorderStyle.None;
-            customernametxt.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            customernametxt.ForeColor = Color.FromArgb(195, 198, 203);
-            customernametxt.Location = new Point(46, 6);
-            customernametxt.Multiline = true;
-            customernametxt.Name = "customernametxt";
-            customernametxt.PlaceholderText = "Customer Name";
-            customernametxt.Size = new Size(400, 35);
-            customernametxt.TabIndex = 12;
-            customernametxt.TabStop = false;
+            invoicenumbertxt.BackColor = Color.FromArgb(22, 31, 50);
+            invoicenumbertxt.BorderStyle = BorderStyle.FixedSingle;
+            invoicenumbertxt.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            invoicenumbertxt.ForeColor = Color.White;
+            invoicenumbertxt.Location = new Point(87, 43);
+            invoicenumbertxt.Name = "invoicenumbertxt";
+            invoicenumbertxt.PlaceholderText = "e.g. 102";
+            invoicenumbertxt.Size = new Size(162, 27);
+            invoicenumbertxt.TabIndex = 18;
+            invoicenumbertxt.TabStop = false;
+            invoicenumbertxt.TextChanged += inovicenumbertxt_TextChanged;
+            invoicenumbertxt.KeyPress += inovicenumbertxt_KeyPress;
             // 
             // pictureBox3
             // 
-            pictureBox3.BackColor = Color.Transparent;
-            pictureBox3.Image = Properties.Resources.person_1000dp_C3C6CB;
-            pictureBox3.Location = new Point(3, 6);
+            pictureBox3.Image = Properties.Resources.assignment_return_40dp_BCBFC5;
+            pictureBox3.Location = new Point(425, 8);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(37, 35);
+            pictureBox3.Size = new Size(32, 37);
             pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox3.TabIndex = 17;
+            pictureBox3.TabIndex = 21;
             pictureBox3.TabStop = false;
-            // 
-            // Datetimelb
-            // 
-            Datetimelb.AutoSize = true;
-            Datetimelb.BackColor = Color.Transparent;
-            Datetimelb.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            Datetimelb.ForeColor = Color.White;
-            Datetimelb.Location = new Point(6, 45);
-            Datetimelb.Name = "Datetimelb";
-            Datetimelb.Size = new Size(96, 25);
-            Datetimelb.TabIndex = 22;
-            Datetimelb.Text = "#PARTEX1";
-            // 
-            // Invoicelb
-            // 
-            Invoicelb.AutoSize = true;
-            Invoicelb.BackColor = Color.Transparent;
-            Invoicelb.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Invoicelb.ForeColor = Color.White;
-            Invoicelb.Location = new Point(117, 9);
-            Invoicelb.Name = "Invoicelb";
-            Invoicelb.Size = new Size(103, 25);
-            Invoicelb.TabIndex = 21;
-            Invoicelb.Text = "#PARTEX1";
             // 
             // label2
             // 
@@ -670,107 +546,33 @@
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(6, 9);
+            label2.Location = new Point(14, 13);
             label2.Name = "label2";
-            label2.Size = new Size(103, 25);
+            label2.Size = new Size(130, 25);
             label2.TabIndex = 20;
-            label2.Text = "INVOICE : ";
+            label2.Text = "RETURN SLIP";
             // 
-            // Panelmain
+            // label4
             // 
-            Panelmain.Controls.Add(panel12);
-            Panelmain.Controls.Add(panel9);
-            Panelmain.Controls.Add(panel1);
-            Panelmain.Controls.Add(cartmainpanel);
-            Panelmain.Dock = DockStyle.Fill;
-            Panelmain.Location = new Point(220, 0);
-            Panelmain.Name = "Panelmain";
-            Panelmain.Size = new Size(950, 535);
-            Panelmain.TabIndex = 22;
-            // 
-            // panel12
-            // 
-            panel12.BackColor = Color.FromArgb(241, 245, 249);
-            panel12.Controls.Add(dataview);
-            panel12.Controls.Add(lbstatus);
-            panel12.Dock = DockStyle.Fill;
-            panel12.Location = new Point(0, 117);
-            panel12.Name = "panel12";
-            panel12.Padding = new Padding(10);
-            panel12.Size = new Size(472, 418);
-            panel12.TabIndex = 23;
-            // 
-            // dataview
-            // 
-            dataview.AllowUserToAddRows = false;
-            dataview.AllowUserToDeleteRows = false;
-            dataview.AllowUserToResizeColumns = false;
-            dataview.AllowUserToResizeRows = false;
-            dataview.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataview.BackgroundColor = Color.FromArgb(241, 245, 249);
-            dataview.BorderStyle = BorderStyle.None;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = Color.FromArgb(30, 41, 59);
-            dataGridViewCellStyle5.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle5.ForeColor = Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(30, 41, 59);
-            dataGridViewCellStyle5.SelectionForeColor = Color.White;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
-            dataview.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            dataview.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = Color.White;
-            dataGridViewCellStyle6.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle6.ForeColor = Color.FromArgb(30, 41, 59);
-            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(99, 105, 118);
-            dataGridViewCellStyle6.SelectionForeColor = Color.White;
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
-            dataview.DefaultCellStyle = dataGridViewCellStyle6;
-            dataview.Dock = DockStyle.Fill;
-            dataview.EnableHeadersVisualStyles = false;
-            dataview.GridColor = Color.FromArgb(30, 41, 59);
-            dataview.Location = new Point(10, 10);
-            dataview.Margin = new Padding(50);
-            dataview.MultiSelect = false;
-            dataview.Name = "dataview";
-            dataview.ReadOnly = true;
-            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = SystemColors.Control;
-            dataGridViewCellStyle7.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle7.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.False;
-            dataview.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
-            dataview.RowHeadersVisible = false;
-            dataview.RowTemplate.DividerHeight = 2;
-            dataview.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataview.Size = new Size(452, 398);
-            dataview.TabIndex = 22;
-            dataview.TabStop = false;
-            dataview.VirtualMode = true;
-            dataview.KeyDown += dataview_KeyDown;
-            // 
-            // lbstatus
-            // 
-            lbstatus.AutoSize = true;
-            lbstatus.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbstatus.ForeColor = Color.FromArgb(162, 162, 162);
-            lbstatus.Location = new Point(301, 203);
-            lbstatus.Name = "lbstatus";
-            lbstatus.Size = new Size(81, 21);
-            lbstatus.TabIndex = 23;
-            lbstatus.Text = "Loading...";
+            label4.AutoSize = true;
+            label4.BackColor = Color.Transparent;
+            label4.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.ForeColor = Color.White;
+            label4.Location = new Point(14, 46);
+            label4.Name = "label4";
+            label4.Size = new Size(74, 20);
+            label4.TabIndex = 22;
+            label4.Text = "#PARTEX";
             // 
             // panel9
             // 
             panel9.BackColor = Color.FromArgb(241, 245, 249);
             panel9.Controls.Add(panel10);
             panel9.Dock = DockStyle.Top;
-            panel9.Location = new Point(0, 49);
+            panel9.Location = new Point(220, 49);
             panel9.Name = "panel9";
             panel9.Size = new Size(472, 68);
-            panel9.TabIndex = 22;
+            panel9.TabIndex = 23;
             // 
             // panel10
             // 
@@ -805,35 +607,100 @@
             pictureBox2.TabIndex = 17;
             pictureBox2.TabStop = false;
             // 
-            // printPreviewDialog1
+            // panel12
             // 
-            printPreviewDialog1.AutoScrollMargin = new Size(0, 0);
-            printPreviewDialog1.AutoScrollMinSize = new Size(0, 0);
-            printPreviewDialog1.ClientSize = new Size(400, 300);
-            printPreviewDialog1.Enabled = true;
-            printPreviewDialog1.Icon = (Icon)resources.GetObject("printPreviewDialog1.Icon");
-            printPreviewDialog1.Name = "printPreviewDialog1";
-            printPreviewDialog1.Visible = false;
+            panel12.BackColor = Color.FromArgb(241, 245, 249);
+            panel12.Controls.Add(dataview);
+            panel12.Controls.Add(lbstatus);
+            panel12.Dock = DockStyle.Fill;
+            panel12.Location = new Point(220, 117);
+            panel12.Name = "panel12";
+            panel12.Padding = new Padding(10);
+            panel12.Size = new Size(472, 418);
+            panel12.TabIndex = 24;
             // 
-            // Receipt
+            // dataview
             // 
-            Receipt.PrintPage += Receipt_PrintPage;
+            dataview.AllowUserToAddRows = false;
+            dataview.AllowUserToDeleteRows = false;
+            dataview.AllowUserToResizeColumns = false;
+            dataview.AllowUserToResizeRows = false;
+            dataview.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataview.BackgroundColor = Color.FromArgb(241, 245, 249);
+            dataview.BorderStyle = BorderStyle.None;
+            dataGridViewCellStyle12.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.BackColor = Color.FromArgb(30, 41, 59);
+            dataGridViewCellStyle12.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle12.ForeColor = Color.White;
+            dataGridViewCellStyle12.SelectionBackColor = Color.FromArgb(30, 41, 59);
+            dataGridViewCellStyle12.SelectionForeColor = Color.White;
+            dataGridViewCellStyle12.WrapMode = DataGridViewTriState.False;
+            dataview.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataview.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle13.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle13.BackColor = Color.White;
+            dataGridViewCellStyle13.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle13.ForeColor = Color.FromArgb(30, 41, 59);
+            dataGridViewCellStyle13.SelectionBackColor = Color.FromArgb(99, 105, 118);
+            dataGridViewCellStyle13.SelectionForeColor = Color.White;
+            dataGridViewCellStyle13.WrapMode = DataGridViewTriState.False;
+            dataview.DefaultCellStyle = dataGridViewCellStyle13;
+            dataview.Dock = DockStyle.Fill;
+            dataview.EnableHeadersVisualStyles = false;
+            dataview.GridColor = Color.FromArgb(30, 41, 59);
+            dataview.Location = new Point(10, 10);
+            dataview.Margin = new Padding(50);
+            dataview.MultiSelect = false;
+            dataview.Name = "dataview";
+            dataview.ReadOnly = true;
+            dataGridViewCellStyle14.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = SystemColors.Control;
+            dataGridViewCellStyle14.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle14.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle14.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = DataGridViewTriState.False;
+            dataview.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataview.RowHeadersVisible = false;
+            dataview.RowTemplate.DividerHeight = 2;
+            dataview.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataview.Size = new Size(452, 398);
+            dataview.TabIndex = 22;
+            dataview.TabStop = false;
+            dataview.VirtualMode = true;
+            dataview.KeyDown += dataview_KeyDown;
             // 
-            // Employeepage
+            // lbstatus
+            // 
+            lbstatus.AutoSize = true;
+            lbstatus.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbstatus.ForeColor = Color.FromArgb(162, 162, 162);
+            lbstatus.Location = new Point(311, 213);
+            lbstatus.Name = "lbstatus";
+            lbstatus.Size = new Size(81, 21);
+            lbstatus.TabIndex = 23;
+            lbstatus.Text = "Loading...";
+            // 
+            // EmployeeReturnPage
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(22, 31, 50);
+            BackColor = Color.White;
             ClientSize = new Size(1170, 535);
-            Controls.Add(Panelmain);
+            Controls.Add(panel12);
+            Controls.Add(panel9);
+            Controls.Add(cartmainpanel);
+            Controls.Add(panel1);
             Controls.Add(Admindrawerpnl);
+            ForeColor = SystemColors.ControlText;
             FormBorderStyle = FormBorderStyle.None;
             KeyPreview = true;
-            Name = "Employeepage";
-            Text = "Employeebilling";
+            Name = "EmployeeReturnPage";
+            StartPosition = FormStartPosition.CenterParent;
+            Text = "EmployeeReturnPage";
             WindowState = FormWindowState.Maximized;
-            Load += Employeepage_Load;
-            KeyDown += Employeepage_KeyDown;
+            Load += EmployeeReturnPage_Load;
+            KeyDown += EmployeeReturnPage_KeyDown;
             Admindrawerpnl.ResumeLayout(false);
             panel5.ResumeLayout(false);
             panel6.ResumeLayout(false);
@@ -851,17 +718,14 @@
             panel14.PerformLayout();
             panel11.ResumeLayout(false);
             panel11.PerformLayout();
-            panel13.ResumeLayout(false);
-            panel13.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            Panelmain.ResumeLayout(false);
-            panel12.ResumeLayout(false);
-            panel12.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataview).EndInit();
             panel9.ResumeLayout(false);
             panel10.ResumeLayout(false);
             panel10.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            panel12.ResumeLayout(false);
+            panel12.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataview).EndInit();
             ResumeLayout(false);
         }
 
@@ -871,7 +735,6 @@
         private Panel panel5;
         private Button Savedbillsbtn;
         private Panel panel6;
-        private Panel Dashboardselected;
         private Button Returnbtn;
         private Panel panel4;
         private Button Billingbtn;
@@ -879,37 +742,13 @@
         private Panel panel2;
         private Button Logoutbutton;
         private Panel drawerinnerpanel;
+        private Panel panel8;
         private PictureBox pictureBox1;
         private Label label3;
         private Label label1;
-        private Label Outofstokelb1;
         private Panel panel1;
+        private Label Outofstokelb1;
         private Panel cartmainpanel;
-        private Panel Panelmain;
-        private DataGridView dataview;
-        private Panel panel9;
-        private Panel panel10;
-        private TextBox searcchtxt;
-        private PictureBox pictureBox2;
-        private Panel panel11;
-        private Label label2;
-        private Label Datetimelb;
-        private Label Invoicelb;
-        private Panel panel12;
-        private Panel panel13;
-        private TextBox customernametxt;
-        private PictureBox pictureBox3;
-        private Label lbstatus;
-        private Panel panel14;
-        private Label subtotallb;
-        private Label label6;
-        private Label label5;
-        private TextBox discounttxt;
-        private Label Payablelb;
-        private Label label7;
-        private Panel panel15;
-        private Button Printbtn;
-        private Button Savebtn;
         private Panel cartpanel;
         private DataGridView cartview;
         private DataGridViewTextBoxColumn Id;
@@ -918,7 +757,22 @@
         private DataGridViewTextBoxColumn Quantity;
         private DataGridViewTextBoxColumn Total;
         private DataGridViewImageColumn Delete;
-        private PrintPreviewDialog printPreviewDialog1;
-        private System.Drawing.Printing.PrintDocument Receipt;
+        private Panel panel14;
+        private Button ConfirmReturn;
+        private Label Payablelb;
+        private Label label7;
+        private Panel panel11;
+        private Label label2;
+        private Panel panel9;
+        private Panel panel10;
+        private TextBox searcchtxt;
+        private PictureBox pictureBox2;
+        private Panel panel12;
+        private DataGridView dataview;
+        private Label lbstatus;
+        private PictureBox pictureBox3;
+        private Panel Dashboardselected;
+        private TextBox invoicenumbertxt;
+        private Label label4;
     }
 }

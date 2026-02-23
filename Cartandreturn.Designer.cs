@@ -45,7 +45,7 @@
             Productnamelb.AutoSize = true;
             Productnamelb.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Productnamelb.ForeColor = Color.FromArgb(30, 41, 59);
-            Productnamelb.Location = new Point(165, 129);
+            Productnamelb.Location = new Point(167, 129);
             Productnamelb.Name = "Productnamelb";
             Productnamelb.Size = new Size(137, 30);
             Productnamelb.TabIndex = 0;
@@ -68,6 +68,7 @@
             quantitycount.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             quantitycount.ForeColor = Color.FromArgb(30, 41, 59);
             quantitycount.Location = new Point(169, 193);
+            quantitycount.Maximum = new decimal(new int[] { 268435456, 1042612833, 542101086, 0 });
             quantitycount.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             quantitycount.Name = "quantitycount";
             quantitycount.Size = new Size(120, 33);

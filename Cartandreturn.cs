@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Data.SqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,10 +21,12 @@ namespace SparePart
         public int ReturnPrice { get { return price; } }
 
         TextBox qtyTextBox;
+        bool returnPage = false;
 
-        public Cartandreturn(string id, string name, string price, string stock)
+        public Cartandreturn(bool returnPae, string id, string name, string price, string stock)
         {
             InitializeComponent();
+            this.returnPage = returnPae;
             this.id = id;
             this.price = int.Parse(price);
             this.stock = int.Parse(stock);
@@ -40,30 +43,73 @@ namespace SparePart
 
         private void Cartandreturn_Load(object sender, EventArgs e)
         {
-            //quantitycount.Maximum = stock;
-            loadproductdetails();
-            this.BeginInvoke((Action)(() =>
+            if (returnPage)
             {
-                quantitycount.Focus();
-                quantitycount.Select(0, quantitycount.Text.Length);
-            }));
-            qtyTextBox = quantitycount.Controls.OfType<TextBox>().FirstOrDefault();
+                pictureBox1.Image = Properties.Resources.shopping_cart;
+                Instocklb.Visible = false;
+                ConfirmAddbtn.Text = "Confirm Return";
+                loadproductdetails();
+                this.BeginInvoke((Action)(() =>
+                {
+                    quantitycount.Focus();
+                    quantitycount.Select(0, quantitycount.Text.Length);
+                }));
+                qtyTextBox = quantitycount.Controls.OfType<TextBox>().FirstOrDefault();
 
-            if (qtyTextBox != null)
-            {
-                qtyTextBox.TextChanged += QtyTextBox_TextChanged;
+                if (qtyTextBox != null)
+                {
+                    qtyTextBox.TextChanged += QtyTextBox_TextChanged;
+                }
+
             }
+            else
+            {
+                quantitycount.Maximum = stock;
+                loadproductdetails();
+                this.BeginInvoke((Action)(() =>
+                {
+                    quantitycount.Focus();
+                    quantitycount.Select(0, quantitycount.Text.Length);
+                }));
+                qtyTextBox = quantitycount.Controls.OfType<TextBox>().FirstOrDefault();
+
+                if (qtyTextBox != null)
+                {
+                    qtyTextBox.TextChanged += QtyTextBox_TextChanged;
+                }
+            }
+
         }
 
         private void QtyTextBox_TextChanged(object sender, EventArgs e)
         {
-            if (decimal.TryParse(qtyTextBox.Text, out decimal qty))
+            if (returnPage)
             {
-                if (qty < 1) qty = 1;
-                if (qty > stock) qty = stock;
-
-                quantitycount.Value = qty;
-                totalcalculation();
+                if (decimal.TryParse(qtyTextBox.Text, out decimal qty))
+                {
+                    if (qty < 1)
+                    {
+                        qty = 1;
+                    }
+                    quantitycount.Value = qty;
+                    totalcalculation();
+                }
+            }
+            else
+            {
+                if (decimal.TryParse(qtyTextBox.Text, out decimal qty))
+                {
+                    if (qty < 1)
+                    {
+                        qty = 1;
+                    }
+                    if (qty > stock)
+                    {
+                        qty = stock;
+                    }
+                    quantitycount.Value = qty;
+                    totalcalculation();
+                }
             }
         }
 
@@ -80,29 +126,51 @@ namespace SparePart
             int quantity = int.Parse(quantitycount.Value.ToString());
             int newstock = stock - quantity;
             string query = $"UPDATE Products SET Stock = {newstock} WHERE ProductID = {id}";
-            DatabaseManagement.edit(query);
+            SqlConnection con = new SqlConnection(DatabaseManagement.getConnectionString());
+            DatabaseManagement.edit(query, con);
         }
 
         private void quantitycount_ValueChanged(object sender, EventArgs e)
         {
-            if (quantitycount.Value > stock)
+            if (returnPage)
             {
-                quantitycount.Value = stock;
+                if (quantitycount.Value < 1)
+                {
+                    quantitycount.Value = 1;
+                }
+                totalcalculation();
             }
-            else if (quantitycount.Value < 1)
+            else
             {
-                quantitycount.Value = 1;
+                if (quantitycount.Value > stock)
+                {
+                    quantitycount.Value = stock;
+                }
+                else if (quantitycount.Value < 1)
+                {
+                    quantitycount.Value = 1;
+                }
+                totalcalculation();
             }
-            totalcalculation();
         }
 
         private void ConfirmAddbtn_Click(object sender, EventArgs e)
         {
-            ReturnQuantity = int.Parse(quantitycount.Value.ToString());
-            ReturnTotal = price * ReturnQuantity;
-            databaseupdate();
-            this.DialogResult = DialogResult.OK;
-            this.Close();
+            if (returnPage)
+            {
+                ReturnQuantity = int.Parse(quantitycount.Value.ToString());
+                ReturnTotal = price * ReturnQuantity;
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+            else
+            {
+                ReturnQuantity = int.Parse(quantitycount.Value.ToString());
+                ReturnTotal = price * ReturnQuantity;
+                databaseupdate();
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
         }
 
         private void Cancelbtn_Click(object sender, EventArgs e)

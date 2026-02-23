@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Data.SqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -98,7 +99,8 @@ namespace SparePart
                 if (isvalid())
                 {
                     string query = $"INSERT INTO Products (ProductName, Price, Stock, lowstock) VALUES ('{productnametxt.Text.Trim()}', {pricetxt.Text.Trim()}, {stocktxt.Text.Trim()}, {lowstocktxt.Text.Trim()})";
-                    int result = DatabaseManagement.edit(query);
+                    SqlConnection con = new SqlConnection(DatabaseManagement.getConnectionString());
+                    int result = DatabaseManagement.edit(query, con);
                     if (result > 0)
                     {
                         MessageBox.Show("Product added successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -111,7 +113,8 @@ namespace SparePart
                 if (isvalid())
                 {
                     string query = $"UPDATE Products SET ProductName = '{productnametxt.Text.Trim()}', Price = {pricetxt.Text.Trim()}, Stock = {stocktxt.Text.Trim()}, lowstock = {lowstocktxt.Text.Trim()} WHERE ProductID = {productid.Trim()}";
-                    int result = DatabaseManagement.edit(query);
+                    SqlConnection con = new SqlConnection(DatabaseManagement.getConnectionString());
+                    int result = DatabaseManagement.edit(query, con);
                     if (result > 0)
                     {
                         MessageBox.Show("Product updated successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);

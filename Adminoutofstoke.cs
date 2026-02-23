@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Data.SqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -51,7 +52,8 @@ namespace SparePart
             lbstatus.Visible = true;
             try
             {
-                DataTable dt = await Task.Run(() => DatabaseManagement.retrieve(query));
+                SqlConnection con= new SqlConnection(DatabaseManagement.getConnectionString());
+                DataTable dt = await Task.Run(() => DatabaseManagement.retrieve(query,con));
 
                 if (dt != null && dt.Rows.Count > 0)
                 {
@@ -86,7 +88,9 @@ namespace SparePart
 
         private void Outofstockbtn_Click(object sender, EventArgs e)
         {
-
+            Adminoutofstoke adminPage = new Adminoutofstoke();
+            adminPage.Show();
+            this.Hide();
         }
 
         private void Adminoutofstoke_KeyDown(object sender, KeyEventArgs e)
@@ -101,6 +105,14 @@ namespace SparePart
                 Logoutbutton.PerformClick();
             }
             else if (e.KeyCode == Keys.F1)
+            {
+                Dashboardbtn.PerformClick();
+            }
+            else if (e.KeyCode == Keys.F2)
+            {
+                Outofstockbtn.PerformClick();
+            }
+            else if (e.KeyCode == Keys.F3)
             {
                 Minquantitybtn.PerformClick();
             }
@@ -157,7 +169,8 @@ namespace SparePart
             lbstatus.Visible = true;
             try
             {
-                DataTable dt = DatabaseManagement.retrieve(query);
+                SqlConnection con= new SqlConnection(DatabaseManagement.getConnectionString());
+                DataTable dt = DatabaseManagement.retrieve(query,con);
 
                 if (dt != null && dt.Rows.Count > 0)
                 {

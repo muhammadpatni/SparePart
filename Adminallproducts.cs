@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Data.SqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -55,9 +56,14 @@ namespace SparePart
         {
             dataview.Visible = false;
             lbstatus.Visible = true;
+            DataTable? dt = null;
             try
             {
-                DataTable dt = DatabaseManagement.retrieve(query);
+                using (SqlConnection con = new SqlConnection(DatabaseManagement.getConnectionString()))
+                {
+                    con.Open();
+                    dt = DatabaseManagement.retrieve(query, con);
+                }
 
                 if (dt != null && dt.Rows.Count > 0)
                 {
@@ -83,7 +89,8 @@ namespace SparePart
             lbstatus.Visible = true;
             try
             {
-                DataTable dt = await Task.Run(() => DatabaseManagement.retrieve(query));
+                SqlConnection con = new SqlConnection(DatabaseManagement.getConnectionString());
+                DataTable dt = await Task.Run(() => DatabaseManagement.retrieve(query, con));
 
                 if (dt != null && dt.Rows.Count > 0)
                 {

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Data.SqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -48,9 +49,11 @@ namespace SparePart
         {
             dataview.Visible = false;
             lbstatus.Visible = true;
-            try
-            {
-                DataTable dt = await Task.Run(() => DatabaseManagement.retrieve(query));
+            try { 
+
+                SqlConnection con = new SqlConnection(DatabaseManagement.getConnectionString());
+            
+                DataTable dt = await Task.Run(() => DatabaseManagement.retrieve(query, con));
 
                 if (dt != null && dt.Rows.Count > 0)
                 {
@@ -75,8 +78,8 @@ namespace SparePart
             dataview.Visible = false;
             lbstatus.Visible = true;
             try
-            {
-                DataTable dt = DatabaseManagement.retrieve(query);
+            { SqlConnection con = new SqlConnection(DatabaseManagement.getConnectionString());
+                DataTable dt = DatabaseManagement.retrieve(query,con);
 
                 if (dt != null && dt.Rows.Count > 0)
                 {
@@ -116,6 +119,14 @@ namespace SparePart
             else if (e.KeyCode == Keys.F1)
             {
                 Dashboardbtn.PerformClick();
+            }
+            else if (e.KeyCode == Keys.F2)
+            {
+                Outofstockbtn.PerformClick();
+            }
+            else if (e.KeyCode == Keys.F3)
+            {
+                Minquantitybtn.PerformClick();
             }
             else if (e.Control && e.KeyCode == Keys.F)
             {
@@ -162,6 +173,13 @@ namespace SparePart
                     searchtxt.Focus();
                 }
             }
+        }
+
+        private void Minquantitybtn_Click(object sender, EventArgs e)
+        {
+            AdminLowStock adminLowStock = new AdminLowStock();
+            adminLowStock.Show();
+            this.Hide();
         }
     }
 }

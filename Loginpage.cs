@@ -1,4 +1,5 @@
-﻿using Microsoft.IdentityModel.Tokens;
+﻿using Microsoft.Data.SqlClient;
+using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -47,8 +48,8 @@ namespace SparePart
             {
                 string userType = AdminRadioBtn.Checked ? "admin" : "employee";
                 string query = $"SELECT * FROM Users WHERE UserName = '{UserNameTxtBox.Text.Trim()}' AND Password = '{PasswordTxtBox.Text.Trim()}' AND Designation = '{userType}'";
-
-                DataTable? dt = DatabaseManagement.retrieve(query);
+                SqlConnection con = new SqlConnection(DatabaseManagement.getConnectionString());
+                DataTable? dt = DatabaseManagement.retrieve(query, con);
                 if (dt != null && dt.Rows.Count > 0)
                 {
 

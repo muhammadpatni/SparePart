@@ -71,8 +71,16 @@ namespace SparePart
             }
             else if (e.KeyCode == Keys.F1)
             {
+                Dashboardbtn.PerformClick();
+            }
+            else if (e.KeyCode == Keys.F2)
+            {
                 Outofstockbtn.PerformClick();
             }
+            else if (e.KeyCode == Keys.F3)
+            {
+                Minquantitybtn.PerformClick();
+            }  
             else if (e.KeyCode == Keys.P && e.Control)
             {
                 Adminallproducts adminallproducts = new Adminallproducts();
@@ -100,7 +108,7 @@ namespace SparePart
 
         private void Dashboardbtn_Click(object sender, EventArgs e)
         {
-            //Pagecalling.loadform(new AdminDashboard(), Mainpanel);
+            Pagecalling.loadform(new AdminDashboard(), Mainpanel);
         }
 
         private void Outofstockbtn_Click(object sender, EventArgs e)

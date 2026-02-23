@@ -63,6 +63,36 @@ namespace SparePart.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap add_1000dp_1E293B {
+            get {
+                object obj = ResourceManager.GetObject("add_1000dp_1E293B", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap add_100dp_1E293B {
+            get {
+                object obj = ResourceManager.GetObject("add_100dp_1E293B", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap add_100dp_FFFFFF {
+            get {
+                object obj = ResourceManager.GetObject("add_100dp_FFFFFF", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap add_box_24dp_FFFFFF {
             get {
                 object obj = ResourceManager.GetObject("add_box_24dp_FFFFFF", resourceCulture);
@@ -76,6 +106,16 @@ namespace SparePart.Properties {
         internal static System.Drawing.Bitmap add_shopping_cart_1000dp_1E293B {
             get {
                 object obj = ResourceManager.GetObject("add_shopping_cart_1000dp_1E293B", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap assignment_return_40dp_BCBFC5 {
+            get {
+                object obj = ResourceManager.GetObject("assignment_return_40dp_BCBFC5", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -323,6 +363,16 @@ namespace SparePart.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap receiptpic {
+            get {
+                object obj = ResourceManager.GetObject("receiptpic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap search_1000dp_1E293B {
             get {
                 object obj = ResourceManager.GetObject("search_1000dp_1E293B", resourceCulture);
@@ -356,6 +406,16 @@ namespace SparePart.Properties {
         internal static System.Drawing.Bitmap search_24dp_FFFFFF {
             get {
                 object obj = ResourceManager.GetObject("search_24dp_FFFFFF", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap shopping_cart {
+            get {
+                object obj = ResourceManager.GetObject("shopping-cart", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
