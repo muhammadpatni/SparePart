@@ -511,6 +511,7 @@ namespace SparePart
             }
             printPreviewDialog1.Document = Receipt;
             printPreviewDialog1.ShowDialog();
+            //Receipt.Print();
             string customerName = string.IsNullOrWhiteSpace(customernametxt.Text) ? "Counter" : customernametxt.Text;
             long grandTotal = long.Parse(Payablelb.Text);
 
