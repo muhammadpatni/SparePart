@@ -133,7 +133,7 @@ namespace SparePart
                 }
             }
 
-            subtotallb.Text = "RS " + subtotal.ToString("0.00");
+            subtotallb.Text = "RS " + subtotal.ToString();
 
             if (!string.IsNullOrWhiteSpace(discounttxt.Text))
             {
@@ -185,6 +185,10 @@ namespace SparePart
             if (e.KeyCode == Keys.Escape)
             {
                 Application.Exit();
+            }
+            else if (e.KeyCode == Keys.P && e.Control)
+            {
+                Printbtn.PerformClick();
             }
             else if (e.KeyCode == Keys.Tab && e.Control)
             {
@@ -412,7 +416,7 @@ namespace SparePart
                 cartview.Rows.Clear();
                 customernametxt.Clear();
                 discounttxt.Clear();
-                subtotallb.Text = "Rs 0.0";
+                subtotallb.Text = "Rs 0";
 
                 MessageBox.Show("Bill saved successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -500,19 +504,51 @@ namespace SparePart
 
         private void Printbtn_Click(object sender, EventArgs e)
         {
+            if (cartview.Rows.Count == 0)
+            {
+                MessageBox.Show("Cart is empty. Please add items to the cart before printing the bill.", "Empty Cart", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             printPreviewDialog1.Document = Receipt;
             printPreviewDialog1.ShowDialog();
+            string customerName = string.IsNullOrWhiteSpace(customernametxt.Text) ? "Counter" : customernametxt.Text;
+            long grandTotal = long.Parse(Payablelb.Text);
+
+            long discount = 0;
+            if (!string.IsNullOrEmpty(discounttxt.Text))
+            {
+                discount = long.Parse(discounttxt.Text);
+            }
+            string Date = Datetimelb.Text;
+
+            string rawInvoice = Invoicelb.Text;
+            long invoiceNumber = long.Parse(rawInvoice.ToUpper().Replace("#PARTEX", "").Trim());
+
+            string invoiceQuery = $"INSERT INTO Invoices (InvoiceNumber,Date, CustomerName, Discount, Grandtotal) VALUES ({invoiceNumber}, '{Date}','{customerName}', {discount}, {grandTotal})";
+            SqlConnection con = new SqlConnection(DatabaseManagement.getConnectionString());
+            DatabaseManagement.edit(invoiceQuery, con);
+            cartview.Rows.Clear();
+            customernametxt.Clear();
+            discounttxt.Clear();
+            subtotallb.Text = "Rs 0";
+            searcchtxt.Focus();
+            updateInvoiceNumber();
+            getInvoiceNumber();
+
 
         }
 
         private void Receipt_PrintPage(object sender, PrintPageEventArgs e)
         {
+
+            string customerName = string.IsNullOrWhiteSpace(customernametxt.Text) ? "Counter" : customernametxt.Text;
+
             Image image = Properties.Resources.receiptpic;
             e.Graphics.DrawImage(image, 70, 20, image.Width, image.Height);
             e.Graphics.DrawString(" Sell Receipt  ", new System.Drawing.Font("Arial", 12, FontStyle.Bold), Brushes.Black, new Point(100, 80));
             e.Graphics.DrawString("Invoice# : " + Invoicelb.Text.Replace("#", ""), new Font("Arial", 9, FontStyle.Regular), Brushes.Black, new Point(10, 120));
             e.Graphics.DrawString("Inv Date/Time : " + DateTime.Now.ToString("dd-MM-yyyy") + "  " + DateTime.Now.ToShortTimeString(), new Font("Arial", 9, FontStyle.Regular), Brushes.Black, new Point(10, 145));
-            e.Graphics.DrawString("Customer Name :  " + customernametxt.Text, new Font("Arial", 9, FontStyle.Regular), Brushes.Black, new Point(10, 170));
+            e.Graphics.DrawString("Customer Name :  " + customerName, new Font("Arial", 9, FontStyle.Regular), Brushes.Black, new Point(10, 170));
             e.Graphics.DrawString("---------------------------------------------------------", new Font("Arial", 12, FontStyle.Bold), Brushes.Black, new Point(0, 200));
             e.Graphics.DrawString("Product Name", new Font("Arial", 7, FontStyle.Bold), Brushes.Black, new Point(0, 215));
             e.Graphics.DrawString("Price", new Font("Arial", 7, FontStyle.Bold), Brushes.Black, new Point(135, 215));
@@ -532,11 +568,11 @@ namespace SparePart
                 }
                 y += 25;
             }
-            e.Graphics.DrawString("---------------------------------------------------------", new Font("Arial", 12, FontStyle.Bold), Brushes.Black, new Point(0, y-20));
-            e.Graphics.DrawString("# OF ITEMS : " + cartview.Rows.Count.ToString(), new Font("Arial", 9, FontStyle.Regular), Brushes.Black, new Point(0, y));
-            e.Graphics.DrawString("SUBTOTAL : " + subtotallb.Text.Replace(".0",""), new Font("Arial", 9, FontStyle.Regular), Brushes.Black, new Point(140, y + 40));
-            e.Graphics.DrawString("DISCOUNT : "+discounttxt.Text, new Font("Arial", 9, FontStyle.Regular), Brushes.Black, new Point(140, y + 60));
-            e.Graphics.DrawString("TOTAL : " +Payablelb.Text.Replace(".0",""), new Font("Arial", 9, FontStyle.Regular), Brushes.Black, new Point(140, y + 80));
+            e.Graphics.DrawString("---------------------------------------------------------", new Font("Arial", 12, FontStyle.Bold), Brushes.Black, new Point(0, y - 20));
+            e.Graphics.DrawString("# OF ITEMS : " + cartview.Rows.Count, new Font("Arial", 9, FontStyle.Regular), Brushes.Black, new Point(0, y));
+            e.Graphics.DrawString("SUBTOTAL : " + subtotallb.Text, new Font("Arial", 9, FontStyle.Regular), Brushes.Black, new Point(140, y + 40));
+            e.Graphics.DrawString("DISCOUNT : " + discounttxt.Text, new Font("Arial", 9, FontStyle.Regular), Brushes.Black, new Point(140, y + 60));
+            e.Graphics.DrawString("TOTAL : " + Payablelb.Text, new Font("Arial", 9, FontStyle.Regular), Brushes.Black, new Point(140, y + 80));
             e.Graphics.DrawString("CASH RECEICED : " + Payablelb.Text.Replace(".0", ""), new Font("Arial", 9, FontStyle.Regular), Brushes.Black, new Point(140, y + 100));
             e.Graphics.DrawString("NET BALANCE : 0 ", new Font("Arial", 9, FontStyle.Regular), Brushes.Black, new Point(140, y + 120));
             e.Graphics.DrawString("------------------------------------------------------------------------", new Font("Arial", 12, FontStyle.Bold), Brushes.Black, new Point(0, y + 130));
@@ -545,7 +581,7 @@ namespace SparePart
             //e.Graphics.DrawString("THANKS", new Font("Arial", 9, FontStyle.Regular), Brushes.Black, new Point(330, y + 160));
             //e.Graphics.DrawString("------------------------------------------------------------------------", new Font("Arial", 12, FontStyle.Bold), Brushes.Black, new Point(0, y + 180));
             e.Graphics.DrawString("Software By MUHAMMAD PATNI 0316-2406968 Muhammad.", new Font("Arial", 6, FontStyle.Regular), Brushes.Black, new Point(0, y + 150));
-            e.Graphics.DrawString("SHOP PTCL        32435482        32446329", new Font("Arial", 6, FontStyle.Regular), Brushes.Black, new Point(0, y + 170));
+            e.Graphics.DrawString("SHOP PTCL        32435482        32446329", new Font("Arial", 6, FontStyle.Regular), Brushes.Black, new Point(0, y + 160));
 
         }
     }

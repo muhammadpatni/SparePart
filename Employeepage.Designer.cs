@@ -514,9 +514,9 @@
             Payablelb.ForeColor = Color.FromArgb(22, 31, 50);
             Payablelb.Location = new Point(370, 82);
             Payablelb.Name = "Payablelb";
-            Payablelb.Size = new Size(46, 30);
+            Payablelb.Size = new Size(26, 30);
             Payablelb.TabIndex = 26;
-            Payablelb.Text = "0.0";
+            Payablelb.Text = "0";
             // 
             // label7
             // 
@@ -563,9 +563,9 @@
             subtotallb.Location = new Point(370, 7);
             subtotallb.Name = "subtotallb";
             subtotallb.RightToLeft = RightToLeft.Yes;
-            subtotallb.Size = new Size(53, 20);
+            subtotallb.Size = new Size(40, 20);
             subtotallb.TabIndex = 25;
-            subtotallb.Text = "RS 0.0";
+            subtotallb.Text = "RS 0";
             subtotallb.TextAlign = ContentAlignment.MiddleRight;
             // 
             // label6
