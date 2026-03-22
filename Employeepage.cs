@@ -74,7 +74,6 @@ namespace SparePart
             if (credit != null && invoices != null)
             {
                 loadsavedbills();
-                DateTimeLoad();
                 await loadproducts("SELECT * FROM Products WHERE Stock > 0");
                 return;
             }
@@ -511,7 +510,7 @@ namespace SparePart
             }
             printPreviewDialog1.Document = Receipt;
             printPreviewDialog1.ShowDialog();
-            //Receipt.Print();
+            Receipt.Print();
             string customerName = string.IsNullOrWhiteSpace(customernametxt.Text) ? "Counter" : customernametxt.Text;
             long grandTotal = long.Parse(Payablelb.Text);
 

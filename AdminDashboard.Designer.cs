@@ -30,12 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminDashboard));
             mainpanel = new Panel();
-            panel1 = new Panel();
+            uipanel = new Panel();
             label2 = new Label();
-            panel7 = new Panel();
+            Inventoryhealthpanel = new Panel();
             label14 = new Label();
             label15 = new Label();
-            panel2 = new Panel();
+            WeeklySalepanel = new Panel();
             label13 = new Label();
             label12 = new Label();
             UdharPnl = new Panel();
@@ -60,9 +60,9 @@
             pictureBox1 = new PictureBox();
             TotalRevenuTxt = new Label();
             mainpanel.SuspendLayout();
-            panel1.SuspendLayout();
-            panel7.SuspendLayout();
-            panel2.SuspendLayout();
+            uipanel.SuspendLayout();
+            Inventoryhealthpanel.SuspendLayout();
+            WeeklySalepanel.SuspendLayout();
             UdharPnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             LowStcokPnl.SuspendLayout();
@@ -77,49 +77,51 @@
             // 
             // mainpanel
             // 
-            mainpanel.Controls.Add(panel1);
+            mainpanel.Controls.Add(uipanel);
             mainpanel.Dock = DockStyle.Fill;
             mainpanel.Location = new Point(0, 0);
             mainpanel.Name = "mainpanel";
             mainpanel.Size = new Size(1166, 553);
             mainpanel.TabIndex = 6;
+            mainpanel.Paint += mainpanel_Paint;
             // 
-            // panel1
+            // uipanel
             // 
-            panel1.Controls.Add(label2);
-            panel1.Controls.Add(panel7);
-            panel1.Controls.Add(panel2);
-            panel1.Controls.Add(UdharPnl);
-            panel1.Controls.Add(LowStcokPnl);
-            panel1.Controls.Add(OutOfStockPnl);
-            panel1.Controls.Add(InventoryPnl);
-            panel1.Controls.Add(RevenuPnl);
-            panel1.Location = new Point(32, 12);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(1105, 529);
-            panel1.TabIndex = 0;
-            panel1.Paint += panel1_Paint;
+            uipanel.Controls.Add(label2);
+            uipanel.Controls.Add(Inventoryhealthpanel);
+            uipanel.Controls.Add(WeeklySalepanel);
+            uipanel.Controls.Add(UdharPnl);
+            uipanel.Controls.Add(LowStcokPnl);
+            uipanel.Controls.Add(OutOfStockPnl);
+            uipanel.Controls.Add(InventoryPnl);
+            uipanel.Controls.Add(RevenuPnl);
+            uipanel.Location = new Point(27, 12);
+            uipanel.Name = "uipanel";
+            uipanel.Size = new Size(1105, 529);
+            uipanel.TabIndex = 0;
+            uipanel.Paint += panel1_Paint;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.Black;
-            label2.Location = new Point(43, -5);
+            label2.Location = new Point(34, 14);
             label2.Name = "label2";
-            label2.Size = new Size(206, 25);
+            label2.Size = new Size(212, 25);
             label2.TabIndex = 21;
-            label2.Text = "Busness Overview";
+            label2.Text = "Business Overview";
             // 
-            // panel7
+            // Inventoryhealthpanel
             // 
-            panel7.BackColor = Color.White;
-            panel7.Controls.Add(label14);
-            panel7.Controls.Add(label15);
-            panel7.Location = new Point(638, 198);
-            panel7.Name = "panel7";
-            panel7.Size = new Size(417, 316);
-            panel7.TabIndex = 14;
+            Inventoryhealthpanel.BackColor = Color.White;
+            Inventoryhealthpanel.Controls.Add(label14);
+            Inventoryhealthpanel.Controls.Add(label15);
+            Inventoryhealthpanel.Location = new Point(638, 205);
+            Inventoryhealthpanel.Name = "Inventoryhealthpanel";
+            Inventoryhealthpanel.Size = new Size(417, 316);
+            Inventoryhealthpanel.TabIndex = 14;
+            Inventoryhealthpanel.Paint += Inventoryhealthpanel_Paint;
             // 
             // label14
             // 
@@ -143,15 +145,15 @@
             label15.TabIndex = 2;
             label15.Text = "Inventory Health";
             // 
-            // panel2
+            // WeeklySalepanel
             // 
-            panel2.BackColor = Color.White;
-            panel2.Controls.Add(label13);
-            panel2.Controls.Add(label12);
-            panel2.Location = new Point(31, 198);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(601, 316);
-            panel2.TabIndex = 15;
+            WeeklySalepanel.BackColor = Color.White;
+            WeeklySalepanel.Controls.Add(label13);
+            WeeklySalepanel.Controls.Add(label12);
+            WeeklySalepanel.Location = new Point(31, 205);
+            WeeklySalepanel.Name = "WeeklySalepanel";
+            WeeklySalepanel.Size = new Size(601, 316);
+            WeeklySalepanel.TabIndex = 15;
             // 
             // label13
             // 
@@ -182,7 +184,7 @@
             UdharPnl.Controls.Add(label9);
             UdharPnl.Controls.Add(pictureBox5);
             UdharPnl.Controls.Add(UdharStatusTxt);
-            UdharPnl.Location = new Point(873, 53);
+            UdharPnl.Location = new Point(864, 62);
             UdharPnl.Name = "UdharPnl";
             UdharPnl.Size = new Size(191, 104);
             UdharPnl.TabIndex = 16;
@@ -229,6 +231,7 @@
             UdharStatusTxt.Size = new Size(99, 25);
             UdharStatusTxt.TabIndex = 2;
             UdharStatusTxt.Text = "Rs 4443";
+            UdharStatusTxt.Click += UdharStatusTxt_Click;
             // 
             // LowStcokPnl
             // 
@@ -236,10 +239,11 @@
             LowStcokPnl.Controls.Add(label7);
             LowStcokPnl.Controls.Add(pictureBox4);
             LowStcokPnl.Controls.Add(LowStockTxt);
-            LowStcokPnl.Location = new Point(665, 53);
+            LowStcokPnl.Location = new Point(656, 62);
             LowStcokPnl.Name = "LowStcokPnl";
             LowStcokPnl.Size = new Size(191, 104);
             LowStcokPnl.TabIndex = 17;
+            LowStcokPnl.Paint += LowStcokPnl_Paint;
             // 
             // label7
             // 
@@ -279,7 +283,7 @@
             OutOfStockPnl.Controls.Add(label5);
             OutOfStockPnl.Controls.Add(pictureBox3);
             OutOfStockPnl.Controls.Add(OutofStockTxt);
-            OutOfStockPnl.Location = new Point(462, 53);
+            OutOfStockPnl.Location = new Point(453, 62);
             OutOfStockPnl.Name = "OutOfStockPnl";
             OutOfStockPnl.Size = new Size(191, 104);
             OutOfStockPnl.TabIndex = 18;
@@ -322,7 +326,7 @@
             InventoryPnl.Controls.Add(label1);
             InventoryPnl.Controls.Add(pictureBox2);
             InventoryPnl.Controls.Add(TotalinventoryTxt);
-            InventoryPnl.Location = new Point(250, 53);
+            InventoryPnl.Location = new Point(241, 62);
             InventoryPnl.Name = "InventoryPnl";
             InventoryPnl.Size = new Size(191, 104);
             InventoryPnl.TabIndex = 19;
@@ -365,7 +369,7 @@
             RevenuPnl.Controls.Add(label3);
             RevenuPnl.Controls.Add(pictureBox1);
             RevenuPnl.Controls.Add(TotalRevenuTxt);
-            RevenuPnl.Location = new Point(40, 53);
+            RevenuPnl.Location = new Point(31, 62);
             RevenuPnl.Name = "RevenuPnl";
             RevenuPnl.Size = new Size(191, 104);
             RevenuPnl.TabIndex = 20;
@@ -412,13 +416,14 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "AdminDashboard";
             Text = "Dashboard";
+            Load += AdminDashboard_Load;
             mainpanel.ResumeLayout(false);
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
-            panel7.ResumeLayout(false);
-            panel7.PerformLayout();
-            panel2.ResumeLayout(false);
-            panel2.PerformLayout();
+            uipanel.ResumeLayout(false);
+            uipanel.PerformLayout();
+            Inventoryhealthpanel.ResumeLayout(false);
+            Inventoryhealthpanel.PerformLayout();
+            WeeklySalepanel.ResumeLayout(false);
+            WeeklySalepanel.PerformLayout();
             UdharPnl.ResumeLayout(false);
             UdharPnl.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
@@ -440,12 +445,12 @@
         #endregion
 
         private Panel mainpanel;
-        private Panel panel1;
+        private Panel uipanel;
         private Label label2;
-        private Panel panel7;
+        private Panel Inventoryhealthpanel;
         private Label label14;
         private Label label15;
-        private Panel panel2;
+        private Panel WeeklySalepanel;
         private Label label13;
         private Label label12;
         private Panel UdharPnl;

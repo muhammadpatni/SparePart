@@ -3,11 +3,13 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.ComponentModel.Design.ObjectSelectorEditor;
 
 namespace SparePart
 {
@@ -111,6 +113,7 @@ namespace SparePart
 
         }
 
+
         private async void dataview_KeyDown(object sender, KeyEventArgs e)
         {
 
@@ -128,7 +131,7 @@ namespace SparePart
                     updateForm.settextboxes(id, name, price, stock, lowstock);
                     updateForm.ShowDialog();
                     e.Handled = true;
-                    await loadproducts("SELECT * FROM Products");
+                    await loadproducts("SELECT ProductID, ProductName, Price, Stock, lowstock FROM Products ORDER BY ProductID");
                     searcchtxt.Clear();
                     searcchtxt.Focus();
                 }
@@ -146,7 +149,7 @@ namespace SparePart
 
         private async void Adminallproducts_Load(object sender, EventArgs e)
         {
-            await loadproducts("SELECT * FROM Products");
+            await loadproducts("SELECT ProductID, ProductName, Price, Stock, lowstock FROM Products ORDER BY ProductID");
         }
 
         private void dataview_CellContentClick(object sender, DataGridViewCellEventArgs e)

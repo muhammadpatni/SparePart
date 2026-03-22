@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             panel2 = new Panel();
-            textBox1 = new TextBox();
             panel1 = new Panel();
             EmployeeRadioBtn = new RadioButton();
             AdminRadioBtn = new RadioButton();
@@ -40,30 +39,16 @@
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
-            panel2.SuspendLayout();
             LoginPnl.SuspendLayout();
             SuspendLayout();
             // 
             // panel2
             // 
             panel2.BackColor = Color.White;
-            panel2.Controls.Add(textBox1);
             panel2.Location = new Point(175, 237);
             panel2.Name = "panel2";
             panel2.Size = new Size(276, 2);
             panel2.TabIndex = 5;
-            // 
-            // textBox1
-            // 
-            textBox1.BackColor = SystemColors.ActiveCaptionText;
-            textBox1.BorderStyle = BorderStyle.None;
-            textBox1.ForeColor = Color.Black;
-            textBox1.Location = new Point(0, -90);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.PlaceholderText = "Username";
-            textBox1.Size = new Size(211, 34);
-            textBox1.TabIndex = 3;
             // 
             // panel1
             // 
@@ -82,7 +67,6 @@
             EmployeeRadioBtn.Name = "EmployeeRadioBtn";
             EmployeeRadioBtn.Size = new Size(100, 25);
             EmployeeRadioBtn.TabIndex = 3;
-            EmployeeRadioBtn.TabStop = true;
             EmployeeRadioBtn.Text = "Employee";
             EmployeeRadioBtn.UseVisualStyleBackColor = true;
             // 
@@ -95,7 +79,6 @@
             AdminRadioBtn.Name = "AdminRadioBtn";
             AdminRadioBtn.Size = new Size(76, 25);
             AdminRadioBtn.TabIndex = 3;
-            AdminRadioBtn.TabStop = true;
             AdminRadioBtn.Text = "Admin";
             AdminRadioBtn.UseVisualStyleBackColor = true;
             // 
@@ -110,6 +93,7 @@
             PasswordTxtBox.Name = "PasswordTxtBox";
             PasswordTxtBox.Size = new Size(276, 34);
             PasswordTxtBox.TabIndex = 3;
+            PasswordTxtBox.TabStop = false;
             PasswordTxtBox.TextChanged += PasswordTxtBox_TextChanged;
             PasswordTxtBox.KeyDown += PasswordTxtBox_KeyDown;
             // 
@@ -124,6 +108,7 @@
             LoginBtn.Name = "LoginBtn";
             LoginBtn.Size = new Size(276, 34);
             LoginBtn.TabIndex = 1;
+            LoginBtn.TabStop = false;
             LoginBtn.Text = "Login";
             LoginBtn.UseVisualStyleBackColor = false;
             LoginBtn.Click += LoginBtn_Click;
@@ -139,6 +124,7 @@
             UserNameTxtBox.Name = "UserNameTxtBox";
             UserNameTxtBox.Size = new Size(276, 34);
             UserNameTxtBox.TabIndex = 3;
+            UserNameTxtBox.TabStop = false;
             UserNameTxtBox.KeyDown += UserNameTxtBox_KeyDown;
             // 
             // LoginPnl
@@ -210,8 +196,6 @@
             WindowState = FormWindowState.Maximized;
             Load += Loginpage_Load;
             KeyDown += LoginPage_KeyDown;
-            panel2.ResumeLayout(false);
-            panel2.PerformLayout();
             LoginPnl.ResumeLayout(false);
             LoginPnl.PerformLayout();
             ResumeLayout(false);
@@ -226,7 +210,6 @@
         private Button LoginBtn;
         private TextBox UserNameTxtBox;
         private Panel LoginPnl;
-        private TextBox textBox1;
         private Label label1;
         private Label label2;
         private Label label3;

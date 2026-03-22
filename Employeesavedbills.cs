@@ -200,8 +200,8 @@ namespace SparePart
             string query2 = $"DELETE FROM Invoices WHERE InvoiceNumber={Invoice};";
             DatabaseManagement.edit(query1, con);
             DatabaseManagement.edit(query2, con);
-            Employeepage returnPage = new Employeepage(credit, invoiceinfo);
-            returnPage.Show();
+            Employeepage emppage = new Employeepage(credit, invoiceinfo);
+            emppage.Show();
             this.Hide();
         }
 

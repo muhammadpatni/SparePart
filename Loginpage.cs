@@ -118,6 +118,10 @@ namespace SparePart
             {
                 Application.Exit();
             }
+            else if (e.KeyCode == Keys.Enter)
+            {
+                Performlogin();
+            }
             else if (e.KeyCode == Keys.F1 && !AdminRadioBtn.Checked)
             {
                 AdminRadioBtn.Checked = true;
@@ -130,9 +134,10 @@ namespace SparePart
 
         private void UserNameTxtBox_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.Tab)
             {
                 PasswordTxtBox.Focus();
+                e.SuppressKeyPress = true;
             }
         }
 
@@ -143,10 +148,10 @@ namespace SparePart
 
         private void PasswordTxtBox_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.Tab)
             {
-                Performlogin();
-                PasswordTxtBox.Text = PasswordTxtBox.Text.Trim();
+                UserNameTxtBox.Focus();
+                e.SuppressKeyPress = true;
             }
 
         }
