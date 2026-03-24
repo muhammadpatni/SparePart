@@ -531,6 +531,7 @@ namespace SparePart
             customernametxt.Clear();
             discounttxt.Clear();
             subtotallb.Text = "Rs 0";
+            CalculateBill();
             searcchtxt.Focus();
             updateInvoiceNumber();
             getInvoiceNumber();

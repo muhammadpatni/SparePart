@@ -36,8 +36,6 @@
             label14 = new Label();
             label15 = new Label();
             WeeklySalepanel = new Panel();
-            label13 = new Label();
-            label12 = new Label();
             UdharPnl = new Panel();
             PendingCustomerTxt = new Label();
             label9 = new Label();
@@ -59,6 +57,10 @@
             label3 = new Label();
             pictureBox1 = new PictureBox();
             TotalRevenuTxt = new Label();
+            panel1 = new Panel();
+            label13 = new Label();
+            label12 = new Label();
+            weeklysalepanelgraph = new Panel();
             mainpanel.SuspendLayout();
             uipanel.SuspendLayout();
             Inventoryhealthpanel.SuspendLayout();
@@ -73,6 +75,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             RevenuPnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // mainpanel
@@ -148,34 +151,12 @@
             // WeeklySalepanel
             // 
             WeeklySalepanel.BackColor = Color.White;
-            WeeklySalepanel.Controls.Add(label13);
-            WeeklySalepanel.Controls.Add(label12);
+            WeeklySalepanel.Controls.Add(weeklysalepanelgraph);
+            WeeklySalepanel.Controls.Add(panel1);
             WeeklySalepanel.Location = new Point(31, 205);
             WeeklySalepanel.Name = "WeeklySalepanel";
             WeeklySalepanel.Size = new Size(601, 316);
             WeeklySalepanel.TabIndex = 15;
-            // 
-            // label13
-            // 
-            label13.AutoSize = true;
-            label13.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label13.ForeColor = Color.FromArgb(128, 132, 140);
-            label13.Location = new Point(37, 62);
-            label13.Name = "label13";
-            label13.Size = new Size(266, 17);
-            label13.TabIndex = 4;
-            label13.Text = "Sale's Performance for the last sevent days";
-            // 
-            // label12
-            // 
-            label12.AutoSize = true;
-            label12.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label12.ForeColor = Color.Black;
-            label12.Location = new Point(37, 28);
-            label12.Name = "label12";
-            label12.Size = new Size(244, 25);
-            label12.TabIndex = 2;
-            label12.Text = "Weekly Revenu Trend";
             // 
             // UdharPnl
             // 
@@ -405,6 +386,47 @@
             TotalRevenuTxt.Size = new Size(99, 25);
             TotalRevenuTxt.TabIndex = 2;
             TotalRevenuTxt.Text = "Rs 4443";
+            TotalRevenuTxt.Click += TotalRevenuTxt_Click;
+            // 
+            // panel1
+            // 
+            panel1.Controls.Add(label13);
+            panel1.Controls.Add(label12);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(601, 94);
+            panel1.TabIndex = 5;
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label13.ForeColor = Color.FromArgb(128, 132, 140);
+            label13.Location = new Point(13, 62);
+            label13.Name = "label13";
+            label13.Size = new Size(266, 17);
+            label13.TabIndex = 6;
+            label13.Text = "Sale's Performance for the last sevent days";
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label12.ForeColor = Color.Black;
+            label12.Location = new Point(13, 28);
+            label12.Name = "label12";
+            label12.Size = new Size(244, 25);
+            label12.TabIndex = 5;
+            label12.Text = "Weekly Revenu Trend";
+            // 
+            // weeklysalepanelgraph
+            // 
+            weeklysalepanelgraph.Dock = DockStyle.Fill;
+            weeklysalepanelgraph.Location = new Point(0, 94);
+            weeklysalepanelgraph.Name = "weeklysalepanelgraph";
+            weeklysalepanelgraph.Size = new Size(601, 222);
+            weeklysalepanelgraph.TabIndex = 6;
             // 
             // AdminDashboard
             // 
@@ -423,7 +445,6 @@
             Inventoryhealthpanel.ResumeLayout(false);
             Inventoryhealthpanel.PerformLayout();
             WeeklySalepanel.ResumeLayout(false);
-            WeeklySalepanel.PerformLayout();
             UdharPnl.ResumeLayout(false);
             UdharPnl.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
@@ -439,6 +460,8 @@
             RevenuPnl.ResumeLayout(false);
             RevenuPnl.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -451,8 +474,6 @@
         private Label label14;
         private Label label15;
         private Panel WeeklySalepanel;
-        private Label label13;
-        private Label label12;
         private Panel UdharPnl;
         private Label PendingCustomerTxt;
         private Label label9;
@@ -474,5 +495,9 @@
         private Label label3;
         private PictureBox pictureBox1;
         private Label TotalRevenuTxt;
+        private Panel weeklysalepanelgraph;
+        private Panel panel1;
+        private Label label13;
+        private Label label12;
     }
 }

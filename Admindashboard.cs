@@ -1,4 +1,6 @@
-﻿using Microsoft.Data.SqlClient;
+﻿using LiveChartsCore;
+using LiveChartsCore.SkiaSharpView;
+using Microsoft.Data.SqlClient;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -9,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace SparePart
 {
@@ -55,6 +58,7 @@ namespace SparePart
             lowstockload();
             outofstockload();
             loadudhaarstatus();
+            totalrevenuetodayload();
             WeeklySalepanel.Height = WeeklySalepanel.Height + 150;
             Inventoryhealthpanel.Height = Inventoryhealthpanel.Height + 150;
             uipanel.Height = uipanel.Height + 150;
@@ -134,6 +138,32 @@ namespace SparePart
 
         }
 
+        private void totalrevenuetodayload()
+        {
+            SqlConnection con = new SqlConnection(DatabaseManagement.getConnectionString());
+            try
+            {
+                SqlCommand cmd = new SqlCommand("SELECT ISNULL(SUM(Grandtotal), 0) FROM Invoices WHERE Date = FORMAT(GETDATE(), 'dd-MM-yyyy');", con);
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+                object result = cmd.ExecuteScalar();
+                if (con.State == ConnectionState.Open)
+                {
+                    con.Close();
+                }
+                TotalRevenuTxt.Text = "RS " + result.ToString();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Something Went Wrong\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                con.Close();
+            }
+
+        }
+
         private void loadudhaarstatus()
         {
             SqlConnection con = new SqlConnection(DatabaseManagement.getConnectionString());
@@ -162,12 +192,18 @@ namespace SparePart
 
         }
 
+        
         private void UdharStatusTxt_Click(object sender, EventArgs e)
         {
 
         }
 
         private void Inventoryhealthpanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void TotalRevenuTxt_Click(object sender, EventArgs e)
         {
 
         }
