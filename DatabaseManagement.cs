@@ -11,7 +11,7 @@ namespace SparePart
 {
     internal class DatabaseManagement
     {
-        private static string ConnectionString = "Data Source=DESKTOP-GJBQRB1\\SQLEXPRESS;Initial Catalog=SpareParts;Integrated Security=True;Trust Server Certificate=True";
+        private static string ConnectionString = "Data Source=WIN-9GCSBBJOLMN\\SQLEXPRESS;Initial Catalog=SpareParts;Integrated Security=True;Trust Server Certificate=True";
 
         public static string getConnectionString()
         {

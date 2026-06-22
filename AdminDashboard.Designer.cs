@@ -28,14 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminDashboard));
             mainpanel = new Panel();
             uipanel = new Panel();
             label2 = new Label();
             Inventoryhealthpanel = new Panel();
-            label14 = new Label();
+            chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            panel2 = new Panel();
             label15 = new Label();
+            label14 = new Label();
             WeeklySalepanel = new Panel();
+            weeklysalepanelgraph = new Panel();
+            weeklysaleschart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            panel1 = new Panel();
+            label13 = new Label();
+            label12 = new Label();
             UdharPnl = new Panel();
             PendingCustomerTxt = new Label();
             label9 = new Label();
@@ -57,14 +70,15 @@
             label3 = new Label();
             pictureBox1 = new PictureBox();
             TotalRevenuTxt = new Label();
-            panel1 = new Panel();
-            label13 = new Label();
-            label12 = new Label();
-            weeklysalepanelgraph = new Panel();
             mainpanel.SuspendLayout();
             uipanel.SuspendLayout();
             Inventoryhealthpanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)chart2).BeginInit();
+            panel2.SuspendLayout();
             WeeklySalepanel.SuspendLayout();
+            weeklysalepanelgraph.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)weeklysaleschart).BeginInit();
+            panel1.SuspendLayout();
             UdharPnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             LowStcokPnl.SuspendLayout();
@@ -75,7 +89,6 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             RevenuPnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // mainpanel
@@ -86,7 +99,6 @@
             mainpanel.Name = "mainpanel";
             mainpanel.Size = new Size(1166, 553);
             mainpanel.TabIndex = 6;
-            mainpanel.Paint += mainpanel_Paint;
             // 
             // uipanel
             // 
@@ -102,7 +114,6 @@
             uipanel.Name = "uipanel";
             uipanel.Size = new Size(1105, 529);
             uipanel.TabIndex = 0;
-            uipanel.Paint += panel1_Paint;
             // 
             // label2
             // 
@@ -118,24 +129,39 @@
             // Inventoryhealthpanel
             // 
             Inventoryhealthpanel.BackColor = Color.White;
-            Inventoryhealthpanel.Controls.Add(label14);
-            Inventoryhealthpanel.Controls.Add(label15);
-            Inventoryhealthpanel.Location = new Point(638, 205);
+            Inventoryhealthpanel.Controls.Add(chart2);
+            Inventoryhealthpanel.Controls.Add(panel2);
+            Inventoryhealthpanel.Location = new Point(638, 170);
             Inventoryhealthpanel.Name = "Inventoryhealthpanel";
             Inventoryhealthpanel.Size = new Size(417, 316);
             Inventoryhealthpanel.TabIndex = 14;
-            Inventoryhealthpanel.Paint += Inventoryhealthpanel_Paint;
             // 
-            // label14
+            // chart2
             // 
-            label14.AutoSize = true;
-            label14.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label14.ForeColor = Color.FromArgb(128, 132, 140);
-            label14.Location = new Point(13, 62);
-            label14.Name = "label14";
-            label14.Size = new Size(166, 17);
-            label14.TabIndex = 4;
-            label14.Text = "Current Stock Distribution";
+            chartArea1.Name = "ChartArea1";
+            chart2.ChartAreas.Add(chartArea1);
+            chart2.Dock = DockStyle.Fill;
+            legend1.Name = "Legend1";
+            chart2.Legends.Add(legend1);
+            chart2.Location = new Point(0, 100);
+            chart2.Name = "chart2";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            chart2.Series.Add(series1);
+            chart2.Size = new Size(417, 216);
+            chart2.TabIndex = 6;
+            chart2.Text = "chart1";
+            // 
+            // panel2
+            // 
+            panel2.Controls.Add(label15);
+            panel2.Controls.Add(label14);
+            panel2.Dock = DockStyle.Top;
+            panel2.Location = new Point(0, 0);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(417, 100);
+            panel2.TabIndex = 5;
             // 
             // label15
             // 
@@ -148,15 +174,84 @@
             label15.TabIndex = 2;
             label15.Text = "Inventory Health";
             // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label14.ForeColor = Color.FromArgb(128, 132, 140);
+            label14.Location = new Point(13, 62);
+            label14.Name = "label14";
+            label14.Size = new Size(166, 17);
+            label14.TabIndex = 4;
+            label14.Text = "Current Stock Distribution";
+            // 
             // WeeklySalepanel
             // 
             WeeklySalepanel.BackColor = Color.White;
             WeeklySalepanel.Controls.Add(weeklysalepanelgraph);
             WeeklySalepanel.Controls.Add(panel1);
-            WeeklySalepanel.Location = new Point(31, 205);
+            WeeklySalepanel.Location = new Point(31, 170);
             WeeklySalepanel.Name = "WeeklySalepanel";
             WeeklySalepanel.Size = new Size(601, 316);
             WeeklySalepanel.TabIndex = 15;
+            // 
+            // weeklysalepanelgraph
+            // 
+            weeklysalepanelgraph.Controls.Add(weeklysaleschart);
+            weeklysalepanelgraph.Dock = DockStyle.Fill;
+            weeklysalepanelgraph.Location = new Point(0, 94);
+            weeklysalepanelgraph.Name = "weeklysalepanelgraph";
+            weeklysalepanelgraph.Size = new Size(601, 222);
+            weeklysalepanelgraph.TabIndex = 6;
+            // 
+            // weeklysaleschart
+            // 
+            chartArea2.Name = "ChartArea1";
+            weeklysaleschart.ChartAreas.Add(chartArea2);
+            weeklysaleschart.Dock = DockStyle.Fill;
+            legend2.Name = "Legend1";
+            weeklysaleschart.Legends.Add(legend2);
+            weeklysaleschart.Location = new Point(0, 0);
+            weeklysaleschart.Name = "weeklysaleschart";
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            weeklysaleschart.Series.Add(series2);
+            weeklysaleschart.Size = new Size(601, 222);
+            weeklysaleschart.TabIndex = 0;
+            weeklysaleschart.Text = "chart1";
+            // 
+            // panel1
+            // 
+            panel1.Controls.Add(label13);
+            panel1.Controls.Add(label12);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(601, 94);
+            panel1.TabIndex = 5;
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label13.ForeColor = Color.FromArgb(128, 132, 140);
+            label13.Location = new Point(13, 62);
+            label13.Name = "label13";
+            label13.Size = new Size(266, 17);
+            label13.TabIndex = 6;
+            label13.Text = "Sale's Performance for the last sevent days";
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label12.ForeColor = Color.Black;
+            label12.Location = new Point(13, 28);
+            label12.Name = "label12";
+            label12.Size = new Size(257, 25);
+            label12.TabIndex = 5;
+            label12.Text = "Weekly Revenue Trend";
             // 
             // UdharPnl
             // 
@@ -165,7 +260,7 @@
             UdharPnl.Controls.Add(label9);
             UdharPnl.Controls.Add(pictureBox5);
             UdharPnl.Controls.Add(UdharStatusTxt);
-            UdharPnl.Location = new Point(864, 62);
+            UdharPnl.Location = new Point(864, 51);
             UdharPnl.Name = "UdharPnl";
             UdharPnl.Size = new Size(191, 104);
             UdharPnl.TabIndex = 16;
@@ -212,7 +307,6 @@
             UdharStatusTxt.Size = new Size(99, 25);
             UdharStatusTxt.TabIndex = 2;
             UdharStatusTxt.Text = "Rs 4443";
-            UdharStatusTxt.Click += UdharStatusTxt_Click;
             // 
             // LowStcokPnl
             // 
@@ -220,11 +314,10 @@
             LowStcokPnl.Controls.Add(label7);
             LowStcokPnl.Controls.Add(pictureBox4);
             LowStcokPnl.Controls.Add(LowStockTxt);
-            LowStcokPnl.Location = new Point(656, 62);
+            LowStcokPnl.Location = new Point(656, 51);
             LowStcokPnl.Name = "LowStcokPnl";
             LowStcokPnl.Size = new Size(191, 104);
             LowStcokPnl.TabIndex = 17;
-            LowStcokPnl.Paint += LowStcokPnl_Paint;
             // 
             // label7
             // 
@@ -264,7 +357,7 @@
             OutOfStockPnl.Controls.Add(label5);
             OutOfStockPnl.Controls.Add(pictureBox3);
             OutOfStockPnl.Controls.Add(OutofStockTxt);
-            OutOfStockPnl.Location = new Point(453, 62);
+            OutOfStockPnl.Location = new Point(453, 51);
             OutOfStockPnl.Name = "OutOfStockPnl";
             OutOfStockPnl.Size = new Size(191, 104);
             OutOfStockPnl.TabIndex = 18;
@@ -307,7 +400,7 @@
             InventoryPnl.Controls.Add(label1);
             InventoryPnl.Controls.Add(pictureBox2);
             InventoryPnl.Controls.Add(TotalinventoryTxt);
-            InventoryPnl.Location = new Point(241, 62);
+            InventoryPnl.Location = new Point(241, 51);
             InventoryPnl.Name = "InventoryPnl";
             InventoryPnl.Size = new Size(191, 104);
             InventoryPnl.TabIndex = 19;
@@ -350,7 +443,7 @@
             RevenuPnl.Controls.Add(label3);
             RevenuPnl.Controls.Add(pictureBox1);
             RevenuPnl.Controls.Add(TotalRevenuTxt);
-            RevenuPnl.Location = new Point(31, 62);
+            RevenuPnl.Location = new Point(31, 51);
             RevenuPnl.Name = "RevenuPnl";
             RevenuPnl.Size = new Size(191, 104);
             RevenuPnl.TabIndex = 20;
@@ -388,46 +481,6 @@
             TotalRevenuTxt.Text = "Rs 4443";
             TotalRevenuTxt.Click += TotalRevenuTxt_Click;
             // 
-            // panel1
-            // 
-            panel1.Controls.Add(label13);
-            panel1.Controls.Add(label12);
-            panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(601, 94);
-            panel1.TabIndex = 5;
-            // 
-            // label13
-            // 
-            label13.AutoSize = true;
-            label13.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label13.ForeColor = Color.FromArgb(128, 132, 140);
-            label13.Location = new Point(13, 62);
-            label13.Name = "label13";
-            label13.Size = new Size(266, 17);
-            label13.TabIndex = 6;
-            label13.Text = "Sale's Performance for the last sevent days";
-            // 
-            // label12
-            // 
-            label12.AutoSize = true;
-            label12.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label12.ForeColor = Color.Black;
-            label12.Location = new Point(13, 28);
-            label12.Name = "label12";
-            label12.Size = new Size(244, 25);
-            label12.TabIndex = 5;
-            label12.Text = "Weekly Revenu Trend";
-            // 
-            // weeklysalepanelgraph
-            // 
-            weeklysalepanelgraph.Dock = DockStyle.Fill;
-            weeklysalepanelgraph.Location = new Point(0, 94);
-            weeklysalepanelgraph.Name = "weeklysalepanelgraph";
-            weeklysalepanelgraph.Size = new Size(601, 222);
-            weeklysalepanelgraph.TabIndex = 6;
-            // 
             // AdminDashboard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -443,8 +496,14 @@
             uipanel.ResumeLayout(false);
             uipanel.PerformLayout();
             Inventoryhealthpanel.ResumeLayout(false);
-            Inventoryhealthpanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)chart2).EndInit();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             WeeklySalepanel.ResumeLayout(false);
+            weeklysalepanelgraph.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)weeklysaleschart).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             UdharPnl.ResumeLayout(false);
             UdharPnl.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
@@ -460,8 +519,6 @@
             RevenuPnl.ResumeLayout(false);
             RevenuPnl.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -499,5 +556,8 @@
         private Panel panel1;
         private Label label13;
         private Label label12;
+        private System.Windows.Forms.DataVisualization.Charting.Chart weeklysaleschart;
+        private Panel panel2;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
     }
 }

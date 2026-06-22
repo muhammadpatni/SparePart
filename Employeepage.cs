@@ -585,6 +585,11 @@ namespace SparePart
             e.Graphics.DrawString("SHOP PTCL        32435482        32446329", new Font("Arial", 6, FontStyle.Regular), Brushes.Black, new Point(0, y + 160));
 
         }
+
+        private void dataview_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 
 }

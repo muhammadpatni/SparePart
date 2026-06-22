@@ -92,7 +92,7 @@ namespace SparePart
             try
             {
                 SqlConnection con = new SqlConnection(DatabaseManagement.getConnectionString());
-                DataTable dt = await Task.Run(() => DatabaseManagement.retrieve(query, con));
+                DataTable? dt = await Task.Run(() => DatabaseManagement.retrieve(query, con));
 
                 if (dt != null && dt.Rows.Count > 0)
                 {
@@ -121,11 +121,11 @@ namespace SparePart
             {
                 if (dataview.CurrentRow != null)
                 {
-                    string id = dataview.CurrentRow.Cells[0].Value.ToString();
-                    string name = dataview.CurrentRow.Cells[1].Value.ToString();
-                    string price = dataview.CurrentRow.Cells[2].Value.ToString();
-                    string stock = dataview.CurrentRow.Cells[3].Value.ToString();
-                    string lowstock = dataview.CurrentRow.Cells[4].Value.ToString();
+                    string? id = dataview.CurrentRow.Cells[0].Value.ToString();
+                    string? name = dataview.CurrentRow.Cells[1].Value.ToString();
+                    string? price = dataview.CurrentRow.Cells[2].Value.ToString();
+                    string? stock = dataview.CurrentRow.Cells[3].Value.ToString();
+                    string? lowstock = dataview.CurrentRow.Cells[4].Value.ToString();
 
                     Updateproductform updateForm = new Updateproductform(false);
                     updateForm.settextboxes(id, name, price, stock, lowstock);

@@ -36,6 +36,8 @@
             DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
             Admindrawerpnl = new Panel();
             panel5 = new Panel();
             Savedbillsbtn = new Button();
@@ -468,13 +470,13 @@
             // 
             // Savebtn
             // 
-            Savebtn.BackColor = Color.FromArgb(224, 224, 224);
+            Savebtn.BackColor = Color.FromArgb(22, 31, 50);
             Savebtn.FlatAppearance.BorderSize = 0;
-            Savebtn.FlatAppearance.MouseDownBackColor = Color.WhiteSmoke;
-            Savebtn.FlatAppearance.MouseOverBackColor = Color.WhiteSmoke;
+            Savebtn.FlatAppearance.MouseDownBackColor = Color.FromArgb(22, 31, 50);
+            Savebtn.FlatAppearance.MouseOverBackColor = Color.FromArgb(22, 31, 50);
             Savebtn.FlatStyle = FlatStyle.Flat;
             Savebtn.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Savebtn.ForeColor = Color.FromArgb(150, 149, 151);
+            Savebtn.ForeColor = Color.White;
             Savebtn.ImageAlign = ContentAlignment.MiddleLeft;
             Savebtn.Location = new Point(248, 129);
             Savebtn.Name = "Savebtn";
@@ -488,13 +490,13 @@
             // 
             // Printbtn
             // 
-            Printbtn.BackColor = Color.FromArgb(224, 224, 224);
+            Printbtn.BackColor = Color.FromArgb(22, 31, 50);
             Printbtn.FlatAppearance.BorderSize = 0;
-            Printbtn.FlatAppearance.MouseDownBackColor = Color.WhiteSmoke;
-            Printbtn.FlatAppearance.MouseOverBackColor = Color.WhiteSmoke;
+            Printbtn.FlatAppearance.MouseDownBackColor = Color.FromArgb(22, 31, 50);
+            Printbtn.FlatAppearance.MouseOverBackColor = Color.FromArgb(22, 31, 50);
             Printbtn.FlatStyle = FlatStyle.Flat;
             Printbtn.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Printbtn.ForeColor = Color.FromArgb(150, 149, 151);
+            Printbtn.ForeColor = Color.White;
             Printbtn.ImageAlign = ContentAlignment.MiddleLeft;
             Printbtn.Location = new Point(22, 129);
             Printbtn.Name = "Printbtn";
@@ -706,26 +708,28 @@
             dataview.AllowUserToDeleteRows = false;
             dataview.AllowUserToResizeColumns = false;
             dataview.AllowUserToResizeRows = false;
+            dataGridViewCellStyle5.ForeColor = Color.FromArgb(22, 31, 50);
+            dataview.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             dataview.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataview.BackgroundColor = Color.FromArgb(241, 245, 249);
             dataview.BorderStyle = BorderStyle.None;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = Color.FromArgb(30, 41, 59);
-            dataGridViewCellStyle5.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle5.ForeColor = Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(30, 41, 59);
-            dataGridViewCellStyle5.SelectionForeColor = Color.White;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
-            dataview.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            dataview.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = Color.White;
-            dataGridViewCellStyle6.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle6.ForeColor = Color.FromArgb(30, 41, 59);
-            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(99, 105, 118);
+            dataGridViewCellStyle6.BackColor = Color.FromArgb(30, 41, 59);
+            dataGridViewCellStyle6.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle6.ForeColor = Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(30, 41, 59);
             dataGridViewCellStyle6.SelectionForeColor = Color.White;
             dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
-            dataview.DefaultCellStyle = dataGridViewCellStyle6;
+            dataview.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataview.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = Color.White;
+            dataGridViewCellStyle7.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle7.ForeColor = Color.FromArgb(22, 31, 50);
+            dataGridViewCellStyle7.SelectionBackColor = Color.FromArgb(99, 105, 118);
+            dataGridViewCellStyle7.SelectionForeColor = Color.White;
+            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.False;
+            dataview.DefaultCellStyle = dataGridViewCellStyle7;
             dataview.Dock = DockStyle.Fill;
             dataview.EnableHeadersVisualStyles = false;
             dataview.GridColor = Color.FromArgb(30, 41, 59);
@@ -734,21 +738,24 @@
             dataview.MultiSelect = false;
             dataview.Name = "dataview";
             dataview.ReadOnly = true;
-            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = SystemColors.Control;
-            dataGridViewCellStyle7.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle7.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.False;
-            dataview.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = SystemColors.Control;
+            dataGridViewCellStyle8.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle8.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.False;
+            dataview.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             dataview.RowHeadersVisible = false;
+            dataGridViewCellStyle9.ForeColor = Color.FromArgb(22, 31, 50);
+            dataview.RowsDefaultCellStyle = dataGridViewCellStyle9;
             dataview.RowTemplate.DividerHeight = 2;
             dataview.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataview.Size = new Size(452, 398);
             dataview.TabIndex = 22;
             dataview.TabStop = false;
             dataview.VirtualMode = true;
+            dataview.CellContentClick += dataview_CellContentClick;
             dataview.KeyDown += dataview_KeyDown;
             // 
             // lbstatus
@@ -827,6 +834,7 @@
             ClientSize = new Size(1170, 535);
             Controls.Add(Panelmain);
             Controls.Add(Admindrawerpnl);
+            ForeColor = Color.White;
             FormBorderStyle = FormBorderStyle.None;
             KeyPreview = true;
             Name = "Employeepage";
