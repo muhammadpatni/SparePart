@@ -53,7 +53,7 @@ namespace SparePart
 
                 SqlConnection con = new SqlConnection(DatabaseManagement.getConnectionString());
             
-                DataTable dt = await Task.Run(() => DatabaseManagement.retrieve(query, con));
+                DataTable? dt = await Task.Run(() => DatabaseManagement.retrieve(query, con));
 
                 if (dt != null && dt.Rows.Count > 0)
                 {
@@ -79,7 +79,7 @@ namespace SparePart
             lbstatus.Visible = true;
             try
             { SqlConnection con = new SqlConnection(DatabaseManagement.getConnectionString());
-                DataTable dt = DatabaseManagement.retrieve(query,con);
+                DataTable? dt = DatabaseManagement.retrieve(query,con);
 
                 if (dt != null && dt.Rows.Count > 0)
                 {
@@ -102,7 +102,7 @@ namespace SparePart
 
         private async void AdminLowStock_Load(object sender, EventArgs e)
         {
-            await loadproducts("SELECT * FROM Products WHERE Stock <= lowstock ");
+            await loadproducts("SELECT * FROM Products WHERE Stock <= lowstock and Stock>0");
 
         }
 
@@ -140,7 +140,7 @@ namespace SparePart
 
         private void searchtxt_TextChanged(object sender, EventArgs e)
         {
-            Searchproduct($"SELECT * FROM Products WHERE ProductName LIKE '%{searchtxt.Text}%' AND Stock <= lowstock ");
+            Searchproduct($"SELECT * FROM Products WHERE ProductName LIKE '%{searchtxt.Text}%' AND Stock <= lowstock and Stock >0 ");
         }
 
         private void searchtxt_KeyDown(object sender, KeyEventArgs e)
@@ -158,17 +158,17 @@ namespace SparePart
             {
                 if (dataview.CurrentRow != null)
                 {
-                    string id = dataview.CurrentRow.Cells[0].Value.ToString();
-                    string name = dataview.CurrentRow.Cells[1].Value.ToString();
-                    string price = dataview.CurrentRow.Cells[2].Value.ToString();
-                    string stock = dataview.CurrentRow.Cells[3].Value.ToString();
-                    string lowstock = dataview.CurrentRow.Cells[4].Value.ToString();
+                    string? id = dataview.CurrentRow.Cells[0].Value.ToString();
+                    string? name = dataview.CurrentRow.Cells[1].Value.ToString();
+                    string? price = dataview.CurrentRow.Cells[2].Value.ToString();
+                    string? stock = dataview.CurrentRow.Cells[3].Value.ToString();
+                    string? lowstock = dataview.CurrentRow.Cells[4].Value.ToString();
 
                     Updateproductform updateForm = new Updateproductform(false);
-                    updateForm.settextboxes(id, name, price, stock, lowstock);
+                    updateForm.settextboxes(id!, name!, price!, stock!, lowstock!);
                     updateForm.ShowDialog();
                     e.Handled = true;
-                    await loadproducts("SELECT * FROM Products WHERE Stock = 0");
+                    await loadproducts("SELECT * FROM Products WHERE Stock <= lowstock and Stock>0");
                     searchtxt.Clear();
                     searchtxt.Focus();
                 }

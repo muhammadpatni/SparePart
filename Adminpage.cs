@@ -80,7 +80,7 @@ namespace SparePart
             else if (e.KeyCode == Keys.F3)
             {
                 Minquantitybtn.PerformClick();
-            }  
+            }
             else if (e.KeyCode == Keys.P && e.Control)
             {
                 Adminallproducts adminallproducts = new Adminallproducts();
@@ -90,7 +90,10 @@ namespace SparePart
             else if (e.KeyCode == Keys.P)
             {
                 Updateproductform updateproductform = new Updateproductform(true);
-                updateproductform.ShowDialog();
+                if (updateproductform.ShowDialog() == DialogResult.Cancel)
+                {
+                    Pagecalling.loadform(new AdminDashboard(), Mainpanel);
+                }
             }
         }
 
@@ -144,7 +147,10 @@ namespace SparePart
         private void addnewproductbutton_Click(object sender, EventArgs e)
         {
             Updateproductform updateproductform = new Updateproductform(true);
-            updateproductform.ShowDialog();
+            if (updateproductform.ShowDialog() == DialogResult.Cancel)
+            {
+                Pagecalling.loadform(new AdminDashboard(), Mainpanel);
+            }
 
         }
 
@@ -153,6 +159,11 @@ namespace SparePart
             Adminallproducts adminallproducts = new Adminallproducts();
             adminallproducts.Show();
             this.Hide();
+        }
+
+        private void panel7_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

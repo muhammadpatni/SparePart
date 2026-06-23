@@ -147,6 +147,7 @@
             Logoutbutton.Padding = new Padding(10, 0, 0, 0);
             Logoutbutton.Size = new Size(194, 37);
             Logoutbutton.TabIndex = 11;
+            Logoutbutton.TabStop = false;
             Logoutbutton.Text = "LOG OUT";
             Logoutbutton.UseVisualStyleBackColor = false;
             Logoutbutton.Click += Logoutbutton_Click;
@@ -177,6 +178,7 @@
             panel7.Name = "panel7";
             panel7.Size = new Size(94, 56);
             panel7.TabIndex = 14;
+            panel7.Paint += panel7_Paint;
             // 
             // Productsbtn
             // 
@@ -254,6 +256,7 @@
             Minquantitybtn.Padding = new Padding(10, 0, 0, 0);
             Minquantitybtn.Size = new Size(194, 37);
             Minquantitybtn.TabIndex = 12;
+            Minquantitybtn.TabStop = false;
             Minquantitybtn.Text = " Min. Quantity";
             Minquantitybtn.UseVisualStyleBackColor = false;
             Minquantitybtn.Click += Minquantitybtn_Click;
@@ -283,6 +286,7 @@
             Outofstockbtn.Padding = new Padding(10, 0, 0, 0);
             Outofstockbtn.Size = new Size(194, 37);
             Outofstockbtn.TabIndex = 12;
+            Outofstockbtn.TabStop = false;
             Outofstockbtn.Text = "Out Of Stock";
             Outofstockbtn.UseVisualStyleBackColor = false;
             Outofstockbtn.Click += Outofstockbtn_Click;
@@ -321,6 +325,7 @@
             Dashboardbtn.Padding = new Padding(10, 0, 0, 0);
             Dashboardbtn.Size = new Size(194, 37);
             Dashboardbtn.TabIndex = 12;
+            Dashboardbtn.TabStop = false;
             Dashboardbtn.Text = "Dashboard";
             Dashboardbtn.UseVisualStyleBackColor = false;
             Dashboardbtn.Click += Dashboardbtn_Click;

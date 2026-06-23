@@ -22,7 +22,7 @@ namespace SparePart
         }
 
         private void AdminDashboard_Load(object sender, EventArgs e)
-        {
+        {   
             LoadChart();
             totalinventoryload();
             lowstockload();
@@ -61,7 +61,7 @@ ORDER BY d.InvoiceDate;
             SqlConnection con = new SqlConnection(DatabaseManagement.getConnectionString());
             DataTable? lastweeksale = DatabaseManagement.retrieve(query, con);
 
-            return lastweeksale;
+            return lastweeksale!;
         }
 
         private void outofstockload()
@@ -93,7 +93,7 @@ ORDER BY d.InvoiceDate;
             SqlConnection con = new SqlConnection(DatabaseManagement.getConnectionString());
             try
             {
-                SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM Products WHERE Stock <= lowstock;", con);
+                SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM Products WHERE Stock <= lowstock and Stock>0;", con);
                 if (con.State == ConnectionState.Closed)
                 {
                     con.Open();
@@ -235,7 +235,7 @@ ORDER BY d.InvoiceDate;
             // =========================
             foreach (DataRow row in dt.Rows)
             {
-                string date = row["Date"].ToString();
+                string? date = row["Date"].ToString();
                 decimal sales = Convert.ToDecimal(row["GrandTotal"]);
 
                 series.Points.AddXY(date, sales);
@@ -329,6 +329,11 @@ ORDER BY d.InvoiceDate;
         }
 
         private void TotalRevenuTxt_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
         {
 
         }

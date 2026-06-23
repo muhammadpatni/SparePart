@@ -17,7 +17,7 @@ namespace SparePart
         {
             InitializeComponent();
         }
-        DataTable products = new DataTable();
+        DataTable? products = new DataTable();
         private void SetGridColumnLayout()
         {
             dataview.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -42,8 +42,8 @@ namespace SparePart
             lbstatus.Visible = true;
             try
             {
-                SqlConnection con = new SqlConnection(DatabaseManagement.getConnectionString());
-                DataTable dt = await Task.Run(() => DatabaseManagement.retrieve(query, con));
+                SqlConnection? con = new SqlConnection(DatabaseManagement.getConnectionString());
+                DataTable? dt = await Task.Run(() => DatabaseManagement.retrieve(query, con));
 
                 if (dt != null && dt.Rows.Count > 0)
                 {
@@ -71,14 +71,14 @@ namespace SparePart
 
         private void Billingbtn_Click(object sender, EventArgs e)
         {
-            Employeepage emp = new Employeepage();
+            Employeepage? emp = new Employeepage();
             emp.Show();
             this.Hide();
         }
 
         private void Logoutbutton_Click(object sender, EventArgs e)
         {
-            LoginPage login = new LoginPage();
+            LoginPage? login = new LoginPage();
             login.Show();
             this.Hide();
 
@@ -162,7 +162,7 @@ namespace SparePart
             decimal subtotal = 0m;
             foreach (DataGridViewRow row in cartview.Rows)
             {
-                object cellValue = row.Cells[4].Value;
+                object? cellValue = row.Cells[4].Value;
                 if (cellValue != null)
                 {
                     subtotal += Convert.ToDecimal(cellValue);
@@ -178,19 +178,19 @@ namespace SparePart
             {
                 if (dataview.CurrentRow != null)
                 {
-                    string id = dataview.CurrentRow.Cells[0].Value.ToString();
-                    string name = dataview.CurrentRow.Cells[1].Value.ToString();
-                    string price = dataview.CurrentRow.Cells[2].Value.ToString();
-                    string stock = dataview.CurrentRow.Cells[3].Value.ToString();
+                    string? id = dataview.CurrentRow.Cells[0].Value.ToString();
+                    string? name = dataview.CurrentRow.Cells[1].Value.ToString();
+                    string? price = dataview.CurrentRow.Cells[2].Value.ToString();
+                    string? stock = dataview.CurrentRow.Cells[3].Value.ToString();
 
-                    Cartandreturn cartBox = new Cartandreturn(true, id, name, price, stock);
+                    Cartandreturn?  cartBox = new Cartandreturn(true, id!, name!, price!, stock!);
 
                     if (cartBox.ShowDialog() == DialogResult.OK)
                     {
-                        string pName = cartBox.ReturnName;
-                        int pPrice = cartBox.ReturnPrice;
-                        int pQty = cartBox.ReturnQuantity;
-                        int pTotal = cartBox.ReturnTotal;
+                        string? pName = cartBox.ReturnName;
+                        int? pPrice = cartBox.ReturnPrice;
+                        int? pQty = cartBox.ReturnQuantity;
+                        int? pTotal = cartBox.ReturnTotal;
 
                         bool productFound = false;
 
@@ -198,8 +198,8 @@ namespace SparePart
                         {
                             if (row.Cells[0].Value != null && row.Cells[0].Value.ToString() == id)
                             {
-                                int oldQty = Convert.ToInt32(row.Cells[3].Value);
-                                int oldTotal = Convert.ToInt32(row.Cells[4].Value);
+                                int? oldQty = Convert.ToInt32(row.Cells[3].Value);
+                                int? oldTotal = Convert.ToInt32(row.Cells[4].Value);
 
                                 row.Cells[3].Value = oldQty + pQty;
                                 row.Cells[4].Value = oldTotal + pTotal;
@@ -230,8 +230,8 @@ namespace SparePart
             lbstatus.Visible = true;
             try
             {
-                SqlConnection con = new SqlConnection(DatabaseManagement.getConnectionString());
-                DataTable dt = DatabaseManagement.retrieve(query, con);
+                SqlConnection? con = new SqlConnection(DatabaseManagement.getConnectionString());
+                DataTable? dt = DatabaseManagement.retrieve(query, con);
 
                 if (dt != null && dt.Rows.Count > 0)
                 {
@@ -270,8 +270,8 @@ namespace SparePart
         {
             try
             {
-                string pID = cartview.Rows[rowIndex].Cells[0].Value.ToString();
-                int pQty = Convert.ToInt32(cartview.Rows[rowIndex].Cells[3].Value);
+                string? pID = cartview.Rows[rowIndex].Cells[0].Value.ToString();
+                int? pQty = Convert.ToInt32(cartview.Rows[rowIndex].Cells[3].Value);
                 cartview.Rows.RemoveAt(rowIndex);
                 CalculateBill();
             }
@@ -309,8 +309,8 @@ namespace SparePart
                 return;
             }
 
-            string query = $"SELECT COUNT(*) FROM Invoices WHERE InvoiceNumber = {invoicenumbertxt.Text} AND InvoiceNumber NOT IN ( SELECT DISTINCT InvoiceNumber FROM Credit );";
-             SqlConnection con = new SqlConnection(DatabaseManagement.getConnectionString());
+            string? query = $"SELECT COUNT(*) FROM Invoices WHERE InvoiceNumber = {invoicenumbertxt.Text} AND InvoiceNumber NOT IN ( SELECT DISTINCT InvoiceNumber FROM Credit );";
+             SqlConnection? con = new SqlConnection(DatabaseManagement.getConnectionString());
 
             if (!DatabaseManagement.IsInvoiceAvailable(query, con))
             {
@@ -323,15 +323,15 @@ namespace SparePart
             {
                 if (row.Cells[0].Value != null && row.Cells[3].Value != null)
                 {
-                    int productID = Convert.ToInt32(row.Cells[0].Value);
-                    int quantity = Convert.ToInt32(row.Cells[3].Value);
-                    string query1 = $"UPDATE Products SET Stock = Stock + {quantity} WHERE ProductID = {productID}";
-                    SqlConnection con1 = new SqlConnection(DatabaseManagement.getConnectionString());
+                    int? productID = Convert.ToInt32(row.Cells[0].Value);
+                    int? quantity = Convert.ToInt32(row.Cells[3].Value);
+                    string? query1 = $"UPDATE Products SET Stock = Stock + {quantity} WHERE ProductID = {productID}";
+                    SqlConnection? con1 = new SqlConnection(DatabaseManagement.getConnectionString());
                     DatabaseManagement.edit(query1, con1);
                 }
             }
-            string query2 = $"UPDATE Invoices SET Grandtotal = Grandtotal - {Payablelb.Text} where InvoiceNumber={invoicenumbertxt.Text}";
-            SqlConnection con2 = new SqlConnection(DatabaseManagement.getConnectionString());
+            string? query2 = $"UPDATE Invoices SET Grandtotal = Grandtotal - {Payablelb.Text} where InvoiceNumber={invoicenumbertxt.Text}";
+            SqlConnection? con2 = new SqlConnection(DatabaseManagement.getConnectionString());
             DatabaseManagement.edit(query2, con2);
             cartview.Rows.Clear();
             invoicenumbertxt.Clear();
@@ -343,14 +343,14 @@ namespace SparePart
 
         private void Savedbillsbtn_Click(object sender, EventArgs e)
         {
-            Employeesavedbills savedbills = new Employeesavedbills();
+            Employeesavedbills? savedbills = new Employeesavedbills();
             savedbills.Show();
             this.Hide();
         }
 
         private void Returnbtn_Click(object sender, EventArgs e)
         {
-            EmployeeReturnPage returnPage = new EmployeeReturnPage();
+            EmployeeReturnPage? returnPage = new EmployeeReturnPage();
             returnPage.Show();
             this.Hide();
         }

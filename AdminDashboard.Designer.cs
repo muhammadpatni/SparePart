@@ -125,6 +125,7 @@
             label2.Size = new Size(212, 25);
             label2.TabIndex = 21;
             label2.Text = "Business Overview";
+            label2.Click += label2_Click;
             // 
             // Inventoryhealthpanel
             // 
@@ -151,6 +152,7 @@
             chart2.Series.Add(series1);
             chart2.Size = new Size(417, 216);
             chart2.TabIndex = 6;
+            chart2.TabStop = false;
             chart2.Text = "chart1";
             // 
             // panel2
@@ -219,6 +221,7 @@
             weeklysaleschart.Series.Add(series2);
             weeklysaleschart.Size = new Size(601, 222);
             weeklysaleschart.TabIndex = 0;
+            weeklysaleschart.TabStop = false;
             weeklysaleschart.Text = "chart1";
             // 
             // panel1

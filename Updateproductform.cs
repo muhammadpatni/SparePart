@@ -118,6 +118,7 @@ namespace SparePart
                     if (result > 0)
                     {
                         MessageBox.Show("Product updated successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.DialogResult = DialogResult.OK;
                         this.Close();
                     }
                 }
@@ -138,6 +139,7 @@ namespace SparePart
 
         private void Discardbtn_Click(object sender, EventArgs e)
         {
+            this.DialogResult = DialogResult.Cancel;
             this.Close();
         }
 
@@ -145,7 +147,7 @@ namespace SparePart
         {
             if (e.KeyCode == Keys.Escape)
             {
-                this.Close();
+                Discardbtn.PerformClick();
             }
             if (e.KeyCode == Keys.Enter)
             {
