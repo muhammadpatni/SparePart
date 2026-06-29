@@ -81,6 +81,7 @@
             AdminRadioBtn.TabIndex = 3;
             AdminRadioBtn.Text = "Admin";
             AdminRadioBtn.UseVisualStyleBackColor = true;
+            AdminRadioBtn.CheckedChanged += AdminRadioBtn_CheckedChanged;
             // 
             // PasswordTxtBox
             // 
@@ -125,6 +126,7 @@
             UserNameTxtBox.Size = new Size(276, 34);
             UserNameTxtBox.TabIndex = 3;
             UserNameTxtBox.TabStop = false;
+            UserNameTxtBox.TextChanged += UserNameTxtBox_TextChanged;
             UserNameTxtBox.KeyDown += UserNameTxtBox_KeyDown;
             // 
             // LoginPnl

@@ -160,7 +160,7 @@ namespace SparePart
 
         private void searcchtxt_TextChanged(object sender, EventArgs e)
         {
-            Searchproduct($"SELECT * FROM Products WHERE ProductName LIKE '%{searcchtxt.Text}%' AND Stock <= lowstock ");
+            Searchproduct($"SELECT * FROM Products WHERE ProductName LIKE '%{searcchtxt.Text}%' AND Stock = 0 ");
         }
 
         void Searchproduct(string query)

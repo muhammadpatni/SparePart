@@ -32,11 +32,12 @@ namespace SparePart
         {
             LoginPnl.Location = new Point((this.Size.Width - LoginPnl.Width) / 2, (this.Size.Height - LoginPnl.Height) / 2);
             UserNameTxtBox.Focus();
-            Task.Run(
-                () => {
-                    SyncManager.SyncLocalToAzure();
-                }
-                );
+            ////Task.Run(
+            //    () =>
+            //    {
+            //        SyncManager.SyncLocalToAzure();
+            //    }
+            //    );
         }
 
 
@@ -172,6 +173,16 @@ namespace SparePart
         }
 
         private void PasswordTxtBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AdminRadioBtn_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void UserNameTxtBox_TextChanged(object sender, EventArgs e)
         {
 
         }
